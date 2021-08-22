@@ -1,0 +1,10 @@
+public
+
+# Minified JS Library
+######################
+src/lib
+*.min.js
+
+# Minified CSS Library
+######################
+*.min.css

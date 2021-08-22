@@ -1,0 +1,10 @@
+.yarn/
+.husky/
+.yarnrc.yml
+public/
+.travis.yml
+
+##############################
+# Minified files
+*.min.js
+*.min.css

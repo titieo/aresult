@@ -1,0 +1,88 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer components {
+  .card {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 55% max-content 1fr;
+    background-image: linear-gradient(
+      to bottom right,
+      rgba(107, 114, 128, var(--tw-bg-opacity)),
+      rgba(255, 255, 255, var(--tw-bg-opacity))
+    );
+  }
+
+  .card__status > * {
+    @apply bg-clip-text bg-gradient-to-br from-green-400 to-blue-500;
+  }
+  @media screen and (prefers-reduced-motion: reduce) {
+    .bg {
+      animation: none;
+    }
+  }
+
+  .bg {
+    animation: color 5s linear infinite;
+  }
+
+  .bg > svg {
+    @apply text-white text-opacity-50 absolute h-1/2;
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    .clockwise {
+      animation: none;
+    }
+
+    .counter-clockwise {
+      animation: none;
+    }
+
+    .bg {
+      animation-duration: 10s;
+    }
+  }
+
+  .clockwise {
+    animation: clockwise 5s linear infinite;
+  }
+
+  .counter-clockwise {
+    animation: counter-clockwise 5s linear infinite;
+  }
+
+  @keyframes color {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+
+    100% {
+      filter: hue-rotate(-360deg);
+    }
+  }
+}
+
+html {
+  @apply antialiased;
+}
+
+@keyframes counter-clockwise {
+  from {
+    transform: translate3d(33.333333%, 33.333333%, 0) rotate(0deg);
+  }
+
+  to {
+    transform: translate3d(33.333333%, 33.333333%, 0) rotate(-360deg);
+  }
+}
+
+@keyframes clockwise {
+  from {
+    transform: translate3d(-33.333333%, -33.333333%, 0) rotate(0deg);
+  }
+
+  to {
+    transform: translate3d(-33.333333%, -33.333333%, 0) rotate(360deg);
+  }
+}

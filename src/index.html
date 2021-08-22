@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html id="html" class="custom-scroll">
+  <head lang="en-US">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <link rel="shortcut icon" type="image/jpg" href="./img/avatar.webp" />
+    <meta name="author" content="loctran016" />
+    <meta name="description" content="loctran016 Personal Blog" />
+  </head>
+  <body
+    class="
+      relative
+      min-w-screen min-h-screen
+      flex
+      justify-center
+      items-center
+      font-sans
+      card-wrapper
+    "
+  >
+    <!-- Background -->
+    <div
+      class="
+        overflow-hidden
+        absolute
+        top-0
+        left-0
+        bottom-0
+        right-0
+        w-full
+        h-full
+        bg-gradient-to-br
+        from-green-400
+        to-blue-500
+        bg
+      "
+    >
+      <svg class="top-0 left-0 clockwise">
+        <use xlink:href="sprite.svg#blob"></use>
+      </svg>
+      <svg class="right-0 bottom-0 counter-clockwise">
+        <use xlink:href="sprite.svg#blob"></use>
+      </svg>
+    </div>
+
+    <!-- Main card -->
+    <div
+      class="
+        grid
+        place-content-center
+        gap-2
+        h-full
+        w-full
+        md:h-1/2 md:w-1/2
+        bg-opacity-75
+        rounded-xl
+        backdrop-filter backdrop-blur
+        rounded-md
+        text-white
+        card
+        text-xl
+        max-w-lg
+        md:text-2xl
+      "
+    >
+      <picture class="col-span-full place-self-center h-5/6 max-w-md">
+        <source srcset="./img/avatar.webp" type="image/webp" />
+        <source srcset="./img/avatar.png" type="image/png" />
+        <img
+          class="
+            mx-auto
+            rounded
+            h-full
+            transition-all
+            duration-500
+            hover:rounded-md
+          "
+          src="./img/avatar.png"
+          alt="Dzịt vàng đáng yêu"
+        />
+      </picture>
+      <h2
+        class="
+          mx-auto
+          text-center
+          font-bold
+          text-3xl
+          md:text-4xl
+          col-span-full
+          font-serif
+        "
+      >
+        Trần Tấn Lộc
+      </h2>
+      <div
+        class="
+          group
+          flex flex-col
+          items-center
+          rounded-md
+          justify-center
+          bg-transparent
+          py-5
+          px-3
+          transition-colors
+          hover:bg-white hover:text-transparent
+          card__status
+        "
+      >
+        <svg class="bg-clip-text h-6 w-6">
+          <use xlink:href="sprite.svg#academic-cap"></use>
+        </svg>
+        <span>Học kì I</span>
+      </div>
+      <div
+        class="
+          group
+          flex flex-col
+          items-center
+          rounded-md
+          justify-center
+          bg-transparent
+          py-5
+          px-3
+          transition-colors
+          hover:bg-white hover:text-transparent
+          card__status
+        "
+      >
+        <svg class="bg-clip-text h-6 w-6">
+          <use xlink:href="sprite.svg#book-open"></use>
+        </svg>
+        <span>8.90</span>
+      </div>
+      <div
+        class="
+          group
+          flex flex-col
+          items-center
+          rounded-md
+          justify-center
+          bg-transparent
+          py-5
+          px-3
+          transition-colors
+          hover:bg-white hover:text-transparent
+          card__status
+        "
+      >
+        <svg class="bg-clip-text h-6 w-6">
+          <use xlink:href="sprite.svg#chart-bar"></use>
+        </svg>
+        <span class="">17</span>
+      </div>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
