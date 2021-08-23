@@ -3,6 +3,10 @@
 @import 'tailwindcss/utilities';
 
 @layer components {
+  body > header.active {
+    @apply max-h-16 bg-opacity-100;
+  }
+
   .card--trans {
     grid-template-rows: 55% max-content 1fr;
     background-image: linear-gradient(

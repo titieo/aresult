@@ -5,6 +5,13 @@ __metadata:
   version: 4
   cacheKey: 7
 
+"@alpinejs/intersect@npm:^3.2.4":
+  version: 3.2.4
+  resolution: "@alpinejs/intersect@npm:3.2.4"
+  checksum: 36a8ffc9feff2a7329d3c29033e1c148c94c27676829ec9dff69de8aad2efba598ca458bcf625ed7a1404843e4ebc643575522eb62647a63f51b95d729840c7e
+  languageName: node
+  linkType: hard
+
 "@alpinejs/persist@npm:^3.2.4":
   version: 3.2.4
   resolution: "@alpinejs/persist@npm:3.2.4"
@@ -6554,6 +6561,7 @@ fsevents@~2.3.2:
   version: 0.0.0-use.local
   resolution: "template@workspace:."
   dependencies:
+    "@alpinejs/intersect": ^3.2.4
     "@alpinejs/persist": ^3.2.4
     "@commitlint/cli": ^13.1.0
     "@commitlint/config-conventional": ^13.1.0

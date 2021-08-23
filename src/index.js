@@ -4,34 +4,36 @@ import confetti from 'canvas-confetti';
 import '@iconscout/unicons/css/line.css';
 import Alpine from 'alpinejs';
 import persist from '@alpinejs/persist';
+import intersect from '@alpinejs/intersect';
+
 // eslint-disable-next-line
 const allSubjects = {
   math: {
     fullName: 'Toán học',
+    bgColor: 'from-red-400 to-yellow-400 dark:from-red-500 dark:to-yellow-500',
     first: [],
     second: [],
     third: [],
-    calcTotal() {
-      let total = 0;
-      for (let i = 0; i < this.first.length; i++) {
-        total += this.first.length;
-      }
-      for (let i = 0; i < this.second.length; i++) {
-        total += this.second.length;
-      }
-      for (let i = 0; i < this.third.length; i++) {
-        total += this.third.length;
-      }
-      this.total = total;
-      return total;
-    },
     calcAverage() {
       let division = 1;
       let average;
+      let total = 0;
       division +=
         this.first.length + this.second.length * 2 + this.third.length * 3;
-      // eslint-disable-next-line prefer-const
-      average = this.total / division;
+      if (division > 0) {
+        for (let i = 0; i < this.first.length; i++) {
+          total += this.first.length;
+        }
+        for (let i = 0; i < this.second.length; i++) {
+          total += this.second.length;
+        }
+        for (let i = 0; i < this.third.length; i++) {
+          total += this.third.length;
+        }
+        average = (total / division).toFixed(2);
+      } else {
+        average = '__.__';
+      }
       this.average = average;
       return average;
     },
@@ -41,6 +43,7 @@ const allSubjects = {
 
 window.Alpine = Alpine;
 Alpine.plugin(persist);
+Alpine.plugin(intersect);
 
 Alpine.store('showResultCard', {
   on: false,
@@ -61,6 +64,16 @@ Alpine.store('showSideBar', false);
 
 Alpine.start();
 // Import Packages
+
+// const navBar = document.querySelector('.navbar');
+// const navBar = document.querySelector('header');
+// const observer = new IntersectionObserver(
+//   ([e]) => e.target.classList.toggle('active', e.intersectionRatio < 1),
+//   { threshold: [1] }
+// );
+// body > header.active
+// observer.observe(navBar);
+
 const temp = false;
 if (temp) {
   const end = Date.now() + 15 * 1000;
