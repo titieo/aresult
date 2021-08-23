@@ -1,1 +1,0 @@
-import("data:text/javascript;base64,Cg==");import{m as a,a as t}from"./vendor.42deeb44.js";window.Alpine=a,a.plugin(t),a.store("showResultCard",{on:!1,toggle(){this.on=!this.on}}),a.store("avatar",{webp:"./img/avatar.webp",png:"./img/avatar.png"}),a.store("showSideBar",!1),a.start();
