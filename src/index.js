@@ -10,7 +10,10 @@ import intersect from '@alpinejs/intersect';
 const allSubjects = {
   math: {
     fullName: 'Toán học',
+    teacher: 'Lorem ipsum dolor sit amet.',
     bgColor: 'from-red-400 to-yellow-400 dark:from-red-500 dark:to-yellow-500',
+    mainImg:
+      'https://sachcuatui.net/wp-content/uploads/2019/10/sach-giao-khoa-dai-so-lop-10-nang-cao.jpg',
     first: [],
     second: [],
     third: [],
@@ -20,7 +23,7 @@ const allSubjects = {
       let total = 0;
       division +=
         this.first.length + this.second.length * 2 + this.third.length * 3;
-      if (division > 0) {
+      if (division > 1) {
         for (let i = 0; i < this.first.length; i++) {
           total += this.first.length;
         }
@@ -45,6 +48,11 @@ window.Alpine = Alpine;
 Alpine.plugin(persist);
 Alpine.plugin(intersect);
 
+Alpine.data('allSubjects', () => {
+  return {
+    items: { ...allSubjects },
+  };
+});
 Alpine.store('showResultCard', {
   on: false,
 

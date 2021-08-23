@@ -127,76 +127,79 @@
           </figcaption>
         </figure>
       </header>
-      <section class="grid grid-cols-layout w-full px-5 py-3 gap-y-3 gap-x-5">
-        <a
-          class="
-            rounded-lg
-            shadow-md
-            transform-gpu
-            transition-all
-            grid grid-rows-card
-            gap-y-3
-            pb-4
-            overflow-hidden
-            text-center
-            place-items-center
-            bg-gradient-to-br
-            cursor-pointer
-            hover:-translate-y-1 hover:shadow-lg hover:scale-105
-            from-red-400
-            to-yellow-400
-            dark:from-red-500 dark:to-yellow-500
-          "
-          href="#"
-        >
-          <img
-            src="https://sachcuatui.net/wp-content/uploads/2019/10/sach-giao-khoa-dai-so-lop-10-nang-cao.jpg"
+      <section
+        class="grid grid-cols-layout w-full px-5 py-3 gap-y-3 gap-x-5"
+        x-data="allSubjects"
+      >
+        <template x-for="item in items">
+          <a
             class="
-              max-h-40
-              place-self-stretch
-              h-full
-              w-full
-              object-cover object-top
-              col-span-full
-            "
-            style="grid-row: 1/2"
-            alt="Math"
-          />
-          <h3
-            class="
-              text-center
-              py-3
-              px-5
-              backdrop-filter backdrop-blur-md
+              rounded-lg
+              shadow-md
               transform-gpu
-              translate-y-1/2
-              font-bold font-serif
-              text-2xl
-              rounded-md
-              col-span-full
-              self-end
-              bg-white bg-opacity-80
-              dark:bg-gray-900 dark:bg-opacity-50
+              transition-all
+              grid grid-rows-card
+              gap-y-3
+              pb-4
+              overflow-hidden
+              text-center
+              place-items-center
+              bg-gradient-to-br
+              cursor-pointer
+              hover:-translate-y-1 hover:shadow-lg hover:scale-105
             "
-            style="grid-row: 1/2"
+            :class="item.bgColor"
+            href="#"
           >
-            Toán học
-          </h3>
-          <span
-            class="
-              col-span-full
-              mt-5
-              oldstyle-nums
-              font-bold font-serif
-              text-3xl
-            "
-            >8.90</span
-          >
-          <div class="col-span-full font-serif text-xs self-end font-light">
-            <i class="uil uil-user-circle mr-1"></i
-            ><span>Lorem ipsum dolor sit amet.</span>
-          </div>
-        </a>
+            <img
+              :src="item.mainImg"
+              class="
+                max-h-40
+                place-self-stretch
+                h-full
+                w-full
+                object-cover object-top
+                col-span-full
+              "
+              style="grid-row: 1/2"
+              alt="Math"
+            />
+            <h3
+              class="
+                text-center
+                py-3
+                px-5
+                backdrop-filter backdrop-blur-md
+                transform-gpu
+                translate-y-1/2
+                font-bold font-serif
+                text-2xl
+                rounded-md
+                col-span-full
+                self-end
+                bg-white bg-opacity-80
+                dark:bg-gray-900 dark:bg-opacity-50
+              "
+              style="grid-row: 1/2"
+              x-text="item.fullName"
+            ></h3>
+            <span
+              class="
+                col-span-full
+                mt-5
+                oldstyle-nums
+                font-bold font-serif
+                text-3xl
+              "
+              x-text="item.calcAverage()"
+              >8.90</span
+            >
+            <div class="col-span-full font-serif text-xs self-end font-light">
+              <i class="uil uil-user-circle mr-1"></i
+              ><span x-text="item.teacher"></span>
+            </div>
+          </a>
+        </template>
       </section>
     </main>
     <footer
