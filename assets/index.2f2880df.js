@@ -1,1 +1,0 @@
-import("data:text/javascript;base64,Cg==");import{c as o}from"./vendor.5c649df7.js";const a=Date.now()+15e3,t=["#ff0000","#ffff00"];!function e(){o({particleCount:2,angle:60,spread:55,origin:{x:0,y:.7},colors:t}),o({particleCount:2,angle:120,spread:55,origin:{x:1,y:.7},colors:t}),Date.now()<a&&requestAnimationFrame(e)}();
