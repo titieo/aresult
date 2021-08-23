@@ -30,7 +30,7 @@ const allSubjects = {
       let average;
       division +=
         this.first.length + this.second.length * 2 + this.third.length * 3;
-// eslint-disable-next-line prefer-const
+      // eslint-disable-next-line prefer-const
       average = this.total / division;
       this.average = average;
       return average;
@@ -51,8 +51,10 @@ Alpine.store('showResultCard', {
 });
 
 Alpine.store('avatar', {
-  webp: './img/avatar.webp',
-  png: './img/avatar.png',
+  webp: 'avatar.webp',
+  //   webp: './img/avatar.webp',
+  png: 'avatar.png',
+  //   png: './img/avatar.png',
 });
 
 Alpine.store('showSideBar', false);
