@@ -33,11 +33,18 @@ module.exports = {
       borderRadius: ['hover'],
       gridTemplateColumns: {
         // Simple 16 column grid
-        layout: 'repeat(auto-fill, minmax(25rem,1fr))',
+        layout: 'repeat(auto-fill, minmax(15rem,1fr))',
       },
       gridTemplateRows: {
-        card: '45% repeat(2,minmax(max-content,1fr))',
+        card: '45% minmax(min-content,1fr) max-content',
       },
+    },
+    flex: {
+      1: '1 1 0%',
+      auto: '1 1 auto',
+      initial: '0 1 auto',
+      none: 'none',
+      img: '1 1 45%',
     },
     fontFamily: {
       sans: [

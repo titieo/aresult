@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html class="antialiased">
-  <head lang="vi-VN">
+<html class="antialiased" lang="vi-VN">
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +17,13 @@
   </head>
   <body
     x-data
-    class="relative min-w-screen min-h-screen font-sans"
+    class="
+      relative
+      min-w-screen min-h-screen
+      font-sans
+      text-gray-700
+      dark:text-gray-200
+    "
     :class="$store.showResultCard.on && 'flex justify-center items-center'"
   >
     <!-- Background -->
@@ -42,7 +48,6 @@
       class="
         backdrop-filter backdrop-blur-md
         h-20
-        bg-white bg-opacity-80
         w-full
         flex
         items-center
@@ -50,6 +55,8 @@
         sticky
         top-0
         z-30
+        bg-white bg-opacity-80
+        dark:bg-gray-900 dark:bg-opacity-50
       "
     >
       <div
@@ -62,14 +69,16 @@
         <span></span>
         <span></span>
       </div>
-      <h1 class="mr-auto font-serif font-bold">Trang chủ</h1>
+      <h1 class="mr-auto font-serif font-bold text-gray-700 dark:text-gray-200">
+        Trang chủ
+      </h1>
       <!-- <i class="uil cursor-pointer uil-moon"></i>
       <i class="uil uil-adjust-half"></i>
       <i class="uil uil-sun"></i> -->
     </header>
     <main
       x-show="!$store.showResultCard.on"
-      class="bg-white w-full relative z-10 pb-5 pt-2 px-3 grid grid-cols-layout"
+      class="bg-white w-full relative z-10 pb-5 pt-2 px-3 dark:bg-gray-900"
     >
       <header
         class="
@@ -117,61 +126,87 @@
           </figcaption>
         </figure>
       </header>
-      <section
-        class="
-          rounded-md
-          shadow-md
-          border-2
-          transform-gpu
-          transition-all
-          grid grid-rows-card grid-cols-2
-          gap-y-3
-          pb-5
-          overflow-hidden
-          text-center
-          place-items-center
-          bg-gradient-to-br
-          from-red-400
-          to-yellow-400
-          hover:-translate-y-1 hover:shadow-lg hover:scale-105
-        "
-      >
-        <figure class="col-span-full place-self-stretch relative mb-5">
+      <section class="grid grid-cols-layout w-full px-5 py-3 gap-y-3 gap-x-5">
+        <a
+          class="
+            rounded-lg
+            shadow-md
+            transform-gpu
+            transition-all
+            grid grid-rows-card
+            gap-y-3
+            pb-4
+            overflow-hidden
+            text-center
+            place-items-center
+            bg-gradient-to-br
+            from-red-400
+            to-yellow-400
+            cursor-pointer
+            hover:-translate-y-1 hover:shadow-lg hover:scale-105
+            dark:from-red-500 dark:to-yellow-500
+          "
+          href="#"
+        >
           <img
             src="https://sachcuatui.net/wp-content/uploads/2019/10/sach-giao-khoa-dai-so-lop-10-nang-cao.jpg"
-            class="h-full w-full object-cover object-top"
+            class="
+              max-h-40
+              place-self-stretch
+              h-full
+              w-full
+              object-cover object-top
+              col-span-full
+            "
+            style="grid-row: 1/2"
             alt="Math"
           />
-          <figcaption
+          <h3
             class="
-              absolute
               text-center
               py-3
               px-5
               bg-white bg-opacity-50
               backdrop-filter backdrop-blur-md
-              left-1/2
               transform-gpu
-              -translate-x-1/2
+              translate-y-1/2
               font-bold font-serif
               text-2xl
-              -bottom-5
               rounded-md
+              col-span-full
+              self-end
             "
+            style="grid-row: 1/2"
           >
             Toán học
-          </figcaption>
-        </figure>
-        <span class="col-span-full oldstyle-nums font-bold font-serif text-4xl"
-          >8.90</span
-        >
-        <div class="col-span-full font-serif self-end text-lg font-light">
-          <i class="uil uil-user-circle mr-1"></i
-          ><span>Lorem ipsum dolor sit amet.</span>
-        </div>
+          </h3>
+          <span
+            class="
+              col-span-full
+              mt-5
+              oldstyle-nums
+              font-bold font-serif
+              text-3xl
+            "
+            >8.90</span
+          >
+          <div class="col-span-full font-serif text-xs self-end font-light">
+            <i class="uil uil-user-circle mr-1"></i
+            ><span>Lorem ipsum dolor sit amet.</span>
+          </div>
+        </a>
       </section>
     </main>
-    <footer x-show="!$store.showResultCard.on"></footer>
+    <footer
+      x-show="!$store.showResultCard.on"
+      class="
+        backdrop-filter backdrop-blur-md
+        h-20
+        w-full
+        bg-white bg-opacity-80
+        dark:bg-gray-900 dark:bg-opacity-50
+      "
+    ></footer>
     <!-- Form -->
     <!-- <div
       class="
