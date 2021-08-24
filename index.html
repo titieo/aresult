@@ -5,7 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Result</title>
-    <link rel="shortcut icon" type="image/jpg" href="/result/assets/favicon.56e2316f.png" />
+    <!-- <link rel="shortcut icon" type="image/jpg" href="favicon.png" /> -->
+
+    <!-- Favicon Start -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/result/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/result/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/result/favicon-16x16.png" />
+    <link rel="manifest" href="/result/site.webmanifest" />
+    <link rel="mask-icon" href="/result/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Favicon End -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,9 +25,9 @@
     />
     <meta name="author" content="loctran016" />
     <meta name="description" content="loctran016 Personal Blog" />
-    <script type="module" crossorigin src="/result/assets/index.f94609dc.js"></script>
+    <script type="module" crossorigin src="/result/assets/index.24c9308d.js"></script>
     <link rel="modulepreload" href="/result/assets/vendor.e8ca5347.js">
-    <link rel="stylesheet" href="/result/assets/index.dc32a85d.css">
+    <link rel="stylesheet" href="/result/assets/index.d42291d2.css">
     <script type="module">!function(){try{new Function("m","return import(m)")}catch(o){console.warn("vite: loading legacy build because dynamic import is unsupported, syntax error above should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}}();</script>
   </head>
   <body
@@ -152,11 +163,16 @@
               cursor-pointer
               hover:-translate-y-1 hover:shadow-lg hover:scale-105
             "
-            :class="item.bgColor"
+            x-data="{fullName,
+            teacher='Lorem, ipsum.',
+            bgColor='bg-gradient-to-br from-green-400 to-blue-500',
+            mainImg='https://images.unsplash.com/photo-1629652487043-fb2825838f8c?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfDIxYXBjM1RVRVZvfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+            calcAverage}=item"
+            :class="bgColor"
             href="#"
           >
             <img
-              :src="item.mainImg"
+              :src="mainImg"
               class="
                 max-h-40
                 place-self-stretch
@@ -185,7 +201,7 @@
                 dark:bg-gray-900 dark:bg-opacity-50
               "
               style="grid-row: 1/2"
-              x-text="item.fullName"
+              x-text="fullName"
             ></h3>
             <span
               class="
@@ -195,12 +211,12 @@
                 font-bold font-serif
                 text-3xl
               "
-              x-text="item.calcAverage()"
+              x-text="calcAverage()"
               >8.90</span
             >
             <div class="col-span-full font-serif text-xs self-end font-light">
               <i class="uil uil-user-circle mr-1"></i
-              ><span x-text="item.teacher"></span>
+              ><span x-text="teacher"></span>
             </div>
           </a>
         </template>
@@ -373,6 +389,6 @@
   
   <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
     <script nomodule id="vite-legacy-polyfill" src="/result/assets/polyfills-legacy.c99f3123.js"></script>
-    <script nomodule id="vite-legacy-entry" data-src="/result/assets/index-legacy.03495a1c.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+    <script nomodule id="vite-legacy-entry" data-src="/result/assets/index-legacy.0956fde1.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
 </body>
 </html>
