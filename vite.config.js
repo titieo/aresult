@@ -3,7 +3,7 @@ import legacy from '@vitejs/plugin-legacy';
 import path from 'path';
 export default defineConfig({
   root: './src/',
-  publicDir: 'img',
+  publicDir: 'assets',
   plugins: [
     legacy({
       targets: ['defaults', 'not IE 11'],
