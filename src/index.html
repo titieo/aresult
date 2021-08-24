@@ -148,11 +148,16 @@
               cursor-pointer
               hover:-translate-y-1 hover:shadow-lg hover:scale-105
             "
-            :class="item.bgColor"
+            x-data="{fullName,
+            teacher='Lorem, ipsum.',
+            bgColor='bg-gradient-to-br from-green-400 to-blue-500',
+            mainImg='https://images.unsplash.com/photo-1629652487043-fb2825838f8c?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfDIxYXBjM1RVRVZvfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+            calcAverage}=item"
+            :class="bgColor"
             href="#"
           >
             <img
-              :src="item.mainImg"
+              :src="mainImg"
               class="
                 max-h-40
                 place-self-stretch
@@ -181,7 +186,7 @@
                 dark:bg-gray-900 dark:bg-opacity-50
               "
               style="grid-row: 1/2"
-              x-text="item.fullName"
+              x-text="fullName"
             ></h3>
             <span
               class="
@@ -191,12 +196,12 @@
                 font-bold font-serif
                 text-3xl
               "
-              x-text="item.calcAverage()"
+              x-text="calcAverage()"
               >8.90</span
             >
             <div class="col-span-full font-serif text-xs self-end font-light">
               <i class="uil uil-user-circle mr-1"></i
-              ><span x-text="item.teacher"></span>
+              ><span x-text="teacher"></span>
             </div>
           </a>
         </template>

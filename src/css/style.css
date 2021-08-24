@@ -3,6 +3,10 @@
 @import 'tailwindcss/utilities';
 
 @layer components {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body > header.active {
     @apply max-h-16 bg-opacity-100;
   }
