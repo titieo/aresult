@@ -1,7 +1,18 @@
 module.exports = {
   mode: 'jit',
-  purge: ['src/index.html'],
+  purge: {
+    mode: 'all',
+    preserveHtmlElements: false,
+    content: ['src/index.html', './src/**/*.js'],
+    options: {
+      keyframes: true,
+    },
+  },
   darkMode: 'media', // or 'media' or 'class'
+  corePlugins: {
+    float: false,
+    clear: false,
+  },
   theme: {
     minHeight: {
       0: '0',
