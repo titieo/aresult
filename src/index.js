@@ -1,7 +1,7 @@
 import './css/style.css';
 
-import confetti from 'canvas-confetti';
-import '@iconscout/unicons/css/line.css';
+// import confetti from 'canvas-confetti';
+
 import Alpine from 'alpinejs';
 import persist from '@alpinejs/persist';
 import intersect from '@alpinejs/intersect';
@@ -44,7 +44,7 @@ Alpine.start();
 // );
 // body > header.active
 // observer.observe(navBar);
-
+/*
 const temp = false;
 if (temp) {
   const end = Date.now() + 15 * 1000;
@@ -70,3 +70,4 @@ if (temp) {
     }
   })();
 }
+*/

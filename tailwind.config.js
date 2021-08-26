@@ -6,6 +6,7 @@ module.exports = {
     content: ['src/index.html', './src/**/*.js'],
     options: {
       keyframes: true,
+      fontFace: true,
     },
   },
   darkMode: 'media', // or 'media' or 'class'
