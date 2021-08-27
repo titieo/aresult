@@ -6,7 +6,7 @@ export default defineConfig({
   root: './src/',
   publicDir: 'assets',
   plugins: [
-    WindiCSS({ dirs: ['src'], fileExtensions: ['html', 'js'] }),
+    WindiCSS(),
     legacy({
       targets: ['defaults', 'not IE 11'],
     }),
