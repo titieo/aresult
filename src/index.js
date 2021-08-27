@@ -1,4 +1,9 @@
+import 'virtual:windi-base.css';
+import 'virtual:windi-components.css';
 import './css/style.css';
+import 'virtual:windi-utilities.css';
+// import 'virtual:windi.css';
+import 'virtual:windi-devtools';
 
 // import confetti from 'canvas-confetti';
 
@@ -34,6 +39,11 @@ Alpine.store('avatar', {
 Alpine.store('showSideBar', false);
 
 Alpine.start();
+
+if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+  document.documentElement.classList.add('dark');
+else document.documentElement.classList.add('light');
+
 // Import Packages
 
 // const navBar = document.querySelector('.navbar');
