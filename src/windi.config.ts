@@ -4,6 +4,10 @@ import defaultTheme from 'windicss/defaultTheme';
 export default defineConfig({
   darkMode: 'media', // or 'media' or 'class'
   //   attributify: true,
+  extract: {
+    include: ['*.{html,js}'],
+    exclude: ['node_modules', '.git'],
+  },
   theme: {
     minHeight: {
       0: '0',
