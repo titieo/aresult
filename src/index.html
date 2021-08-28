@@ -27,13 +27,7 @@
     <meta name="description" content="loctran016 Personal Blog" />
   </head>
   <body
-    class="
-      relative
-      min-w-screen min-h-screen
-      font-sans
-      text-gray-700
-      dark:text-gray-200
-    "
+    class="relative min-h-screen font-sans text-gray-700 dark:text-gray-200"
     :class="$store.showResultCard.on && 'flex justify-center items-center'"
   >
     <!-- Background -->
@@ -57,6 +51,7 @@
     <header
       class="
         backdrop-filter backdrop-blur-md
+        px-5
         h-20
         w-full
         flex
@@ -229,7 +224,7 @@
         </template>
       </section>
     </main>
-    <footer
+    <!-- <footer
       x-show="!$store.showResultCard.on"
       class="
         backdrop-filter backdrop-blur-md
@@ -238,7 +233,91 @@
         bg-white bg-opacity-80
         dark:bg-gray-900 dark:bg-opacity-50
       "
-    ></footer>
+    ></footer> -->
+    <footer
+      class="
+        backdrop-filter backdrop-blur-md
+        w-full
+        text-3xl text-center
+        flex
+        space-x-4
+        bg-white bg-opacity-80
+        dark:bg-gray-900 dark:bg-opacity-50
+        py-3
+        px-5
+        items-center
+      "
+    >
+      <span class="text-lg mr-auto font-bold font-serif"
+        >Copyright &copy; MIT Licensed LocTran016</span
+      >
+      <a
+        href="https://www.facebook.com/trantanloc016/"
+        target="_blank"
+        class="
+          group
+          rounded-md
+          px-1
+          flex
+          items-center
+          justify-center
+          link--facebook
+        "
+        ><i
+          class="
+            uil uil-facebook-f
+            bg-clip-text
+            group-hover:text-white
+            transition-color
+            duration-500
+          "
+        ></i
+      ></a>
+      <a
+        href="https://www.instagram.com/loctran016/"
+        target="_blank"
+        class="
+          group
+          rounded-md
+          px-1
+          flex
+          items-center
+          justify-center
+          link--insta
+        "
+        ><i
+          class="
+            uil uil-instagram
+            bg-clip-text
+            text-transparent
+            group-hover:text-white
+            transition-color
+            duration-500
+          "
+        ></i
+      ></a>
+      <a
+        href="https://twitter.com/loctran016"
+        target="_blank"
+        class="
+          group
+          rounded-md
+          px-1
+          flex
+          items-center
+          justify-center
+          link--twitter
+        "
+        ><i
+          class="
+            uil uil-twitter
+            group-hover:text-white
+            transition-color
+            duration-500
+          "
+        ></i
+      ></a>
+    </footer>
     <!-- Form -->
     <!-- <div
       class="

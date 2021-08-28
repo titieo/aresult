@@ -95,7 +95,7 @@ input {
 
   /* @apply h-full w-16 cursor-pointer relative mt-12 mr-8 ml-5; */
 
-  @apply h-full w-12 cursor-pointer relative mt-12 mr-7 ml-5;
+  @apply h-full w-12 cursor-pointer relative mt-12 mr-7;
 }
 
 .nav-icon span {
@@ -193,4 +193,56 @@ input {
 
 .main-header {
   grid-template-columns: max-content 1fr max-content;
+}
+
+.uil-instagram {
+  background: var(--color);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.uil-twitter,
+.uil-facebook-f {
+  color: var(--color);
+}
+
+.link--facebook {
+  --color: #0572e6;
+}
+
+.link--insta {
+  --color: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+.link--twitter {
+  --color: #1da1f2;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .link--facebook:hover,
+  .link--insta:hover,
+  .link--twitter:hover,
+  .link--facebook:focus,
+  .link--insta:focus,
+  .link--twitter:focus {
+    background: var(--color);
+    transition: none;
+  }
+}
+
+.link--facebook:hover,
+.link--insta:hover,
+.link--twitter:hover,
+.link--facebook:focus,
+.link--insta:focus,
+.link--twitter:focus {
+  background: var(--color);
+  @apply transition-all duration-500;
 }
