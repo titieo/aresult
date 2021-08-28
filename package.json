@@ -12,7 +12,7 @@
   "scripts": {
     "build": "NODE_ENV=production vite build",
     "build-dev": "build && vite preview",
-    "dev": "NODE_ENV=development BROWSER=firefox vite",
+    "dev": "NODE_ENV=development vite",
     "format": "concurrently \"yarn:format:*\" && echo Please apply the diff",
     "format:eslint": "echo Fixing Lint Issues With Eslint... && yarn eslint --ext .js --fix --quiet && echo Fix generated successfully. || (echo Fix failed! && exit 1)",
     "format:pkg": "format-package -w",
@@ -71,8 +71,9 @@
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "22.0.0",
-    "tailwindcss": "^2.2.7",
-    "vite": "^2.4.4"
+    "vite": "^2.4.4",
+    "vite-plugin-windicss": "^1.3.0",
+    "windicss": "^3.1.7"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",

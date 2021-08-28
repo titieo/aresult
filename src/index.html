@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="antialiased" lang="vi-VN">
+<html class="antialiased" x-data="i18n" :lang="isEnglish && 'en-US' || 'vi-VN'">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,14 +27,7 @@
     <meta name="description" content="loctran016 Personal Blog" />
   </head>
   <body
-    x-data
-    class="
-      relative
-      min-w-screen min-h-screen
-      font-sans
-      text-gray-700
-      dark:text-gray-200
-    "
+    class="relative min-h-screen font-sans text-gray-700 dark:text-gray-200"
     :class="$store.showResultCard.on && 'flex justify-center items-center'"
   >
     <!-- Background -->
@@ -58,6 +51,7 @@
     <header
       class="
         backdrop-filter backdrop-blur-md
+        px-5
         h-20
         w-full
         flex
@@ -81,9 +75,19 @@
         <span></span>
         <span></span>
       </div>
-      <h1 class="mr-auto font-serif font-bold text-gray-700 dark:text-gray-200">
+      <h1
+        class="mr-auto font-serif font-bold text-gray-700 dark:text-gray-200"
+        x-text="lang().home"
+      >
         Trang chủ
       </h1>
+      <button @click="isEnglish = ! isEnglish" class="w-14 h-10">
+        <img
+          :src="langCode() + '.svg'"
+          :alt="langCode()"
+          class="max-w-full max-h-full"
+        />
+      </button>
       <!-- <i class="uil cursor-pointer uil-moon"></i>
       <i class="uil uil-adjust-half"></i>
       <i class="uil uil-sun"></i> -->
@@ -116,10 +120,12 @@
           />
         </picture>
         <h2 class="self-center">
-          <span class="gradient-text">Lớp</span> <span>10</span>
+          <span class="gradient-text" x-text="lang().grade">Lớp</span>
+          <span>10</span>
         </h2>
         <h2 class="self-center">
-          <span class="gradient-text">Học kì</span> <span>I</span>
+          <span class="gradient-text" x-text="lang().semester">Học kì</span>
+          <span>I</span>
         </h2>
         <figure class="score row-span-full w-40 relative">
           <img src="./laurel.svg" alt="laurel" class="min-h-full" />
@@ -197,7 +203,7 @@
                 dark:bg-gray-900 dark:bg-opacity-50
               "
               style="grid-row: 1/2"
-              x-text="fullName"
+              x-text="fullName[langCode()]"
             ></h3>
             <span
               class="
@@ -218,7 +224,7 @@
         </template>
       </section>
     </main>
-    <footer
+    <!-- <footer
       x-show="!$store.showResultCard.on"
       class="
         backdrop-filter backdrop-blur-md
@@ -227,7 +233,91 @@
         bg-white bg-opacity-80
         dark:bg-gray-900 dark:bg-opacity-50
       "
-    ></footer>
+    ></footer> -->
+    <footer
+      class="
+        backdrop-filter backdrop-blur-md
+        w-full
+        text-3xl text-center
+        flex
+        space-x-4
+        bg-white bg-opacity-80
+        dark:bg-gray-900 dark:bg-opacity-50
+        py-3
+        px-5
+        items-center
+      "
+    >
+      <span class="text-lg mr-auto font-bold font-serif"
+        >Copyright &copy; MIT Licensed LocTran016</span
+      >
+      <a
+        href="https://www.facebook.com/trantanloc016/"
+        target="_blank"
+        class="
+          group
+          rounded-md
+          px-1
+          flex
+          items-center
+          justify-center
+          link--facebook
+        "
+        ><i
+          class="
+            uil uil-facebook-f
+            bg-clip-text
+            group-hover:text-white
+            transition-color
+            duration-500
+          "
+        ></i
+      ></a>
+      <a
+        href="https://www.instagram.com/loctran016/"
+        target="_blank"
+        class="
+          group
+          rounded-md
+          px-1
+          flex
+          items-center
+          justify-center
+          link--insta
+        "
+        ><i
+          class="
+            uil uil-instagram
+            bg-clip-text
+            text-transparent
+            group-hover:text-white
+            transition-color
+            duration-500
+          "
+        ></i
+      ></a>
+      <a
+        href="https://twitter.com/loctran016"
+        target="_blank"
+        class="
+          group
+          rounded-md
+          px-1
+          flex
+          items-center
+          justify-center
+          link--twitter
+        "
+        ><i
+          class="
+            uil uil-twitter
+            group-hover:text-white
+            transition-color
+            duration-500
+          "
+        ></i
+      ></a>
+    </footer>
     <!-- Form -->
     <!-- <div
       class="
@@ -282,7 +372,6 @@
         backdrop-filter backdrop-blur
         rounded-md
         text-white text-xl
-        max-w-lg
         grid-cols-3
         md:text-2xl
         card--trans

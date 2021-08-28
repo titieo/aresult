@@ -1,6 +1,7 @@
 export const allSubjects = {
   math: {
-    fullName: 'Toán học',
+    // fullName: 'Toán học',
+    fullName: { vi: 'Toán học', en: 'Mathematics' },
     // teacher: 'Lorem ipsum dolor sit amet.',
     bgColor: 'from-red-400 to-yellow-400 dark:from-red-500 dark:to-yellow-500',
     mainImg:
@@ -33,3 +34,6 @@ export const allSubjects = {
     },
   },
 };
+
+export const vi = { home: 'Trang chủ', grade: 'Lớp', semester: 'Học kì' };
+export const en = { home: 'Home', grade: 'Class', semester: 'Semester' };

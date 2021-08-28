@@ -1,9 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies, global-require */
-const plugins = [
-  require('autoprefixer'),
-  require('tailwindcss/nesting'),
-  require('tailwindcss'),
-];
+const plugins = [require('autoprefixer')];
 
 if (process.env.NODE_ENV === 'production') {
   plugins.push();
