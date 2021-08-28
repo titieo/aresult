@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html class="antialiased" x-data="i18n" :lang="isEnglish && 'en-US' || 'vi-VN'">
+<html
+  class="antialiased <md:text-[80%]"
+  x-data="i18n"
+  :lang="isEnglish && 'en-US' || 'vi-VN'"
+>
+  <!-- class="antialiased <md:text-[90%] <sm:text-[80%]" -->
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,7 +32,14 @@
     <meta name="description" content="loctran016 Personal Blog" />
   </head>
   <body
-    class="relative min-h-screen font-sans text-gray-700 dark:text-gray-200"
+    class="
+      relative
+      min-h-screen
+      flex flex-col
+      font-sans
+      text-gray-700
+      dark:text-gray-200
+    "
     :class="$store.showResultCard.on && 'flex justify-center items-center'"
   >
     <!-- Background Start-->
@@ -100,7 +112,18 @@
     <!-- Main Start -->
     <main
       x-show="!$store.showResultCard.on"
-      class="bg-white w-full relative z-10 pb-5 pt-2 px-3 dark:bg-gray-900"
+      class="
+        bg-white
+        w-full
+        flex-grow
+        relative
+        z-10
+        pb-5
+        pt-2
+        px-3
+        dark:bg-gray-900
+        flex flex-col
+      "
     >
       <header
         class="
@@ -150,7 +173,7 @@
         </figure>
       </header>
       <section
-        class="grid grid-cols-layout w-full px-5 py-3 gap-y-3 gap-x-5"
+        class="grid grid-cols-layout w-full px-5 py-3 gap-y-3 gap-x-5 flex-grow"
         x-data="allSubjects"
       >
         <template x-for="item in items">
@@ -234,9 +257,9 @@
     <!-- Sidebar Start -->
     <aside
       class="fixed top-0 z-30 w-full h-full"
-      @keydown.escape="$store.showSideBar = false"
       :class="$store.showSideBar || 'pointer-events-none'"
     >
+      <!-- @keydown.escape="$store.showSideBar = false" -->
       <div
         class="
           w-full
@@ -255,7 +278,7 @@
       <nav
         class="
           h-full
-          w-[15rem]
+          w-[20rem]
           bg-white
           flex flex-col
           space-y-2
@@ -353,84 +376,86 @@
         w-full
         text-3xl text-center
         flex
-        space-x-4
         bg-white bg-opacity-80
         dark:bg-gray-900 dark:bg-opacity-50
         py-3
         px-5
         items-center
+        <md:flex-col <md:space-y-1
       "
       x-show="!$store.showResultCard.on"
     >
-      <span class="text-lg mr-auto font-bold font-serif"
+      <span class="text-lg md:mr-auto font-bold font-serif"
         >Copyright &copy; MIT Licensed LocTran016</span
       >
-      <a
-        href="https://www.facebook.com/trantanloc016/"
-        target="_blank"
-        class="
-          group
-          rounded-md
-          px-1
-          flex
-          items-center
-          justify-center
-          link--facebook
-        "
-        ><i
+      <div class="flex space-x-4">
+        <a
+          href="https://www.facebook.com/trantanloc016/"
+          target="_blank"
           class="
-            uil uil-facebook-f
-            bg-clip-text
-            group-hover:text-white
-            transition-color
-            duration-500
+            group
+            rounded-md
+            px-1
+            flex
+            items-center
+            justify-center
+            link--facebook
           "
-        ></i
-      ></a>
-      <a
-        href="https://www.instagram.com/loctran016/"
-        target="_blank"
-        class="
-          group
-          rounded-md
-          px-1
-          flex
-          items-center
-          justify-center
-          link--insta
-        "
-        ><i
+          ><i
+            class="
+              uil uil-facebook-f
+              bg-clip-text
+              group-hover:text-white
+              transition-color
+              duration-500
+            "
+          ></i
+        ></a>
+        <a
+          href="https://www.instagram.com/loctran016/"
+          target="_blank"
           class="
-            uil uil-instagram
-            bg-clip-text
-            text-transparent
-            group-hover:text-white
-            transition-color
-            duration-500
+            group
+            rounded-md
+            px-1
+            flex
+            items-center
+            justify-center
+            link--insta
           "
-        ></i
-      ></a>
-      <a
-        href="https://twitter.com/loctran016"
-        target="_blank"
-        class="
-          group
-          rounded-md
-          px-1
-          flex
-          items-center
-          justify-center
-          link--twitter
-        "
-        ><i
+          ><i
+            class="
+              uil uil-instagram
+              bg-clip-text
+              text-transparent
+              group-hover:text-white
+              transition-color
+              duration-500
+            "
+          ></i
+        ></a>
+        <a
+          href="https://twitter.com/loctran016"
+          target="_blank"
           class="
-            uil uil-twitter
-            group-hover:text-white
-            transition-color
-            duration-500
+            group
+            rounded-md
+            px-1
+            flex
+            items-center
+            justify-center
+            link--twitter
           "
-        ></i
-      ></a>
+          ><i
+            class="
+              uil uil-twitter
+              group-hover:text-white
+              transition-color
+              duration-500
+            "
+          ></i
+        ></a>
+      </div>
     </footer>
     <!-- Form -->
     <!-- <div
@@ -470,119 +495,6 @@
         <input type="text" id="grade" name="grade" placeholder="Lớp" class="" />
       </form>
     </div> -->
-
-    <!-- Main card -->
-    <div
-      class="
-        shadow-2xl
-        grid
-        place-content-center
-        gap-2
-        h-full
-        w-full
-        md:h-1/2 md:w-1/2
-        bg-opacity-50
-        rounded-xl
-        backdrop-filter backdrop-blur
-        rounded-md
-        text-white text-xl
-        grid-cols-3
-        md:text-2xl
-        card--trans
-      "
-      x-show="$store.showResultCard.on"
-    >
-      <picture class="col-span-full place-self-center h-5/6 max-w-md">
-        <source :srcset="$store.avatar.webp" type="image/webp" />
-        <source :srcset="$store.avatar.png" type="image/png" />
-        <img
-          class="
-            mx-auto
-            rounded
-            h-full
-            transition-all
-            duration-500
-            hover:rounded-md
-          "
-          :srcset="$store.avatar.png"
-          alt="Dzịt vàng đáng yêu"
-        />
-      </picture>
-      <h2
-        class="
-          mx-auto
-          text-center
-          font-bold
-          text-3xl
-          md:text-4xl
-          col-span-full
-          font-serif
-          transform-gpu
-          -translate-y-3
-        "
-      >
-        Trần Tấn Lộc
-      </h2>
-      <div
-        class="
-          flex flex-col
-          items-center
-          rounded-md
-          justify-center
-          bg-transparent
-          py-5
-          px-3
-          transition-colors
-          hover:bg-white hover:text-transparent
-          text-center
-          card__status
-        "
-      >
-        <i class="uil uil-graduation-cap"></i>
-        <span>Học kì I</span>
-        <span class="text-lg md:text-xl">Lớp 10</span>
-      </div>
-      <div
-        class="
-          flex flex-col
-          items-center
-          rounded-md
-          justify-center
-          bg-transparent
-          py-5
-          px-3
-          transition-colors
-          hover:bg-white hover:text-transparent
-          card__status
-        "
-      >
-        <!-- <svg class="bg-clip-text h-6 w-6">
-          <use xlink:href="sprite.svg#book-open"></use>
-        </svg> -->
-        <i class="uil uil-notebooks"></i>
-        <span>8.90</span>
-      </div>
-      <div
-        class="
-          flex flex-col
-          items-center
-          rounded-md
-          justify-center
-          bg-transparent
-          py-5
-          px-3
-          transition-colors
-          hover:bg-white hover:text-transparent
-          card__status
-        "
-      >
-        <!-- <svg class="bg-clip-text h-6 w-6">
-          <use xlink:href="sprite.svg#chart-bar"></use>
-        </svg> -->
-        <i class="uil uil-chart"></i>
-        <span class="">17</span>
-      </div>
-    </div>
 
     <script type="module" src="./index.js"></script>
   </body>
