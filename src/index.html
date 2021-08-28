@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html class="antialiased" lang="vi-VN">
+<html
+  class="antialiased"
+  :lang="$store.i18n.isEnglish && 'en-US' || 'vi-VN'"
+  x-data
+>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,7 +31,6 @@
     <meta name="description" content="loctran016 Personal Blog" />
   </head>
   <body
-    x-data
     class="
       relative
       min-w-screen min-h-screen
@@ -81,9 +84,22 @@
         <span></span>
         <span></span>
       </div>
-      <h1 class="mr-auto font-serif font-bold text-gray-700 dark:text-gray-200">
+      <h1
+        class="mr-auto font-serif font-bold text-gray-700 dark:text-gray-200"
+        x-text="$store.lang[$store.i18n.lang()].home"
+      >
         Trang chủ
       </h1>
+      <button
+        @click="$store.i18n.isEnglish = ! $store.i18n.isEnglish"
+        class="w-14 h-10"
+      >
+        <img
+          :src="$store.i18n.lang() + '.svg'"
+          :alt="$store.i18n.lang()"
+          class="max-w-full max-h-full"
+        />
+      </button>
       <!-- <i class="uil cursor-pointer uil-moon"></i>
       <i class="uil uil-adjust-half"></i>
       <i class="uil uil-sun"></i> -->
@@ -116,10 +132,20 @@
           />
         </picture>
         <h2 class="self-center">
-          <span class="gradient-text">Lớp</span> <span>10</span>
+          <span
+            class="gradient-text"
+            x-text="$store.lang[$store.i18n.lang()].grade"
+            >Lớp</span
+          >
+          <span>10</span>
         </h2>
         <h2 class="self-center">
-          <span class="gradient-text">Học kì</span> <span>I</span>
+          <span
+            class="gradient-text"
+            x-text="$store.lang[$store.i18n.lang()].semester"
+            >Học kì</span
+          >
+          <span>I</span>
         </h2>
         <figure class="score row-span-full w-40 relative">
           <img src="./laurel.svg" alt="laurel" class="min-h-full" />
@@ -197,7 +223,7 @@
                 dark:bg-gray-900 dark:bg-opacity-50
               "
               style="grid-row: 1/2"
-              x-text="fullName"
+              x-text="fullName[$store.i18n.lang()]"
             ></h3>
             <span
               class="

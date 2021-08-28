@@ -92,7 +92,10 @@ input {
 
 .nav-icon {
   /* margin: 50px 20px; */
-  @apply h-full w-16 cursor-pointer relative mt-12 mr-8 ml-5;
+
+  /* @apply h-full w-16 cursor-pointer relative mt-12 mr-8 ml-5; */
+
+  @apply h-full w-12 cursor-pointer relative mt-12 mr-7 ml-5;
 }
 
 .nav-icon span {

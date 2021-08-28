@@ -2,7 +2,7 @@ import { defineConfig } from 'windicss/helpers';
 import defaultTheme from 'windicss/defaultTheme';
 
 export default defineConfig({
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   //   attributify: true,
   theme: {
     minHeight: {

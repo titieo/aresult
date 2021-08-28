@@ -12,7 +12,7 @@
   "scripts": {
     "build": "NODE_ENV=production vite build",
     "build-dev": "build && vite preview",
-    "dev": "NODE_ENV=development BROWSER=firefox vite",
+    "dev": "NODE_ENV=development vite",
     "format": "concurrently \"yarn:format:*\" && echo Please apply the diff",
     "format:eslint": "echo Fixing Lint Issues With Eslint... && yarn eslint --ext .js --fix --quiet && echo Fix generated successfully. || (echo Fix failed! && exit 1)",
     "format:pkg": "format-package -w",
