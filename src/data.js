@@ -1,20 +1,20 @@
 export const allSubjects = {
-  math: {
+  math : {
     // fullName: 'Toán học',
-    fullName: { vi: 'Toán học', en: 'Mathematics' },
+    fullName : {vi : 'Toán học', en : 'Mathematics'},
     // teacher: 'Lorem ipsum dolor sit amet.',
-    bgColor: 'from-red-400 to-yellow-400 dark:from-red-500 dark:to-yellow-500',
-    mainImg:
-      'https://sachcuatui.net/wp-content/uploads/2019/10/sach-giao-khoa-dai-so-lop-10-nang-cao.jpg',
-    first: [],
-    second: [],
-    third: [],
+    bgColor : 'from-red-400 to-yellow-400 dark:from-red-500 dark:to-yellow-500',
+    mainImg :
+        'https://sachcuatui.net/wp-content/uploads/2019/10/sach-giao-khoa-dai-so-lop-10-nang-cao.jpg',
+    first : [],
+    second : [],
+    third : [],
     calcAverage() {
       let division = 1;
       let average;
       let total = 0;
       division +=
-        this.first.length + this.second.length * 2 + this.third.length * 3;
+          this.first.length + this.second.length * 2 + this.third.length * 3;
       if (division > 1) {
         for (let i = 0; i < this.first.length; i++) {
           total += this.first.length;
@@ -35,5 +35,13 @@ export const allSubjects = {
   },
 };
 
-export const vi = { home: 'Trang chủ', grade: 'Lớp', semester: 'Học kì' };
-export const en = { home: 'Home', grade: 'Class', semester: 'Semester' };
+export const vi = {
+  home : 'Trang chủ',
+  grade : 'Lớp',
+  semester : 'Học kì'
+};
+export const en = {
+  home : 'Home',
+  grade : 'Class',
+  semester : 'Semester'
+};
