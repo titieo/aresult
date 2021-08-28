@@ -30,7 +30,7 @@
     class="relative min-h-screen font-sans text-gray-700 dark:text-gray-200"
     :class="$store.showResultCard.on && 'flex justify-center items-center'"
   >
-    <!-- Background -->
+    <!-- Background Start-->
     <div
       class="
         overflow-hidden
@@ -48,6 +48,9 @@
         <use xlink:href="sprite.svg#blob"></use>
       </svg>
     </div>
+    <!-- Background End -->
+
+    <!-- Header Start -->
     <header
       class="
         backdrop-filter backdrop-blur-md
@@ -92,6 +95,9 @@
       <i class="uil uil-adjust-half"></i>
       <i class="uil uil-sun"></i> -->
     </header>
+    <!-- Header End -->
+
+    <!-- Main Start -->
     <main
       x-show="!$store.showResultCard.on"
       class="bg-white w-full relative z-10 pb-5 pt-2 px-3 dark:bg-gray-900"
@@ -101,8 +107,7 @@
           grid
           border-b-2
           py-2
-          grid-rows-2 grid-flow-col
-          main-header
+          grid-rows-2 grid-flow-col grid-cols-header
           font-bold font-serif
           text-2xl
           col-span-full
@@ -224,16 +229,124 @@
         </template>
       </section>
     </main>
-    <!-- <footer
-      x-show="!$store.showResultCard.on"
-      class="
-        backdrop-filter backdrop-blur-md
-        h-20
-        w-full
-        bg-white bg-opacity-80
-        dark:bg-gray-900 dark:bg-opacity-50
-      "
-    ></footer> -->
+    <!-- Main End -->
+
+    <!-- Sidebar Start -->
+    <aside
+      class="fixed top-0 z-30 w-full h-full"
+      @keydown.escape="$store.showSideBar = false"
+      :class="$store.showSideBar || 'pointer-events-none'"
+    >
+      <div
+        class="
+          w-full
+          h-full
+          bg-black
+          absolute
+          top-0
+          -z-1
+          cursor-pointer
+          transition-all
+          duration-300
+        "
+        @click="$store.showSideBar = false"
+        :class="$store.showSideBar && 'bg-opacity-50' || 'bg-opacity-0'"
+      ></div>
+      <nav
+        class="
+          h-full
+          w-[15rem]
+          bg-white
+          flex flex-col
+          space-y-2
+          transition-transform
+          duration-300
+          transform-gpu
+        "
+        :class="! $store.showSideBar && '-translate-x-full'"
+      >
+        <figure
+          class="
+            seft-stretch
+            bg-gradient-to-br
+            from-green-400
+            flex flex-col
+            items-center
+            justify-center
+            w-full
+            to-blue-500
+            pt-4
+            pb-5
+            text-center text-white text-lg
+            font-serif
+          "
+        >
+          <picture class="mb-2">
+            <source :srcset="$store.avatar.webp" type="image/webp" />
+            <source :srcset="$store.avatar.png" type="image/png" />
+            <img
+              class="
+                rounded
+                h-[10rem]
+                transition-all
+                duration-500
+                hover:rounded-md
+              "
+              :srcset="$store.avatar.png"
+              alt="Dzịt vàng đáng yêu"
+            />
+          </picture>
+          <figcaption class="font-bold">Trần Tấn Lộc</figcaption>
+          <div class="flex space-x-2">
+            <p><span x-text="lang().grade" class="font-bold">Lớp</span> 10</p>
+            <p>
+              <span x-text="lang().semester" class="font-bold">Học kì</span> I
+            </p>
+          </div>
+        </figure>
+        <ul>
+          <li
+            class="
+              flex
+              align-center
+              space-x-1
+              py-2
+              px-4
+              rounded-md
+              mx-2
+              cursor-pointer
+              transition-all
+              border border-opacity-0 border-cool-gray-200
+              hover:border-opacity-100 hover:shadow-md
+            "
+          >
+            <i class="uil uil-estate"></i
+            ><span x-text="lang().home">Trang chủ</span>
+          </li>
+          <li
+            class="
+              flex
+              align-center
+              space-x-1
+              py-2
+              px-4
+              rounded-md
+              mx-2
+              cursor-pointer
+              transition-all
+              border border-opacity-0 border-cool-gray-200
+              hover:border-opacity-100 hover:shadow-md
+            "
+          >
+            <i class="uil uil-setting"></i
+            ><span x-text="lang().setting">Cài đặt</span>
+          </li>
+        </ul>
+        <div class="border-t-2 text-center">
+          <span x-text="lang().version">Phiên bản</span> <%- version %>
+        </div>
+      </nav>
+    </aside>
     <footer
       class="
         backdrop-filter backdrop-blur-md
@@ -247,6 +360,7 @@
         px-5
         items-center
       "
+      x-show="!$store.showResultCard.on"
     >
       <span class="text-lg mr-auto font-bold font-serif"
         >Copyright &copy; MIT Licensed LocTran016</span

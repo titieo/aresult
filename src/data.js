@@ -35,5 +35,18 @@ export const allSubjects = {
   },
 };
 
-export const vi = { home: 'Trang chủ', grade: 'Lớp', semester: 'Học kì' };
-export const en = { home: 'Home', grade: 'Class', semester: 'Semester' };
+export const vi = {
+  home: 'Trang chủ',
+  grade: 'Lớp',
+  semester: 'Học kì',
+  version: 'Phiên bản',
+  setting: 'Cài đặt',
+};
+
+export const en = {
+  home: 'Home',
+  grade: 'Class',
+  semester: 'Semester',
+  version: 'Version',
+  setting: 'Setting',
+};

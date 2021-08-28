@@ -18,6 +18,7 @@ export default defineConfig({
     extend: {
       gridTemplateColumns: {
         layout: 'repeat(auto-fill, minmax(15rem,1fr))',
+        header: 'max-content 1fr max-content',
       },
       gridTemplateRows: {
         card: '45% minmax(min-content,1fr) max-content',
