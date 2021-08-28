@@ -23,6 +23,9 @@ export default defineConfig({
       gridTemplateRows: {
         card: '45% minmax(min-content,1fr) max-content',
       },
+      backgroundImage: (theme) => ({
+        card: "url('star.svg'), linear-gradient(to bottom right, var(--tw-gradient-stops));",
+      }),
     },
     fontFamily: {
       ...defaultTheme.fontFamily,

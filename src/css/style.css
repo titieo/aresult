@@ -139,6 +139,10 @@ input {
   mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAweiIvPjwvc3ZnPg==);
 }
 
+@supports (mask-image: url()) {
+  @apply rounded;
+}
+
 .gradient-text {
   @apply bg-gradient-to-br from-green-400 to-blue-500 text-transparent bg-clip-text;
 }
@@ -189,10 +193,6 @@ input {
       transform: translate3d(-45%, -45%, 0) rotate(360deg);
     }
   }
-}
-
-.main-header {
-  grid-template-columns: max-content 1fr max-content;
 }
 
 .uil-instagram {
