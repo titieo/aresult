@@ -28,17 +28,23 @@ Alpine.store('showResultCard', {
   },
 });
 
-Alpine.store('i18n', {
-  //   isEnglish: this.persist(false),
-  isEnglish: false,
-  lang() {
-    return this.isEnglish ? 'en' : 'vi';
-  },
+Alpine.data('dropdown', function () {
+  return {
+    open: this.$persist(false),
+  };
 });
 
-Alpine.store('lang', {
-  vi: { ...vi },
-  en: { ...en },
+Alpine.data('i18n', function () {
+  return {
+    isEnglish: this.$persist(false),
+    // isEnglish: false,
+    langCode() {
+      return this.isEnglish ? 'en' : 'vi';
+    },
+    lang() {
+      return this.isEnglish ? { ...en } : { ...vi };
+    },
+  };
 });
 
 Alpine.store('avatar', {

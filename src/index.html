@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<html
-  class="antialiased"
-  :lang="$store.i18n.isEnglish && 'en-US' || 'vi-VN'"
-  x-data
->
+<html class="antialiased" x-data="i18n" :lang="isEnglish && 'en-US' || 'vi-VN'">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -86,17 +82,14 @@
       </div>
       <h1
         class="mr-auto font-serif font-bold text-gray-700 dark:text-gray-200"
-        x-text="$store.lang[$store.i18n.lang()].home"
+        x-text="lang().home"
       >
         Trang chủ
       </h1>
-      <button
-        @click="$store.i18n.isEnglish = ! $store.i18n.isEnglish"
-        class="w-14 h-10"
-      >
+      <button @click="isEnglish = ! isEnglish" class="w-14 h-10">
         <img
-          :src="$store.i18n.lang() + '.svg'"
-          :alt="$store.i18n.lang()"
+          :src="langCode() + '.svg'"
+          :alt="langCode()"
           class="max-w-full max-h-full"
         />
       </button>
@@ -132,19 +125,11 @@
           />
         </picture>
         <h2 class="self-center">
-          <span
-            class="gradient-text"
-            x-text="$store.lang[$store.i18n.lang()].grade"
-            >Lớp</span
-          >
+          <span class="gradient-text" x-text="lang().grade">Lớp</span>
           <span>10</span>
         </h2>
         <h2 class="self-center">
-          <span
-            class="gradient-text"
-            x-text="$store.lang[$store.i18n.lang()].semester"
-            >Học kì</span
-          >
+          <span class="gradient-text" x-text="lang().semester">Học kì</span>
           <span>I</span>
         </h2>
         <figure class="score row-span-full w-40 relative">
@@ -223,7 +208,7 @@
                 dark:bg-gray-900 dark:bg-opacity-50
               "
               style="grid-row: 1/2"
-              x-text="fullName[$store.i18n.lang()]"
+              x-text="fullName[langCode()]"
             ></h3>
             <span
               class="
