@@ -42,6 +42,7 @@ export const vi = {
   semester: 'Học kì',
   version: 'Phiên bản',
   setting: 'Cài đặt',
+  bug: 'Góp ý',
 };
 
 export const en = {
@@ -51,4 +52,5 @@ export const en = {
   semester: 'Semester',
   version: 'Version',
   setting: 'Setting',
+  bug: 'Report bug',
 };

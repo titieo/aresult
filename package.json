@@ -6,9 +6,14 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/loctran016/frontend-boilerplate.git"
+    "url": "https://github.com/loctran016/result.git"
   },
-  "author": "loctran016",
+  "bugs": "https://github.com/loctran016/result/issues",
+  "author": {
+    "name": "LocTran016",
+    "email": "locphuc016@gmail.com",
+    "url": "https://loctran016.github.io"
+  },
   "scripts": {
     "build": "NODE_ENV=production vite build",
     "build-dev": "build && vite preview",

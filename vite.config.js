@@ -12,6 +12,7 @@ export default defineConfig({
     injectHtml({
       data: {
         version: pkg.version,
+        bugs: `${pkg.bugs}/new`,
       },
     }),
     WindiCSS(),

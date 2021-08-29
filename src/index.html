@@ -382,6 +382,27 @@
             <i class="uil uil-setting"></i
             ><span x-text="data.setting">Cài đặt</span>
           </li>
+          <li
+            class="
+              flex
+              align-center
+              space-x-1
+              py-2
+              px-4
+              rounded-md
+              cursor-pointer
+              transition-all
+              border border-opacity-0 border-cool-gray-200
+              dark:border-opacity-0
+              dark:border-true-gray-600
+              dark:hover:border-opacity-100
+              dark:hover:text-light-blue-400
+              hover:border-opacity-100 hover:shadow-md
+            "
+          >
+            <i class="uil uil-bug"></i
+            ><a href="<%- bugs %>" target="_blank" x-text="data.bug">Góp ý</a>
+          </li>
         </ul>
         <div class="border-t-2 text-center pt-1 flex-grow">
           <span x-text="data.version">Phiên bản</span> <%- version %>

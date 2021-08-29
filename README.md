@@ -23,18 +23,18 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/loctran016/template">
+  <a href="https://github.com/loctran016/result">
     <img src="src/img/avatar.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Result</h3>
 
   <p align="center">
-    Frontend Template
+    Result
     <br />
-    <a href="https://github.com/loctran016/template/issues">templatert Bug</a>
+    <a href="https://github.com/loctran016/result/issues">Report Bug</a>
     ·
-    <a href="https://github.com/loctran016/template/issues">Request Feature</a>
+    <a href="https://github.com/loctran016/result/issues">Request Feature</a>
   </p>
 </p>
 
@@ -72,11 +72,12 @@
 
 ### Built With
 
-- [Babel](https://babeljs.io/)
 - [Eslint](https://eslint.org/)
 - [Stylelint](https://stylelint.io/)
-- [Webpack](https://webpack.js.org/)
 - [Prettier](https://prettier.io/)
+- [ViteJS](https://vitejs.dev/)
+- [AlpineJS](https://alpinejs.dev/)
+- [WindiCSS](https://windicss.org/)
 
 <!-- GETTING STARTED -->
 
@@ -99,7 +100,7 @@ This is an example of how to list things you need to use the software and how to
 1. Clone the template
 
    ```sh
-   git clone https://github.com/loctran016/template.git
+   git clone https://github.com/loctran016/result.git
    ```
 
 2. Install NPM packages
@@ -116,7 +117,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 ## Roadmap
 
-See the [open issues](https://github.com/loctran016/template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/loctran016/result/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -142,7 +143,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 loctran016 - [@loctran016](https://twitter.com/loctran016) -loctran01616@icloud.com
 
-Project Link: [https://github.com/loctran016/template](https://github.comloctran01616/template)
+Project Link: [https://github.com/loctran016/result](https://github.comloctran01616/template)
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -153,15 +154,15 @@ Project Link: [https://github.com/loctran016/template](https://github.comloctran
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/loctran016/template.svg?style=for-the-badge
-[contributors-url]: https://github.com/loctran016/template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/loctran016/template.svg?style=for-the-badge
-[forks-url]: https://github.com/loctran016/template/network/members
-[stars-shield]: https://img.shields.io/github/stars/loctran016/template.svg?style=for-the-badge
-[stars-url]: https://github.com/loctran016/template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/loctran016/template.svg?style=for-the-badge
-[issues-url]: https://github.com/loctran016/template/issues
-[license-shield]: https://img.shields.io/github/license/loctran016/template.svg?style=for-the-badge
-[license-url]: https://github.com/loctran016/template/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/loctran016/result.svg?style=for-the-badge
+[contributors-url]: https://github.com/loctran016/result/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/loctran016/result.svg?style=for-the-badge
+[forks-url]: https://github.com/loctran016/result/network/members
+[stars-shield]: https://img.shields.io/github/stars/loctran016/result.svg?style=for-the-badge
+[stars-url]: https://github.com/loctran016/result/stargazers
+[issues-shield]: https://img.shields.io/github/issues/loctran016/result.svg?style=for-the-badge
+[issues-url]: https://github.com/loctran016/result/issues
+[license-shield]: https://img.shields.io/github/license/loctran016/result.svg?style=for-the-badge
+[license-url]: https://github.com/loctran016/result/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/loctran016
