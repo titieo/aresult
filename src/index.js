@@ -52,3 +52,12 @@ Alpine.store('avatar', {
 Alpine.store('showSideBar', false);
 
 Alpine.start();
+
+document.querySelectorAll('a').forEach((i) => {
+  if (i.getAttribute('target') === '_blank')
+    i.setAttribute('rel', 'noopener noreferrer');
+});
+
+document.querySelectorAll('img').forEach((i) => {
+  i.setAttribute('loading', 'lazy');
+});

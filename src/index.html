@@ -98,7 +98,11 @@
       >
         Trang chủ
       </h1>
-      <button @click="isEnglish = ! isEnglish" class="w-14 h-10">
+      <button
+        @click="isEnglish = ! isEnglish"
+        class="w-14 h-10"
+        aria-label="Switch language"
+      >
         <img
           :src="langCode() + '.svg'"
           :alt="langCode()"
@@ -108,6 +112,7 @@
       <button
         class="cursor-pointer text-4xl"
         @click="isDarkMode = ! isDarkMode"
+        aria-label="Switch theme"
       >
         <i
           class="uil text-gray-700 dark:text-gray-200"
@@ -408,7 +413,11 @@
           <span x-text="data.version">Phiên bản</span> <%- version %>
         </div>
         <div class="flex mx-3 items-center justify-center space-x-5">
-          <button @click="isEnglish = ! isEnglish" class="w-14 h-10">
+          <button
+            @click="isEnglish = ! isEnglish"
+            class="w-14 h-10"
+            aria-label="Switch language"
+          >
             <img
               :src="langCode() + '.svg'"
               :alt="langCode()"
@@ -418,6 +427,7 @@
           <button
             class="cursor-pointer text-4xl"
             @click="isDarkMode = ! isDarkMode"
+            aria-label="Switch theme"
           >
             <i
               class="uil text-gray-700 dark:text-gray-200"
@@ -449,6 +459,7 @@
         <a
           href="https://www.facebook.com/trantanloc016/"
           target="_blank"
+          aria-label="Facebook"
           class="
             group
             rounded-md
@@ -471,6 +482,7 @@
         <a
           href="https://www.instagram.com/loctran016/"
           target="_blank"
+          aria-label="Instagram"
           class="
             group
             rounded-md
@@ -494,6 +506,7 @@
         <a
           href="https://twitter.com/loctran016"
           target="_blank"
+          aria-label="Twitter"
           class="
             group
             rounded-md
