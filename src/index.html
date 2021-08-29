@@ -11,7 +11,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Result</title>
-    <!-- <link rel="shortcut icon" type="image/jpg" href="favicon.png" /> -->
 
     <!-- Favicon Start -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -104,7 +103,7 @@
         aria-label="Switch language"
       >
         <img
-          :src="langCode() + '.svg'"
+          :src="`${langCode()}.svg`"
           :alt="langCode()"
           class="max-w-full max-h-full"
         />
@@ -191,7 +190,7 @@
         class="grid grid-cols-layout w-full px-5 py-3 gap-y-3 gap-x-5 flex-grow"
         x-data="allSubjects"
       >
-        <template x-for="item in items">
+        <template x-for="i in Object.keys(items)">
           <a
             class="
               rounded-lg
@@ -211,24 +210,22 @@
             x-data="{fullName,
             teacher='Lorem, ipsum.',
             bgColor='bg-gradient-to-br from-green-400 to-blue-500',
-            mainImg='https://images.unsplash.com/photo-1629652487043-fb2825838f8c?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfDIxYXBjM1RVRVZvfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-            calcAverage}=item"
+            calcAverage}=items[i]"
             :class="bgColor"
-            href="#"
+            :href="`#${i}`"
           >
-            <img
-              :src="mainImg"
-              class="
-                max-h-40
-                place-self-stretch
-                h-full
-                w-full
-                object-cover object-top
-                col-span-full
-              "
+            <picture
+              class="place-self-stretch col-span-full"
               style="grid-row: 1/2"
-              alt="Math"
-            />
+            >
+              <source :srcset="`${i}.webp`" type="image/webp" />
+              <source :srcset="`${i}.png`" type="image/png" />
+              <img
+                :src="`${i}.png`"
+                class="max-h-40 h-full w-full object-cover object-top"
+                :alt="i"
+              />
+            </picture>
             <h3
               class="
                 text-center
@@ -419,7 +416,7 @@
             aria-label="Switch language"
           >
             <img
-              :src="langCode() + '.svg'"
+              :src="`${langCode()}.svg`"
               :alt="langCode()"
               class="max-w-full max-h-full"
             />

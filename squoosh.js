@@ -8,7 +8,7 @@ const root = path.join(__dirname, '/src');
 const imagesToOptimizePath = `${root}/rawImages/`;
 const moveToPath =
   './_originalRawImages/'; /* Uncomment this if you want to keep files */
-const optimizeToPath = `${root}/img/`;
+const optimizeToPath = `${root}/assets/`;
 
 (async () => {
   const files = await fs.promises.readdir(imagesToOptimizePath);

@@ -4,8 +4,6 @@ export const allSubjects = {
     fullName: { vi: 'Toán học', en: 'Mathematics' },
     // teacher: 'Lorem ipsum dolor sit amet.',
     bgColor: 'from-red-400 to-yellow-400 dark:from-red-500 dark:to-yellow-500',
-    mainImg:
-      'https://sachcuatui.net/wp-content/uploads/2019/10/sach-giao-khoa-dai-so-lop-10-nang-cao.jpg',
     first: [],
     second: [],
     third: [],
