@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html
-  class="antialiased <md:text-[80%]"
-  x-data="i18n"
-  :lang="isEnglish && 'en-US' || 'vi-VN'"
+  class="antialiased <md:text-[80%] scrollbar-primary"
+  x-data="{...i18n(), isDarkMode:$persist(false)}"
+  :class="isDarkMode ? 'dark' : 'light'"
+  :lang="lang().code"
 >
   <!-- class="antialiased <md:text-[90%] <sm:text-[80%]" -->
   <head>
@@ -40,7 +41,7 @@
       text-gray-700
       dark:text-gray-200
     "
-    :class="$store.showResultCard.on && 'flex justify-center items-center'"
+    :class="$store.showResultCard.on && 'justify-center items-center'"
   >
     <!-- Background Start-->
     <div
@@ -78,6 +79,7 @@
         bg-white bg-opacity-80
         dark:bg-gray-900 dark:bg-opacity-50
         navbar
+        space-x-5
       "
     >
       <div
@@ -91,8 +93,8 @@
         <span></span>
       </div>
       <h1
-        class="mr-auto font-serif font-bold text-gray-700 dark:text-gray-200"
-        x-text="lang().home"
+        class="!mr-auto font-serif font-bold text-gray-700 dark:text-gray-200"
+        x-text="data.home"
       >
         Trang chủ
       </h1>
@@ -103,9 +105,16 @@
           class="max-w-full max-h-full"
         />
       </button>
-      <!-- <i class="uil cursor-pointer uil-moon"></i>
-      <i class="uil uil-adjust-half"></i>
-      <i class="uil uil-sun"></i> -->
+      <button
+        class="cursor-pointer text-4xl"
+        @click="isDarkMode = ! isDarkMode"
+      >
+        <i
+          class="uil text-gray-700 dark:text-gray-200"
+          :class="isDarkMode ? 'uil-moon' : 'uil-sun'"
+        ></i>
+      </button>
+      <!-- <i class="uil uil-adjust-half"></i> -->
     </header>
     <!-- Header End -->
 
@@ -113,7 +122,6 @@
     <main
       x-show="!$store.showResultCard.on"
       class="
-        bg-white
         w-full
         flex-grow
         relative
@@ -121,6 +129,7 @@
         pb-5
         pt-2
         px-3
+        bg-white
         dark:bg-gray-900
         flex flex-col
       "
@@ -129,7 +138,8 @@
         class="
           grid
           border-b-2
-          py-2
+          pt-2
+          pb-4
           grid-rows-2 grid-flow-col grid-cols-header
           font-bold font-serif
           text-2xl
@@ -148,11 +158,11 @@
           />
         </picture>
         <h2 class="self-center">
-          <span class="gradient-text" x-text="lang().grade">Lớp</span>
+          <span class="gradient-text" x-text="data.grade">Lớp</span>
           <span>10</span>
         </h2>
         <h2 class="self-center">
-          <span class="gradient-text" x-text="lang().semester">Học kì</span>
+          <span class="gradient-text" x-text="data.semester">Học kì</span>
           <span>I</span>
         </h2>
         <figure class="score row-span-full w-40 relative">
@@ -280,11 +290,13 @@
           h-full
           w-[20rem]
           bg-white
+          dark:bg-gray-900
           flex flex-col
           space-y-2
           transition-transform
           duration-300
           transform-gpu
+          pb-2
         "
         :class="! $store.showSideBar && '-translate-x-full'"
       >
@@ -321,13 +333,13 @@
           </picture>
           <figcaption class="font-bold">Trần Tấn Lộc</figcaption>
           <div class="flex space-x-2">
-            <p><span x-text="lang().grade" class="font-bold">Lớp</span> 10</p>
+            <p><span x-text="data.grade" class="font-bold">Lớp</span> 10</p>
             <p>
-              <span x-text="lang().semester" class="font-bold">Học kì</span> I
+              <span x-text="data.semester" class="font-bold">Học kì</span> I
             </p>
           </div>
         </figure>
-        <ul>
+        <ul class="mx-2 space-y-2">
           <li
             class="
               flex
@@ -336,15 +348,18 @@
               py-2
               px-4
               rounded-md
-              mx-2
               cursor-pointer
               transition-all
               border border-opacity-0 border-cool-gray-200
+              dark:border-opacity-0
+              dark:border-true-gray-600
+              dark:hover:border-opacity-100
+              dark:hover:text-light-blue-400
               hover:border-opacity-100 hover:shadow-md
             "
           >
             <i class="uil uil-estate"></i
-            ><span x-text="lang().home">Trang chủ</span>
+            ><span x-text="data.home">Trang chủ</span>
           </li>
           <li
             class="
@@ -354,19 +369,40 @@
               py-2
               px-4
               rounded-md
-              mx-2
               cursor-pointer
               transition-all
               border border-opacity-0 border-cool-gray-200
+              dark:border-opacity-0
+              dark:border-true-gray-600
+              dark:hover:border-opacity-100
+              dark:hover:text-light-blue-400
               hover:border-opacity-100 hover:shadow-md
             "
           >
             <i class="uil uil-setting"></i
-            ><span x-text="lang().setting">Cài đặt</span>
+            ><span x-text="data.setting">Cài đặt</span>
           </li>
         </ul>
-        <div class="border-t-2 text-center pt-1">
-          <span x-text="lang().version">Phiên bản</span> <%- version %>
+        <div class="border-t-2 text-center pt-1 flex-grow">
+          <span x-text="data.version">Phiên bản</span> <%- version %>
+        </div>
+        <div class="flex mx-3 items-center justify-center space-x-5">
+          <button @click="isEnglish = ! isEnglish" class="w-14 h-10">
+            <img
+              :src="langCode() + '.svg'"
+              :alt="langCode()"
+              class="max-w-full max-h-full"
+            />
+          </button>
+          <button
+            class="cursor-pointer text-4xl"
+            @click="isDarkMode = ! isDarkMode"
+          >
+            <i
+              class="uil text-gray-700 dark:text-gray-200"
+              :class="isDarkMode ? 'uil-moon' : 'uil-sun'"
+            ></i>
+          </button>
         </div>
       </nav>
     </aside>

@@ -10,6 +10,8 @@ import 'virtual:windi-devtools';
 import Alpine from 'alpinejs';
 import persist from '@alpinejs/persist';
 import intersect from '@alpinejs/intersect';
+// Alpine.js
+
 import { allSubjects, vi, en } from './data';
 
 window.Alpine = Alpine;
@@ -28,12 +30,6 @@ Alpine.store('showResultCard', {
   },
 });
 
-Alpine.data('dropdown', function () {
-  return {
-    open: this.$persist(false),
-  };
-});
-
 Alpine.data('i18n', function () {
   return {
     isEnglish: this.$persist(false),
@@ -42,7 +38,8 @@ Alpine.data('i18n', function () {
       return this.isEnglish ? 'en' : 'vi';
     },
     lang() {
-      return this.isEnglish ? { ...en } : { ...vi };
+      this.data = this.isEnglish ? { ...en } : { ...vi };
+      return this.data;
     },
   };
 });

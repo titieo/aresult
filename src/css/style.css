@@ -8,6 +8,27 @@ body > header.active {
   @apply max-h-16 bg-opacity-100;
 }
 
+.text-color-base {
+  @apply text-gray-700 dark:text-gray-200;
+}
+
+.scrollbar-primary {
+  @apply scrollbar-thin
+  scrollbar-track-transparent scrollbar-thumb-rounded-full hover:scrollbar-thumb-cool-gray-300;
+
+  /* @apply scrollbar-thumb-cool-gray-200 hover:scrollbar-thumb-cool-gray-300; */
+
+  --scrollbar-opacity: 0.5;
+  --scrollbar-thumb: rgb(229, 231, 235, var(--scrollbar-opacity));
+}
+/* stylelint-disable */
+
+.scrollbar-primary::-webkit-scrollbar-thumb:hover {
+  --scrollbar-thumb: rgb(209, 213, 219, var(--scrollbar-opacity));
+}
+
+/* stylelint-enable */
+
 .card--trans {
   grid-template-rows: 55% max-content 1fr;
   background-image: linear-gradient(
@@ -95,7 +116,7 @@ input {
 
   /* @apply h-full w-16 cursor-pointer relative mt-12 mr-8 ml-5; */
 
-  @apply h-full w-12 cursor-pointer relative mt-12 mr-7;
+  @apply h-full w-12 cursor-pointer relative mt-12 mr-2;
 }
 
 .nav-icon span {

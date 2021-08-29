@@ -1,8 +1,9 @@
 import { defineConfig } from 'windicss/helpers';
 import defaultTheme from 'windicss/defaultTheme';
+import WindiScroll from '@windicss/plugin-scrollbar';
 
 export default defineConfig({
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   //   attributify: true,
   extract: {
     include: ['*.{html,js}'],
@@ -53,5 +54,8 @@ export default defineConfig({
       large: '12px',
     },
   },
-  plugins: [],
+  plugins: [WindiScroll],
+  variants: {
+    scrollbar: ['rounded'],
+  },
 });

@@ -744,6 +744,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@windicss/plugin-scrollbar@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "@windicss/plugin-scrollbar@npm:1.2.3"
+  checksum: 50b49a48f55c4b5fbca1317d2869af47063a10174a49efa556d7c6247b695b7b73a86ff2fe0ebc406dddf0f8dfcf0590542cb94906fef1a1a79f4d0ef42a24c6
+  languageName: node
+  linkType: hard
+
 "@windicss/plugin-utils@npm:1.3.0":
   version: 1.3.0
   resolution: "@windicss/plugin-utils@npm:1.3.0"
@@ -6663,6 +6670,7 @@ fsevents@~2.3.2:
     "@iconscout/unicons": ^4.0.0
     "@squoosh/lib": ^0.4.0
     "@vitejs/plugin-legacy": ^1.5.1
+    "@windicss/plugin-scrollbar": ^1.2.3
     alpinejs: ^3.2.4
     autoprefixer: ^10.3.1
     canvas-confetti: ^1.4.0

@@ -36,6 +36,7 @@ export const allSubjects = {
 };
 
 export const vi = {
+  code: 'vi-VN',
   home: 'Trang chủ',
   grade: 'Lớp',
   semester: 'Học kì',
@@ -44,6 +45,7 @@ export const vi = {
 };
 
 export const en = {
+  code: 'en-US',
   home: 'Home',
   grade: 'Class',
   semester: 'Semester',
