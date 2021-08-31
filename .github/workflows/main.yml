@@ -24,7 +24,7 @@ jobs:
       - name: Install
         run: yarn install
       - name: Build and Analysis
-        run: yarn analysis
+        run: yarn build && yarn analysis
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
