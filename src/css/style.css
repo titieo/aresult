@@ -4,6 +4,13 @@ html {
   scroll-behavior: smooth;
 }
 
+table,
+th,
+td {
+  border-collapse: collapse;
+  text-align: center;
+}
+
 body > header.active {
   @apply max-h-16 bg-opacity-100;
 }
@@ -97,6 +104,10 @@ body > header.active {
 
 .abs-full {
   @apply absolute top-0 bottom-0 right-0 left-0 w-full h-full;
+}
+
+.fixed-full {
+  @apply fixed top-0 bottom-0 right-0 left-0 w-full h-full;
 }
 
 .flex-center {

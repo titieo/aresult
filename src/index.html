@@ -51,6 +51,7 @@
         from-green-400
         to-blue-500
         body-bg
+        -z-100
       "
     >
       <svg class="top-0 left-0 clockwise">
@@ -74,7 +75,7 @@
         text-2xl text-black text-opacity-90
         sticky
         top-0
-        z-30
+        z-10
         bg-white bg-opacity-80
         dark:bg-gray-900 dark:bg-opacity-50
         navbar
@@ -93,9 +94,8 @@
       </div>
       <h1
         class="!mr-auto font-serif font-bold text-gray-700 dark:text-gray-200"
-        x-text="data.home"
       >
-        Trang chủ
+        <a href="#" x-text="data.home">Trang chủ</a>
       </h1>
       <button
         @click="isEnglish = ! isEnglish"
@@ -129,7 +129,6 @@
         w-full
         flex-grow
         relative
-        z-10
         pb-5
         pt-2
         px-3
@@ -187,7 +186,15 @@
         </figure>
       </header>
       <section
-        class="grid grid-cols-layout w-full px-5 py-3 gap-y-3 gap-x-5 flex-grow"
+        class="
+          grid grid-cols-layout
+          w-full
+          px-5
+          py-3
+          gap-y-3 gap-x-5
+          flex-grow
+          max-w-con
+        "
         x-data="allSubjects"
       >
         <template x-for="i in Object.keys(items)">
@@ -263,12 +270,82 @@
           </a>
         </template>
       </section>
+
+      <!-- Schedule Start -->
+      <section
+        id="schedule"
+        class="
+          bg-white
+          dark:bg-gray-900
+          fixed-full
+          transform-gpu
+          transition-transform
+          z-10
+          duration-500
+          translate-x-full
+          target:translate-x-0
+        "
+      >
+        <header class="w-full bg-light-blue-400 py-1 px-3 mb-5">
+          <a
+            @click="console.error('Button clicked')"
+            href="#"
+            class="uil uil-arrow-left text-light-200 text-5xl cursor-pointer"
+          ></a>
+        </header>
+        <div class="overflow-hidden rounded-md max-w-con border">
+          <table
+            x-data="schedule"
+            class="border rounded-md scrollbar-primary min-w-full min-h-full"
+          >
+            <thead class="sticky top-0 bg-blue-500 text-white border">
+              <template x-for="i in cells.head">
+                <th x-text="i" class="border py-2 px-3.5"></th>
+              </template>
+            </thead>
+            <tbody>
+              <template x-for="item in cells.sun.length">
+                <tr>
+                  <template x-for="(cell,index) in cells.sun[item-1]">
+                    <td
+                      class="border"
+                      x-html="cell"
+                      :rowspan="index === 0 && cell && cells.sun.length"
+                      :class="(index === 0 && cell) ? 'text-7xl' : 'py-1.5 px-2.5'"
+                      x-show="index !== 0 || cell"
+                    ></td>
+                    <!-- text-6xl -->
+                  </template>
+                </tr>
+              </template>
+              <tr>
+                <td :colspan="cells.head.length" class="border py-1.5 px-2.5">
+                  🎉🎊🥳 Ăn trưa 🎉🎊🥳
+                </td>
+              </tr>
+              <template x-for="item in cells.moon.length">
+                <tr>
+                  <template x-for="(cell,index) in cells.moon[item-1]">
+                    <td
+                      class="border"
+                      x-html="cell"
+                      :rowspan="index === 0 && cell && cells.moon.length"
+                      x-show="index !== 0 || cell"
+                      :class="(index === 0 && cell) ? 'text-7xl' : 'py-1.5 px-2.5'"
+                    ></td>
+                  </template>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
     <!-- Main End -->
 
     <!-- Sidebar Start -->
     <aside
-      class="fixed top-0 z-30 w-full h-full"
+      class="fixed-full z-30"
       :class="$store.showSideBar || 'pointer-events-none'"
     >
       <!-- @keydown.escape="$store.showSideBar = false" -->
@@ -360,8 +437,18 @@
               hover:border-opacity-100 hover:shadow-md
             "
           >
-            <i class="uil uil-estate"></i
-            ><span x-text="data.home">Trang chủ</span>
+            <a
+              href="#"
+              class="space-x-1 flex-grow"
+              @click="$store.showSideBar = false"
+              ><i class="uil uil-estate"></i
+              ><span
+                href="#"
+                x-text="data.home"
+                @click="$store.showSideBar = false"
+                >Trang chủ</span
+              ></a
+            >
           </li>
           <li
             class="
@@ -381,8 +468,13 @@
               hover:border-opacity-100 hover:shadow-md
             "
           >
-            <i class="uil uil-setting"></i
-            ><span x-text="data.setting">Cài đặt</span>
+            <a
+              href="#schedule"
+              class="space-x-1 flex-grow"
+              @click="$store.showSideBar = false"
+              ><i class="uil uil-schedule"></i
+              ><span x-text="data.schedule">Thời khoá biểu</span></a
+            >
           </li>
           <li
             class="
@@ -402,8 +494,35 @@
               hover:border-opacity-100 hover:shadow-md
             "
           >
-            <i class="uil uil-bug"></i
-            ><a href="<%- bugs %>" target="_blank" x-text="data.bug">Góp ý</a>
+            <a
+              href="#"
+              class="space-x-1 flex-grow"
+              @click="$store.showSideBar = false"
+              ><i class="uil uil-setting"></i
+              ><span x-text="data.setting">Cài đặt</span></a
+            >
+          </li>
+          <li
+            class="
+              flex
+              align-center
+              py-2
+              px-4
+              rounded-md
+              cursor-pointer
+              transition-all
+              border border-opacity-0 border-cool-gray-200
+              dark:border-opacity-0
+              dark:border-true-gray-600
+              dark:hover:border-opacity-100
+              dark:hover:text-light-blue-400
+              hover:border-opacity-100 hover:shadow-md
+            "
+          >
+            <a href="<%- bugs %>" target="_blank" class="space-x-1 flex-grow"
+              ><i class="uil uil-bug"></i
+              ><span x-text="data.bug">Góp ý</span></a
+            >
           </li>
         </ul>
         <div class="border-t-2 text-center pt-1 flex-grow">
@@ -563,6 +682,6 @@
       </form>
     </div> -->
 
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./index.js" defer></script>
   </body>
 </html>

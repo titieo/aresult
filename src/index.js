@@ -1,3 +1,4 @@
+'use strict';
 import 'virtual:windi-base.css';
 import 'virtual:windi-components.css';
 import './css/style.css';
@@ -12,7 +13,7 @@ import persist from '@alpinejs/persist';
 import intersect from '@alpinejs/intersect';
 // Alpine.js
 
-import { allSubjects, vi, en } from './data';
+import { allSubjects, vi, en, sunData, moonData } from './data';
 
 window.Alpine = Alpine;
 Alpine.plugin(persist);
@@ -28,6 +29,25 @@ Alpine.store('showResultCard', {
   toggle() {
     this.on = !this.on;
   },
+});
+
+Alpine.data('schedule', () => {
+  return {
+    cells: {
+      head: [
+        'Session',
+        'Period',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+      ],
+      sun: [...sunData],
+      moon: [...moonData],
+    },
+  };
 });
 
 Alpine.data('i18n', function () {
