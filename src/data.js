@@ -1,6 +1,7 @@
+const emptyPoint = `-:-`;
+const decimalNum = 2;
 const allSubjects = {
   math: {
-    // fullName: 'Toán học',
     fullName: { vi: 'Toán học', en: 'Mathematics' },
     // teacher: 'Lorem ipsum dolor sit amet.',
     bgColor: 'from-red-400 to-yellow-400 dark:from-red-500 dark:to-yellow-500',
@@ -8,44 +9,51 @@ const allSubjects = {
     second: [],
     third: [],
   },
-  physics: {
-    // fullName: 'Toán học',
-    fullName: { vi: 'T', en: 'Physics' },
-    // teacher: 'Lorem ipsum dolor sit amet.',
-    bgColor: 'from-red-400 to-yellow-400 dark:from-red-500 dark:to-yellow-500',
-    first: [],
-    second: [],
-    third: [],
-  },
 };
 
 for (const i in allSubjects) {
-  console.log(allSubjects[i]);
-  allSubjects[i].calcAverage = function () {
-    let division = 0;
-    let average;
-    let total = 0;
-    division +=
-      this.first.length + this.second.length * 2 + this.third.length * 3;
-    if (division > 0) {
-      for (const i of this.first) {
-        total += i;
+  if (typeof allSubjects[i] !== 'function')
+    allSubjects[i].calcAverage = function () {
+      let division = 0;
+      let average;
+      let total = 0;
+      division +=
+        this.first.length + this.second.length * 2 + this.third.length * 3;
+      if (division > 0) {
+        const arr = [this.first, this.second, this.third];
+        for (const data in arr) {
+          for (const i of arr[data]) {
+            total += i * Number(data + 1);
+          }
+        }
+        average = (total / division).toFixed(decimalNum);
+      } else {
+        average = emptyPoint;
       }
-      for (const i of this.second) {
-        total += i * 2;
-      }
-      for (const i of this.third) {
-        total += i * 3;
-      }
-      average = (total / division).toFixed(2);
-    } else {
-      average = '__.__';
-    }
-    this.average = average;
-    return average;
-  };
+      this.average = average;
+      return average;
+    };
   allSubjects[i].calcAverage();
+  //   Calc average
 }
+
+allSubjects.calcAverage = function () {
+  const division = Object.keys(this).length - 1;
+  let average;
+  let total = 0;
+  for (const i in this) {
+    const num = Number(this[i].average);
+    console.log(i, num);
+    if (num) {
+      total += num;
+    }
+  }
+  // eslint-disable-next-line prefer-const
+  average = total > 0 ? (total / division).toFixed(decimalNum) : emptyPoint;
+  this.average = average;
+  return average;
+};
+allSubjects.calcAverage();
 
 export const vi = {
   code: 'vi-VN',

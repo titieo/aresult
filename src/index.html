@@ -180,8 +180,12 @@
               lining-nums
               gradient-text
             "
+            x-data="allSubjects"
+            x-text="items.average"
           >
-            8.90
+            <!-- x-data="allSubjects"
+            x-text="items.average" -->
+            __.__
           </figcaption>
         </figure>
       </header>
@@ -197,7 +201,9 @@
         "
         x-data="allSubjects"
       >
-        <template x-for="i in Object.keys(items)">
+        <template
+          x-for="i in Object.keys(items).filter(key => typeof items[key] === 'object')"
+        >
           <a
             class="
               rounded-lg
@@ -217,7 +223,7 @@
             x-data="{fullName,
             teacher='Lorem, ipsum.',
             bgColor='bg-gradient-to-br from-green-400 to-blue-500',
-            calcAverage}=items[i]"
+            average}=items[i]"
             :class="bgColor"
             :href="`#${i}`"
           >
@@ -260,8 +266,8 @@
                 font-bold font-serif
                 text-3xl
               "
-              x-text="calcAverage()"
-              >8.90</span
+              x-text="average"
+              >__.__</span
             >
             <div class="col-span-full font-serif text-xs self-end font-light">
               <i class="uil uil-user-circle mr-1"></i
