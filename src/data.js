@@ -78,8 +78,8 @@ export const en = {
 };
 
 export const icon = {
-  sun: `<i class="uil uil-sun"></i>`,
-  moon: `<i class="uil uil-moon"></i>`,
+  sun: `<i class="uil uil-sun from-red-500 to-orange-400 bg-gradient-to-r bg-clip-text text-transparent"></i>`,
+  moon: `<i class="uil uil-moon bg-gradient-to-r bg-clip-text text-transparent from-fuchsia-600 to bg-purple-600"></i>`,
 };
 
 export const sunData = [
