@@ -110,6 +110,32 @@ body > header.active {
   @apply fixed top-0 bottom-0 right-0 left-0 w-full h-full;
 }
 
+.uil.uil-moon,
+.uil.uil-sun {
+  @apply bg-gradient-to-r bg-clip-text text-transparent;
+}
+
+.uil.uil-sun {
+  @apply from-red-500 to-orange-400;
+}
+
+.uil.uil-moon {
+  @apply from-fuchsia-600 to-purple-600;
+}
+
+.bg-rainbow {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, var(--tw-bg-opacity, 1)),
+    rgba(255, 127, 0, var(--tw-bg-opacity, 1)),
+    rgba(255, 255, 0, var(--tw-bg-opacity, 1)),
+    rgba(0, 255, 0, var(--tw-bg-opacity, 1)),
+    rgba(0, 0, 255, var(--tw-bg-opacity, 1)),
+    rgba(75, 0, 130, var(--tw-bg-opacity, 1)),
+    rgba(148, 0, 211, var(--tw-bg-opacity, 1))
+  );
+}
+
 .flex-center {
   @apply flex justify-center items-center;
 }
