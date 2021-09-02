@@ -194,9 +194,7 @@
           max-w-con
         "
       >
-        <template
-          x-for="i in Object.keys(items).filter(key => typeof items[key] === 'object')"
-        >
+        <template x-for="i in filteredObj">
           <a
             class="
               rounded-lg
@@ -213,21 +211,20 @@
               cursor-pointer
               hover:-translate-y-1 hover:shadow-lg hover:scale-105
             "
-            x-data="{fullName,
+            x-data="{name,fullName,
             teacher='Lorem, ipsum.',
-            bgColor='bg-gradient-to-br from-green-400 to-blue-500',
+            bgColor='from-green-400 to-blue-500',
             average}=items[i]"
             :class="bgColor"
-            :href="`#${i}`"
+            :href="`#${name}`"
           >
             <picture
-              class="place-self-stretch col-span-full"
-              style="grid-row: 1/2"
+              class="place-self-stretch col-span-full row-start-1 row-end-2"
             >
-              <source :srcset="`${i}.webp`" type="image/webp" />
-              <source :srcset="`${i}.png`" type="image/png" />
+              <source :srcset="`${name}.webp`" type="image/webp" />
+              <source :srcset="`${name}.png`" type="image/png" />
               <img
-                :src="`${i}.png`"
+                :src="`${name}.png`"
                 class="max-h-40 h-full w-full object-cover object-top"
                 :alt="i"
               />
@@ -245,10 +242,10 @@
                 rounded-md
                 col-span-full
                 self-end
+                row-start-1 row-end-2
                 bg-white bg-opacity-80
                 dark:bg-gray-900 dark:bg-opacity-50
               "
-              style="grid-row: 1/2"
               x-text="fullName[langCode()]"
             ></h3>
             <span
@@ -402,9 +399,8 @@
       </section>
       <!-- Schedule End -->
 
-      <template
-        x-for="i in Object.keys(items).filter(key => typeof items[key] === 'object')"
-      >
+      <template x-for="i in filteredObj">
+        <!-- x-data="{bgColor}=items[i]" -->
         <section
           class="
             bg-white
@@ -419,17 +415,57 @@
           "
           :id="i"
         >
-          <header class="px-2 py-4">
+          <header
+            class="
+              px-2
+              py-4
+              bg-opacity-50
+              grid grid-cols-2
+              bg-gradient-to-br
+              place-items-center
+              text-white
+            "
+            :class="items[i].bgColor"
+          >
             <div
-              class="flex text-white items-center space-x-2"
-              @click="console.log(items[i])"
+              class="
+                flex
+                text-white
+                items-center
+                space-x-2
+                col-span-full
+                row-start-1
+                place-self-stretch
+              "
             >
               <a
                 href="#"
                 class="uil uil-arrow-left text-5xl cursor-pointer"
               ></a>
-              <h2 class="text-2xl">Môn học</h2>
+              <h2 class="text-2xl" x-text="items[i].fullName[langCode()]">
+                Môn học
+              </h2>
             </div>
+            <p class="text-xl">Trung bình môn</p>
+            <figure
+              class="score h-20 lg:h-28 relative text-2xl md:text-3xl order-1"
+            >
+              <img src="./laurel.svg" alt="laurel" class="min-h-full" />
+              <figcaption
+                class="
+                  absolute
+                  top-1/2
+                  left-1/2
+                  transform-gpu
+                  -translate-x-1/2 -translate-y-6
+                  lining-nums
+                  gradient-text
+                "
+                x-text="items[i].average"
+              >
+                -:-
+              </figcaption>
+            </figure>
           </header>
         </section></template
       >

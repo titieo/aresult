@@ -134,7 +134,8 @@ const allSubjects = {
 };
 
 for (const i in allSubjects) {
-  if (typeof allSubjects[i] !== 'function')
+  if (typeof allSubjects[i] !== 'function') {
+    allSubjects[i].name = i;
     allSubjects[i].calcAverage = function () {
       let division = 0;
       let average;
@@ -155,6 +156,7 @@ for (const i in allSubjects) {
       this.average = average;
       return average;
     };
+  }
   allSubjects[i].calcAverage();
   if (!allSubjects[i].fullName.en)
     allSubjects[i].fullName.en = firstLetterUpper(i);
@@ -166,7 +168,6 @@ allSubjects.calcAverage = function () {
   const division = Object.keys(this).length - 1;
   for (const i in this) {
     const num = Number(this[i].average);
-    console.log(i, num);
     if (num) {
       total += num;
     }
