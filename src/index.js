@@ -21,14 +21,9 @@ Alpine.plugin(intersect);
 
 Alpine.data('allSubjects', () => {
   return {
-    items: { ...allSubjects },
+    items: allSubjects,
+    // Allow for the data to be updated
   };
-});
-Alpine.store('showResultCard', {
-  on: false,
-  toggle() {
-    this.on = !this.on;
-  },
 });
 
 Alpine.data('schedule', () => {
@@ -63,7 +58,6 @@ Alpine.data('schedule', () => {
 Alpine.data('i18n', function () {
   return {
     isEnglish: this.$persist(false),
-    // isEnglish: false,
     langCode() {
       return this.isEnglish ? 'en' : 'vi';
     },
@@ -88,6 +82,13 @@ document.querySelectorAll('a').forEach((i) => {
     i.setAttribute('rel', 'noopener noreferrer');
 });
 
-document.querySelectorAll('img').forEach((i) => {
-  i.setAttribute('loading', 'lazy');
+document.querySelectorAll('img').forEach((img) => {
+  img.setAttribute('loading', 'lazy');
+  img.onerror = function () {
+    console.error(`${this.src} not found`);
+    /*
+    this.src = 'cat.png';
+    this.srcset = 'cat.png 640w,cat@2x.png 1920w, cat@3x.png 2400w';
+    this.onerror = null; */
+  };
 });

@@ -6,8 +6,8 @@ const imagePool = new ImagePool();
 const root = path.join(__dirname, '/src');
 // Define your paths:
 const imagesToOptimizePath = `${root}/rawImages/`;
-const moveToPath =
-  './_originalRawImages/'; /* Uncomment this if you want to keep files */
+// const moveToPath =
+//   './_originalRawImages/'; /* Uncomment this if you want to keep files */
 const optimizeToPath = `${root}/assets/`;
 
 (async () => {
@@ -22,10 +22,10 @@ const optimizeToPath = `${root}/assets/`;
 
 async function libSquooshOptimize(file) {
   const imagePath = path.join(imagesToOptimizePath, file);
-  const moveOriginalToPath = path.join(
-    moveToPath,
-    file
-  ); /* Uncomment this if you want to keep files */
+  //   const moveOriginalToPath = path.join(
+  //     moveToPath,
+  //     file
+  //   ); /* Uncomment this if you want to keep files */
   const saveOptimizedImageToPath = path.join(
     optimizeToPath,
     path.parse(file).name
@@ -60,8 +60,8 @@ async function libSquooshOptimize(file) {
   }
 
   // move original image async
-  await fs.promises.rename(
-    imagePath,
-    moveOriginalToPath
-  ); /* Uncomment this if you want to keep files */
+  //   await fs.promises.rename(
+  //     imagePath,
+  //     moveOriginalToPath
+  //   ); /* Uncomment this if you want to keep files */
 }

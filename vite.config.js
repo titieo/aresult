@@ -4,6 +4,8 @@ import WindiCSS from 'vite-plugin-windicss';
 import path from 'path';
 import { minifyHtml, injectHtml } from 'vite-plugin-html';
 import pkg from './package.json';
+import { VitePWA } from 'vite-plugin-pwa';
+
 export default defineConfig({
   root: './src/',
   publicDir: 'assets',
@@ -19,6 +21,7 @@ export default defineConfig({
     legacy({
       targets: ['defaults', 'not IE 11'],
     }),
+    VitePWA(),
   ],
   build: {
     outDir: path.join(__dirname, 'website'),

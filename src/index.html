@@ -4,6 +4,7 @@
   x-data="{...i18n(), isDarkMode:$persist(false)}"
   :class="isDarkMode ? 'dark' : 'light'"
   :lang="lang().code"
+  @keydown.escape="$store.showSideBar ? () => {$store.showSideBar = false} : () => {window.location.href='#'}"
 >
   <!-- class="antialiased <md:text-[90%] <sm:text-[80%]" -->
   <head>
@@ -40,7 +41,6 @@
       text-gray-700
       dark:text-gray-200
     "
-    :class="$store.showResultCard.on && 'justify-center items-center'"
   >
     <!-- Background Start-->
     <div
@@ -121,7 +121,6 @@
 
     <!-- Main Start -->
     <main
-      x-show="!$store.showResultCard.on"
       class="
         w-full
         flex-grow
@@ -133,6 +132,7 @@
         dark:bg-gray-900
         flex flex-col
       "
+      x-data="allSubjects"
     >
       <header
         class="
@@ -177,7 +177,6 @@
               lining-nums
               gradient-text
             "
-            x-data="allSubjects"
             x-text="items.average"
           >
             __.__
@@ -190,11 +189,10 @@
           w-full
           px-5
           py-3
-          gap-y-3 gap-x-5
+          gap-y-5 gap-x-5
           flex-grow
           max-w-con
         "
-        x-data="allSubjects"
       >
         <template
           x-for="i in Object.keys(items).filter(key => typeof items[key] === 'object')"
@@ -264,7 +262,9 @@
               x-text="average"
               >__.__</span
             >
-            <div class="col-span-full font-serif text-xs self-end font-light">
+            <div
+              class="col-span-full mx-2 font-serif text-xs self-end font-light"
+            >
               <i class="uil uil-user-circle mr-1"></i
               ><span x-text="teacher"></span>
             </div>
@@ -284,8 +284,8 @@
           z-10
           duration-500
           translate-x-full
-          grid grid-rows-[auto,1fr]
           target:translate-x-0
+          grid grid-rows-[auto,1fr]
         "
       >
         <header
@@ -404,6 +404,7 @@
           </table>
         </div>
       </section>
+      <!-- Schedule End -->
     </main>
     <!-- Main End -->
 
@@ -412,7 +413,6 @@
       class="fixed-full z-30"
       :class="$store.showSideBar || 'pointer-events-none'"
     >
-      <!-- @keydown.escape="$store.showSideBar = false" -->
       <div
         class="
           w-full
@@ -627,7 +627,6 @@
         items-center
         <md:flex-col <md:space-y-1
       "
-      x-show="!$store.showResultCard.on"
     >
       <span class="text-lg md:mr-auto font-bold font-serif"
         >Copyright &copy; MIT Licensed LocTran016</span
