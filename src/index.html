@@ -301,11 +301,7 @@
             text-light-200
           "
         >
-          <a
-            @click="console.error('Button clicked')"
-            href="#"
-            class="uil uil-arrow-left text-5xl cursor-pointer"
-          ></a>
+          <a href="#" class="uil uil-arrow-left text-5xl cursor-pointer"></a>
           <h2 x-text="data.schedule" class="text-2xl font-serif font-bold">
             Thời khoá biểu
           </h2>
@@ -405,6 +401,38 @@
         </div>
       </section>
       <!-- Schedule End -->
+
+      <template
+        x-for="i in Object.keys(items).filter(key => typeof items[key] === 'object')"
+      >
+        <section
+          class="
+            bg-white
+            dark:bg-gray-900
+            fixed-full
+            transform-gpu
+            transition-transform
+            z-10
+            duration-500
+            translate-x-full
+            target:translate-x-0
+          "
+          :id="i"
+        >
+          <header class="px-2 py-4">
+            <div
+              class="flex text-white items-center space-x-2"
+              @click="console.log(items[i])"
+            >
+              <a
+                href="#"
+                class="uil uil-arrow-left text-5xl cursor-pointer"
+              ></a>
+              <h2 class="text-2xl">Môn học</h2>
+            </div>
+          </header>
+        </section></template
+      >
     </main>
     <!-- Main End -->
 

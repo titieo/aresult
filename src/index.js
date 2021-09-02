@@ -86,9 +86,8 @@ document.querySelectorAll('img').forEach((img) => {
   img.setAttribute('loading', 'lazy');
   img.onerror = function () {
     console.error(`${this.src} not found`);
-    /*
     this.src = 'cat.png';
     this.srcset = 'cat.png 640w,cat@2x.png 1920w, cat@3x.png 2400w';
-    this.onerror = null; */
+    this.onerror = null;
   };
 });
