@@ -33,7 +33,7 @@
     "lintci:prettier": "echo Linting With Prettier... && yarn prettier --check . && echo Lint passed. || (echo Lint failed, attempting fix... && yarn prettier -w . && echo Fix generated successfully. || (echo Fix failed! && exit 1))",
     "lintci:stylelint": "echo Linting With Stylelint... && stylelint src/css/**/*.css && echo Lint passed. || (echo Lint failed, attempting fix... && stylelint src/css/**/*.css --fix && echo Fix generated successfully. || (echo Fix failed! && exit 1))",
     "min": "node ./squoosh",
-    "postinstall": "husky install"
+    "postinstall": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks"
   },
   "commitlint": {
     "extends": [

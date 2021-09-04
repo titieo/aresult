@@ -15,6 +15,8 @@ export default defineConfig({
       data: {
         version: pkg.version,
         bugs: `${pkg.bugs}/new`,
+        author: pkg.author.name || pkg.author,
+        license: pkg.license,
       },
     }),
     WindiCSS(),
