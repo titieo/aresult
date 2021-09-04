@@ -23,10 +23,16 @@ Alpine.data('allSubjects', () => {
   return {
     items: allSubjects,
     // Allow for the data to be updated
+
     get filteredObj() {
-      return Object.keys(this.items).filter(
-        (i) => typeof this.items[i] === 'object'
-      );
+      return Object.keys(this.items).filter((i) => {
+        return (
+          typeof this.items[i] === 'object' &&
+          i !== 'first' &&
+          i !== 'second' &&
+          i !== 'third'
+        );
+      });
     },
   };
 });

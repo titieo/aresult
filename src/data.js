@@ -7,6 +7,34 @@ const firstLetterUpper = function (theString) {
   });
 };
 
+const mergeData = function (template, custom) {
+  for (const i in template) {
+    console.log(i);
+    if (!custom[i]) custom[i] = template[i];
+  }
+};
+
+const removeDecimal = function (number) {
+  const num = Number(number);
+  for (let i = 0; i <= decimalNum; i++) {
+    if ((num * 10 ** i) % 10 ** i === 0) {
+      return num.toFixed(i);
+    } else if (i === decimalNum) {
+      return num;
+    }
+  }
+};
+
+const template = {
+  allSubjects: {
+    teacher: 'Lorem, ipsum.',
+    bgColor: 'from-green-400 to-blue-500 dark:from-green-500 dark:to-blue-600',
+    first: [],
+    second: [],
+    third: [],
+  },
+};
+
 const allSubjects = {
   math: {
     fullName: { vi: 'Toán học' },
@@ -149,7 +177,7 @@ for (const i in allSubjects) {
             total += i * Number(data + 1);
           }
         }
-        average = (total / division).toFixed(decimalNum);
+        average = removeDecimal((total / division).toFixed(decimalNum));
       } else {
         average = emptyPoint;
       }
@@ -158,9 +186,10 @@ for (const i in allSubjects) {
     };
   }
   allSubjects[i].calcAverage();
+  //   Calc average
   if (!allSubjects[i].fullName.en)
     allSubjects[i].fullName.en = firstLetterUpper(i);
-  //   Calc average
+  mergeData(template.allSubjects, allSubjects[i]);
 }
 
 allSubjects.calcAverage = function () {
@@ -173,11 +202,24 @@ allSubjects.calcAverage = function () {
     }
   }
   const average =
-    total > 0 ? (total / division).toFixed(decimalNum) : emptyPoint;
+    total > 0
+      ? removeDecimal((total / division).toFixed(decimalNum))
+      : emptyPoint;
   this.average = average;
   return average;
 };
 allSubjects.calcAverage();
+mergeData(
+  {
+    first: {
+      vi: 'Điểm Kiểm tra Thường xuyên',
+      en: 'Điểm Kiểm tra Thường xuyên',
+    },
+    second: { vi: 'Điểm Giữa kì', en: 'Điểm Giữa kì' },
+    third: { vi: 'Điểm Cuối kì', en: 'Điểm Cuối kì' },
+  },
+  allSubjects
+);
 
 export const vi = {
   code: 'vi-VN',

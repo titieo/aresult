@@ -74,6 +74,7 @@
     "postcss": "^8.3.6",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.3.2",
+    "shx": "^0.3.3",
     "stylelint": "13.13.1",
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-prettier": "^8.0.2",
