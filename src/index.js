@@ -8,13 +8,19 @@ import 'virtual:windi-devtools';
 
 // import confetti from 'canvas-confetti';
 
-import Alpine from 'alpinejs';
-import persist from '@alpinejs/persist';
-import intersect from '@alpinejs/intersect';
+// import Alpine from 'alpinejs';
+// import persist from '@alpinejs/persist';
+// import intersect from '@alpinejs/intersect';
 // Alpine.js
 
-import { allSubjects, vi, en, sunData, moonData } from './data';
+// import { allSubjects, vi, en, sunData, moonData } from './data';
+import App from './App.svelte';
 
+const app = new App({
+  target: document.body,
+});
+
+/*
 window.Alpine = Alpine;
 Alpine.plugin(persist);
 Alpine.plugin(intersect);
@@ -79,15 +85,10 @@ Alpine.data('i18n', function () {
   };
 });
 
-Alpine.store('avatar', {
-  webp: 'avatar.webp',
-  png: 'avatar.png',
-});
-
-Alpine.store('showSideBar', false);
+// Alpine.store('showSideBar', false);
 
 Alpine.start();
-
+*/
 document.querySelectorAll('a').forEach((i) => {
   if (i.getAttribute('target') === '_blank')
     i.setAttribute('rel', 'noopener noreferrer');
@@ -102,3 +103,5 @@ document.querySelectorAll('img').forEach((img) => {
     this.onerror = null;
   };
 });
+
+export default app;

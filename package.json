@@ -47,16 +47,14 @@
     "> 5% in VN"
   ],
   "dependencies": {
-    "@alpinejs/intersect": "^3.3.2",
-    "@alpinejs/persist": "^3.3.2",
     "@iconscout/unicons": "^4.0.0",
-    "alpinejs": "^3.3.2",
     "canvas-confetti": "^1.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@squoosh/lib": "^0.4.0",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.22",
     "@vitejs/plugin-legacy": "^1.5.3",
     "@windicss/plugin-scrollbar": "^1.2.3",
     "autoprefixer": "^10.3.4",
@@ -74,11 +72,13 @@
     "postcss": "^8.3.6",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.4.0",
+    "prettier-plugin-svelte": "^2.4.0",
     "shx": "^0.3.3",
     "stylelint": "^13.13.1",
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
+    "svelte": "^3.42.4",
     "vite": "^2.5.6",
     "vite-plugin-html": "^2.1.0",
     "vite-plugin-pwa": "^0.11.2",
