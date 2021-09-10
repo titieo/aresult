@@ -1,12 +1,12 @@
 <script>
-  import { showSideBar, avatar } from './stores.js';
+  import { showSideBar, avatar, isEnglish } from './stores.js';
 
-  function updateSideBar() {
-    showSideBar.update(n => !showSideBar); // logs '2'
+  function changeLanguage() {
+    isEnglish.update((n) => !isEnglish); // logs '2'
   }
 
   function hideSideBar() {
-      showSideBar.set(false);
+    showSideBar.set(false);
   }
 
   function sideBar() {
@@ -14,12 +14,9 @@
   }
 </script>
 
-<aside
-      class="fixed-full z-30"
-      class:pointer-events-none={showSideBar}
-    >
-      <div
-        class="
+<aside class="fixed-full z-30" class:pointer-events-none={showSideBar}>
+  <div
+    class="
           w-full
           h-full
           bg-black
@@ -30,13 +27,14 @@
           transition-all
           duration-300
         "
-        on:click={hideSideBar}
-        class:bg-opacity-50={showSideBar} class:bg-opacity-0={!showSideBar}
-      >
-      <!-- "$store.showSideBar && 'bg-opacity-50' || 'bg-opacity-0'" -->
-    </div>
-      <nav
-        class="
+    on:click={hideSideBar}
+    class:bg-opacity-50={showSideBar}
+    class:bg-opacity-0={!showSideBar}
+  >
+    <!-- "$store.showSideBar && 'bg-opacity-50' || 'bg-opacity-0'" -->
+  </div>
+  <nav
+    class="
           h-full
           w-[20rem]
           bg-white
@@ -48,10 +46,10 @@
           transform-gpu
           pb-2
         "
-        class:-translate-x-full={!showSideBar}
-      >
-        <figure
-          class="
+    class:-translate-x-full={!showSideBar}
+  >
+    <figure
+      class="
             seft-stretch
             bg-card
             from-green-400
@@ -65,33 +63,33 @@
             text-center text-white text-lg
             font-serif
           "
-        >
-          <picture class="mb-2">
-            <source srcset={avatar.webp} type="image/webp" />
-            <source srcset={avatar.png} type="image/png" />
-            <img
-              class="
+    >
+      <picture class="mb-2">
+        <source srcset={$avatar.webp} type="image/webp" />
+        <source srcset={$avatar.png} type="image/png" />
+        <img
+          class="
                 rounded
                 h-[10rem]
                 transition-all
                 duration-500
                 hover:rounded-md
               "
-              :srcset="$store.avatar.png"
-              alt="Dzịt vàng đáng yêu"
-            />
-          </picture>
-          <figcaption class="font-bold">Trần Tấn Lộc</figcaption>
-          <div class="flex space-x-2">
-            <p><span x-text="data.grade" class="font-bold">Lớp</span> 10</p>
-            <p>
-              <span x-text="data.semester" class="font-bold">Học kì</span> I
-            </p>
-          </div>
-        </figure>
-        <ul class="mx-2 space-y-2">
-          <li
-            class="
+          srcset={$avatar.png}
+          alt="Dzịt vàng đáng yêu"
+        />
+      </picture>
+      <figcaption class="font-bold">Trần Tấn Lộc</figcaption>
+      <div class="flex space-x-2">
+        <p><span x-text="data.grade" class="font-bold">Lớp</span> 10</p>
+        <p>
+          <span x-text="data.semester" class="font-bold">Học kì</span> I
+        </p>
+      </div>
+    </figure>
+    <ul class="mx-2 space-y-2">
+      <li
+        class="
               flex
               align-center
               space-x-1
@@ -107,22 +105,17 @@
               dark:hover:text-light-blue-400
               hover:border-opacity-100 hover:shadow-md
             "
-          >
-            <a
-              href="#"
-              class="space-x-1 flex-grow"
-              @click="$store.showSideBar = false"
-              ><i class="uil uil-estate"></i
-              ><span
-                href="#"
-                x-text="data.home"
-                @click="$store.showSideBar = false"
-                >Trang chủ</span
-              ></a
-            >
-          </li>
-          <li
-            class="
+      >
+        <a href="#" class="space-x-1 flex-grow" on:click={hideSideBar}
+          ><i class="uil uil-estate" /><span
+            href="#"
+            x-text="data.home"
+            on:click={hideSideBar}>Trang chủ</span
+          ></a
+        >
+      </li>
+      <li
+        class="
               flex
               align-center
               space-x-1
@@ -138,17 +131,15 @@
               dark:hover:text-light-blue-400
               hover:border-opacity-100 hover:shadow-md
             "
-          >
-            <a
-              href="#schedule"
-              class="space-x-1 flex-grow"
-              @click="$store.showSideBar = false"
-              ><i class="uil uil-schedule"></i
-              ><span x-text="data.schedule">Thời khoá biểu</span></a
-            >
-          </li>
-          <li
-            class="
+      >
+        <a href="#schedule" class="space-x-1 flex-grow" on:click={hideSideBar}
+          ><i class="uil uil-schedule" /><span x-text="data.schedule"
+            >Thời khoá biểu</span
+          ></a
+        >
+      </li>
+      <li
+        class="
               flex
               align-center
               space-x-1
@@ -164,17 +155,15 @@
               dark:hover:text-light-blue-400
               hover:border-opacity-100 hover:shadow-md
             "
-          >
-            <a
-              href="#"
-              class="space-x-1 flex-grow"
-              @click="$store.showSideBar = false"
-              ><i class="uil uil-setting"></i
-              ><span x-text="data.setting">Cài đặt</span></a
-            >
-          </li>
-          <li
-            class="
+      >
+        <a href="#" class="space-x-1 flex-grow" on:click={hideSideBar}
+          ><i class="uil uil-setting" /><span x-text="data.setting"
+            >Cài đặt</span
+          ></a
+        >
+      </li>
+      <li
+        class="
               flex
               align-center
               py-2
@@ -189,36 +178,32 @@
               dark:hover:text-light-blue-400
               hover:border-opacity-100 hover:shadow-md
             "
-          >
-            <a href="<%- bugs %>" target="_blank" class="space-x-1 flex-grow"
-              ><i class="uil uil-bug"></i
-              ><span x-text="data.bug">Góp ý</span></a
-            >
-          </li>
-        </ul>
-        <div class="border-t-2 text-center pt-1 flex-grow">
-          <span x-text="data.version">Phiên bản</span>
-          <!-- <span x-text="data.version">Phiên bản</span> <%- version %> -->
-        </div>
-        <div class="flex mx-3 items-center justify-center space-x-5">
-          <button
-            @click="isEnglish = ! isEnglish"
-            class="w-14 h-10"
-            aria-label="Switch language"
-          >
-            <img
-              :src="`${langCode()}.svg`"
-              :alt="langCode()"
-              class="max-w-full max-h-full"
-            />
-          </button>
-          <button
-            class="cursor-pointer text-4xl"
-            @click="isDarkMode = ! isDarkMode"
-            aria-label="Switch theme"
-          >
-            <i class="uil" :class="isDarkMode ? 'uil-moon' : 'uil-sun'"></i>
-          </button>
-        </div>
-      </nav>
-    </aside>
+      >
+        <a href="<%- bugs %>" target="_blank" class="space-x-1 flex-grow"
+          ><i class="uil uil-bug" /><span x-text="data.bug">Góp ý</span></a
+        >
+      </li>
+    </ul>
+    <div class="border-t-2 text-center pt-1 flex-grow">
+      <span x-text="data.version">Phiên bản</span>
+      <!-- <span x-text="data.version">Phiên bản</span> <%- version %> -->
+    </div>
+    <div class="flex mx-3 items-center justify-center space-x-5">
+      <button
+        class="w-14 h-10"
+        aria-label="Switch language"
+        on:click={changeLanguage}
+      >
+        <!-- on:click={changeLanguage} -->
+        <img alt="langCode()" class="max-w-full max-h-full" />
+        <!-- src="`${langCode()}.svg`" -->
+      </button>
+      <button class="cursor-pointer text-4xl" aria-label="Switch theme">
+        <!-- on:click={"isDarkMode = ! isDarkMode"} -->
+        <i class="uil">
+          <!-- :class="isDarkMode ? 'uil-moon' : 'uil-sun'" -->
+        </i>
+      </button>
+    </div>
+  </nav>
+</aside>

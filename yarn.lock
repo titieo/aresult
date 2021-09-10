@@ -3987,6 +3987,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-svelte3@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "eslint-plugin-svelte3@npm:3.2.1"
+  peerDependencies:
+    eslint: ">=6.0.0"
+    svelte: ^3.2.0
+  checksum: 04769e87e85dd34d1af0cdc81286ab2840c3178ad7e80d5ff75f343d304d5e2b08d7776e1d175646472bdcd570911efcef32b56dd4244ddb30243c04a2be0ded
+  languageName: node
+  linkType: hard
+
 "eslint-scope@npm:^5.1.1":
   version: 5.1.1
   resolution: "eslint-scope@npm:5.1.1"
@@ -8569,6 +8579,7 @@ fsevents@~2.3.2:
     eslint-plugin-import: ^2.24.2
     eslint-plugin-node: ^11.1.0
     eslint-plugin-promise: ^5.1.0
+    eslint-plugin-svelte3: ^3.2.1
     format-package: ^6.1.0
     husky: ^7.0.2
     lint-staged: ^11.1.2
