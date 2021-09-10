@@ -1,6 +1,14 @@
 import { allSubjects, vi, en, sunData, moonData } from '../data';
 import { writable } from 'svelte/store';
 
+const toBoolean = (value) => {
+  if (typeof value === 'string') {
+    return value === 'true';
+  } else {
+    Boolean(value);
+  }
+};
+
 export const showSideBar = writable(false);
 
 export const avatar = writable({
@@ -19,5 +27,9 @@ export const avatar = writable({
 //   // },
 // });
 export const isEnglish = writable(false);
+// export const isEnglish = writable(localStorage.getItem('isEnglish') || false);
+// isEnglish.subscribe((val) => localStorage.setItem('isEnglish', val));
+const store = writable(localStorage.getItem('store') || '');
 
+store.subscribe((val) => localStorage.setItem('store', val));
 // i18n.subscribe((value) => (value ? { ...en } : { ...vi }));

@@ -8,10 +8,6 @@
   function hideSideBar() {
     showSideBar.set(false);
   }
-
-  function sideBar() {
-    showSideBar.set(true);
-  }
 </script>
 
 <aside class="fixed-full z-30" class:pointer-events-none={showSideBar}>
