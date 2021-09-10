@@ -9,7 +9,7 @@ const toBoolean = (value) => {
   }
 };
 
-export const showSideBar = writable(false);
+export const sideBarVisibility = writable(false);
 
 export const avatar = writable({
   webp: 'avatar.webp',

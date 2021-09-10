@@ -1,16 +1,20 @@
 <script>
-  import { showSideBar, avatar, isEnglish } from './stores.js';
+  import { sideBarVisibility, avatar, isEnglish } from './stores.js';
+  let showSideBar;
 
+  const unsubscribe = sideBarVisibility.subscribe((value) => {
+    showSideBar = value;
+  });
   function changeLanguage() {
-    isEnglish.update((n) => !isEnglish); // logs '2'
+    isEnglish.update((n) => (n = !isEnglish)); // logs '2'
   }
 
   function hideSideBar() {
-    showSideBar.set(false);
+    sideBarVisibility.update((n) => (n = true));
   }
 </script>
 
-<aside class="fixed-full z-30" class:pointer-events-none={showSideBar}>
+<aside class="fixed-full z-30" class:pointer-events-none={!showSideBar}>
   <div
     class="
           w-full

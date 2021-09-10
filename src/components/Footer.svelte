@@ -13,7 +13,7 @@
       "
 >
   <span class="text-lg md:mr-auto font-bold font-serif"
-    >Copyright &copy; MIT Licensed loctran016</span
+    >Copyright &copy; MIT Licensed LocTran016</span
   >
   <!-- Copyright &copy; <%- license %> Licensed <%- author %> -->
   <div class="flex space-x-4">

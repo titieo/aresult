@@ -8,11 +8,6 @@ import 'virtual:windi-devtools';
 
 // import confetti from 'canvas-confetti';
 
-// import Alpine from 'alpinejs';
-// import persist from '@alpinejs/persist';
-// import intersect from '@alpinejs/intersect';
-// Alpine.js
-
 // import { allSubjects, vi, en, sunData, moonData } from './data';
 import App from './App.svelte';
 
