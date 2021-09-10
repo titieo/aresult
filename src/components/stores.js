@@ -26,7 +26,7 @@ export const avatar = writable({
 //   //   return isEnglish ? { ...en } : { ...vi };
 //   // },
 // });
-export const isEnglish = writable(false);
+export const isEnglishLang = writable(false);
 // export const isEnglish = writable(localStorage.getItem('isEnglish') || false);
 // isEnglish.subscribe((val) => localStorage.setItem('isEnglish', val));
 const store = writable(localStorage.getItem('store') || '');

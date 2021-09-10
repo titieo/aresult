@@ -1,14 +1,21 @@
 <script>
-  import { showSideBar, avatar, isEnglish } from './stores.js';
-  import Schedule from './Schedule.svelte';
-  import Details from './Details.svelte';
-  import Banner from './Banner.svelte';
+  import { sideBarVisibility, avatar, isEnglishLang } from './stores.js';
+  //   import Banner from './Banner.svelte';
+  //   import Details from './Details.svelte';
+  //   import Schedule from './Schedule.svelte';
+
+  let showSideBar;
+
+  const unsubscribe = sideBarVisibility.subscribe((value) => {
+    showSideBar = value;
+  });
+
   function changeLanguage() {
-    isEnglish.update((n) => !isEnglish); // logs '2'
+    isEnglishLang.update((n) => (n = !isEnglishLang)); // logs '2'
   }
 
   function hideSideBar() {
-    showSideBar.set(false);
+    sideBarVisibility.update((n) => (n = true));
   }
 </script>
 
@@ -75,8 +82,8 @@
       </figcaption>
     </figure>
   </header>
-
+  <!--
   <Banner />
   <Schedule />
-  <Details />
+  <Details /> -->
 </main>

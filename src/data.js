@@ -1,3 +1,4 @@
+// @ts-nocheck
 const emptyPoint = `-:-`;
 const decimalNum = 2;
 

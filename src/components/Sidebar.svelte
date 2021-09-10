@@ -1,12 +1,12 @@
 <script>
-  import { sideBarVisibility, avatar, isEnglish } from './stores.js';
+  import { sideBarVisibility, avatar, isEnglishLang } from './stores.js';
   let showSideBar;
 
-  const unsubscribe = sideBarVisibility.subscribe((value) => {
+  const unsubSideBar = sideBarVisibility.subscribe((value) => {
     showSideBar = value;
   });
   function changeLanguage() {
-    isEnglish.update((n) => (n = !isEnglish)); // logs '2'
+    isEnglishLang.update((n) => (n = !isEnglishLang)); // logs '2'
   }
 
   function hideSideBar() {
@@ -79,13 +79,14 @@
           alt="Dzịt vàng đáng yêu"
         />
       </picture>
-      <figcaption class="font-bold">Trần Tấn Lộc</figcaption>
-      <div class="flex space-x-2">
+
+      <div class="flex space-x-2 order-1">
         <p><span x-text="data.grade" class="font-bold">Lớp</span> 10</p>
         <p>
           <span x-text="data.semester" class="font-bold">Học kì</span> I
         </p>
       </div>
+      <figcaption class="font-bold">Trần Tấn Lộc</figcaption>
     </figure>
     <ul class="mx-2 space-y-2">
       <li
