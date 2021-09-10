@@ -7,6 +7,7 @@
         to-blue-500
         body-bg
         -z-100
+        min-h-screen
       "
 >
   <svg class="top-0 left-0 clockwise">
