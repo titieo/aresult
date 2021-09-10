@@ -6,7 +6,7 @@
     showSideBar = value;
   });
   function changeLanguage() {
-    isEnglishLang.update((n) => (n = !isEnglishLang)); // logs '2'
+    isEnglishLang.update((n) => (n = !isEnglishLang));
   }
 
   function hideSideBar() {
@@ -65,8 +65,8 @@
           "
     >
       <picture class="mb-2">
-        <source srcset={$avatar.webp} type="image/webp" />
-        <source srcset={$avatar.png} type="image/png" />
+        <source srcset={`${$avatar}.webp`} type="image/webp" />
+        <source srcset={`${$avatar}.png`} type="image/png" />
         <img
           class="
                 rounded
@@ -75,7 +75,7 @@
                 duration-500
                 hover:rounded-md
               "
-          srcset={$avatar.png}
+          src={`${$avatar}.png`}
           alt="Dzịt vàng đáng yêu"
         />
       </picture>

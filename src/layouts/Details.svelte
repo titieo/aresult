@@ -1,17 +1,23 @@
-<template x-for="i in filteredObj">
+<script>
+  import { allSubjectsStore } from './stores';
+</script>
+
+{#each Object.keys($allSubjectsStore).filter((i) => {
+  return typeof this.items[i] === 'object' && i !== 'first' && i !== 'second' && i !== 'third';
+}) as i}
   <section
-    class="
-      fixed-full
-      transform-gpu
-      transition-transform
-      z-10
-      duration-500
-      translate-x-full
-      target:translate-x-0
-      bg-gradient-to-br
-    "
-    :class="items[i].bgColor"
-    :id="i"
+    class={`
+        fixed-full
+        transform-gpu
+        transition-transform
+        z-10
+        duration-500
+        translate-x-full
+        target:translate-x-0
+        bg-gradient-to-br
+        ${$allSubjectsStore[i].bgColor}
+    `}
+    id={i}
   >
     <header
       class="
@@ -141,5 +147,4 @@
         </template>
       </div>
     </template>
-  </section></template
->
+  </section>{/each}

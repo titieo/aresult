@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { allSubjects, vi, en, sunData, moonData } from '../data';
 import { writable } from 'svelte/store';
 
@@ -11,10 +12,7 @@ const toBoolean = (value) => {
 
 export const sideBarVisibility = writable(false);
 
-export const avatar = writable({
-  webp: 'avatar.webp',
-  png: 'avatar.png',
-});
+export const avatar = writable('avatar');
 
 // export const i18n = writable({
 //   isEnglish: false,
@@ -30,6 +28,8 @@ export const isEnglishLang = writable(false);
 // export const isEnglish = writable(localStorage.getItem('isEnglish') || false);
 // isEnglish.subscribe((val) => localStorage.setItem('isEnglish', val));
 const store = writable(localStorage.getItem('store') || '');
+
+export const allSubjectsStore = writable(allSubjects);
 
 store.subscribe((val) => localStorage.setItem('store', val));
 // i18n.subscribe((value) => (value ? { ...en } : { ...vi }));

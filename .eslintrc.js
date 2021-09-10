@@ -14,5 +14,6 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
+  plugins: ['svelte3'],
   rules: { 'import/no-duplicates': 0 },
 };

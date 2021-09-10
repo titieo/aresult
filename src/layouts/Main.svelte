@@ -1,6 +1,7 @@
 <script>
   import { sideBarVisibility, avatar, isEnglishLang } from './stores.js';
-  //   import Banner from './Banner.svelte';
+  import Picture from '../components/Picture.svelte';
+  import Banner from './Banner.svelte';
   //   import Details from './Details.svelte';
   //   import Schedule from './Schedule.svelte';
 
@@ -48,14 +49,19 @@
   "
   >
     <picture class="mr-4 max-w-md row-span-full">
-      <source srcset={$avatar.webp} type="image/webp" />
-      <source srcset={$avatar.png} type="image/png" />
+      <source srcset={`${$avatar}.webp`} type="image/webp" />
+      <source srcset={`${$avatar}.png`} type="image/png" />
       <img
         class="mx-auto mask mask-squircle h-32"
-        src={$avatar.png}
+        src={`${$avatar}.png`}
         alt="Dzịt vàng đáng yêu"
       />
     </picture>
+    <!-- pict = 'cat',
+    alt = 'cat',
+    pictureClass,
+    imgClass; -->
+    <!-- <Picture bind:pict={$avatar} bind:pictureClass={"mr-4 max-w-md row-span-full"}/> -->
     <h2 class="self-center">
       <span class="gradient-text" x-text="data.grade">Lớp</span>
       <span>10</span>
@@ -78,12 +84,12 @@
       "
         x-text="items.average"
       >
-        __.__
+        -:-
       </figcaption>
     </figure>
   </header>
-  <!--
+
   <Banner />
-  <Schedule />
+  <!--<Schedule />
   <Details /> -->
 </main>

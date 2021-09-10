@@ -1,9 +1,9 @@
 <script>
-  import Bodybg from './components/Bodybg.svelte';
-  import Header from './components/Header.svelte';
-  import Main from './components/Main.svelte';
-  import Sidebar from './components/Sidebar.svelte';
-  import Footer from './components/Footer.svelte';
+  import Bodybg from './layouts/Bodybg.svelte';
+  import Header from './layouts/Header.svelte';
+  import Main from './layouts/Main.svelte';
+  import Sidebar from './layouts/Sidebar.svelte';
+  import Footer from './layouts/Footer.svelte';
 </script>
 
 <Bodybg />
