@@ -20,36 +20,37 @@
     i18n,
     theme;
 
-  $: switchTheme = theme === 'dark' ? 'light' : 'dark';
-  //   $: document.body.className = theme; // "dark" or "light"
-
-  const changeTheme = function () {
-    theme = switchTheme;
-  };
-
   isEnglish.subscribe((val) => {
     i18n = val ? en : vi;
   });
 
   function handleEscape(e) {
-    console.log(e.keyCode);
     if (e.keyCode === 27) {
       if (showSidebar) {
         showSidebar = false;
       } else {
         window.location.href = '#';
       }
-      console.log(e.keyCode);
     }
   }
-</script>
 
-<!-- <DarkMode bind:theme /> -->
+  $: changeTheme = theme === 'dark' ? 'light' : 'dark';
+  $: document.documentElement.lang = i18n.code;
+  $: document.documentElement.className = theme;
+</script>
 
 <svelte:window on:keydown={handleEscape} />
 
+<DarkMode bind:theme />
+
 <Bodybg />
-<Navbar bind:show={showSidebar} bind:isEnglish={$isEnglish} bind:i18n />
+<Navbar
+  bind:show={showSidebar}
+  bind:isEnglish={$isEnglish}
+  bind:i18n
+  bind:theme
+  bind:changeTheme
+/>
 <Main bind:i18n />
 <Sidebar bind:show={showSidebar} bind:isEnglish={$isEnglish} bind:i18n />
 <Footer />

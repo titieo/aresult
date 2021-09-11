@@ -6,7 +6,7 @@ export default defineConfig({
   darkMode: 'class', // or 'media' or 'class'
   //   attributify: true,
   extract: {
-    include: ['src/**/*.{svelte,html,js,css}'],
+    include: ['src/**/*.{svelte,html,js,css,json}'],
     exclude: ['node_modules', '.git'],
   },
   theme: {

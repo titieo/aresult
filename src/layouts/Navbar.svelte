@@ -3,6 +3,7 @@
   export let show = false;
   export let i18n,
     isEnglish = false;
+  export let theme, changeTheme;
 </script>
 
 <header
@@ -35,15 +36,19 @@
   <button
     class="w-14 h-10"
     aria-label="Switch language"
-    on:click={() => ((isEnglish = !isEnglish), console.log(isEnglish, i18n))}
+    on:click={() => (isEnglish = !isEnglish)}
   >
     <!-- on:click={changeLanguage} -->
     <img alt={i18n.key} class="max-w-full max-h-full" src={`${i18n.key}.svg`} />
     <!-- src="`${langCode()}.svg`" -->
   </button>
-  <button class="cursor-pointer text-4xl" aria-label="Switch theme">
+  <button
+    class="cursor-pointer text-4xl"
+    aria-label="Switch theme"
+    on:click={changeTheme}
+  >
     <!-- on:click={changeTheme} @click="isDarkMode = ! isDarkMode" -->
-    <i class={`uil`} />
+    <i class={`uil ${theme === 'dark' ? 'uil-moon' : 'uil-sun'}`} />
     <!-- :class="isDarkMode ? 'uil-moon' : 'uil-sun'" -->
   </button>
   <!-- <i class="uil uil-adjust-half"></i> -->

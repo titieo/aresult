@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<html
-  class="antialiased <md:text-[80%] scrollbar-primary"
-  x-data="{...i18n(), isDarkMode:$persist(false)}"
-  :class="isDarkMode ? 'dark' : 'light'"
-  :lang="lang().code"
-  @keydown.escape="$store.showSideBar ? () => {$store.showSideBar = false} : () => {window.location.href='#'}"
->
+<html class="" lang="en-US">
   <!-- class="antialiased <md:text-[90%] <sm:text-[80%]" -->
   <head>
     <meta charset="UTF-8" />
@@ -30,7 +24,6 @@
       rel="stylesheet"
     />
     <meta name="author" content="<%- author %>" />
-    <!-- <meta name="author" content="loctran016" /> -->
     <meta name="description" content="loctran016 Personal Blog" />
   </head>
   <body
