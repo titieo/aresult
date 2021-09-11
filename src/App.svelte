@@ -1,13 +1,15 @@
 <script>
   import Bodybg from './layouts/Bodybg.svelte';
-  import Header from './layouts/Header.svelte';
+  import Navbar from './layouts/Navbar.svelte';
   import Main from './layouts/Main.svelte';
   import Sidebar from './layouts/Sidebar.svelte';
   import Footer from './layouts/Footer.svelte';
+
+  let showSidebar = false;
 </script>
 
 <Bodybg />
-<Header />
+<Navbar bind:show={showSidebar} />
 <Main />
-<Sidebar />
+<Sidebar bind:show={showSidebar} />
 <Footer />

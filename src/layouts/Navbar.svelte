@@ -1,23 +1,6 @@
 <script>
-  import { sideBarVisibility, avatar, isEnglishLang } from './stores.js';
-  let showSideBar, isEnglish;
-
-  const unsubSideBar = sideBarVisibility.subscribe((value) => {
-    showSideBar = value;
-  });
-
-  const unsubLang = isEnglishLang.subscribe((value) => {
-    isEnglish = value;
-  });
-
-  function changeLanguage() {
-    isEnglish.update((n) => (n = !isEnglish));
-    console.log(isEnglish);
-  }
-
-  function toggleSideBar() {
-    sideBarVisibility.update((n) => (n = true));
-  }
+  //   import { isEnglishLang } from './stores.js';
+  export let show = false;
 </script>
 
 <header
@@ -38,7 +21,7 @@
         space-x-5
       "
 >
-  <div class="nav-icon" class:open={showSideBar} on:click={toggleSideBar}>
+  <div class="nav-icon" class:open={show} on:click={() => (show = !show)}>
     <span />
     <span />
     <span />
@@ -47,11 +30,8 @@
   <h1 class="!mr-auto font-serif font-bold text-gray-700 dark:text-gray-200">
     <a href="#" x-text="data.home">Trang chủ</a>
   </h1>
-  <button
-    on:click={changeLanguage}
-    class="w-14 h-10"
-    aria-label="Switch language"
-  >
+  <button class="w-14 h-10" aria-label="Switch language">
+    <!-- on:click={changeLanguage} -->
     <img alt="langCode()" class="max-w-full max-h-full" />
     <!-- src="`${langCode()}.svg`" -->
   </button>

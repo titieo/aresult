@@ -1,20 +1,18 @@
 <script>
-  import { sideBarVisibility, avatar, isEnglishLang } from './stores.js';
-  let showSideBar;
+  import { avatar, isEnglishLang } from './stores.js';
+  //   let showSideBar;
+  export let show = false;
 
-  const unsubSideBar = sideBarVisibility.subscribe((value) => {
-    showSideBar = value;
-  });
   function changeLanguage() {
     isEnglishLang.update((n) => (n = !isEnglishLang));
   }
 
   function hideSideBar() {
-    sideBarVisibility.update((n) => (n = true));
+    show = false;
   }
 </script>
 
-<aside class="fixed-full z-30" class:pointer-events-none={!showSideBar}>
+<aside class="fixed-full z-30" class:pointer-events-none={!show}>
   <div
     class="
           w-full
@@ -28,8 +26,8 @@
           duration-300
         "
     on:click={hideSideBar}
-    class:bg-opacity-50={showSideBar}
-    class:bg-opacity-0={!showSideBar}
+    class:bg-opacity-50={show}
+    class:bg-opacity-0={!show}
   >
     <!-- "$store.showSideBar && 'bg-opacity-50' || 'bg-opacity-0'" -->
   </div>
@@ -46,7 +44,7 @@
           transform-gpu
           pb-2
         "
-    class:-translate-x-full={!showSideBar}
+    class:-translate-x-full={!show}
   >
     <figure
       class="
