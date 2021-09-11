@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
-import { allSubjects, sunData, moonData } from '../data';
-import en from '../i18n/en.json';
-import vi from '../i18n/vi.json';
 import { writable } from 'svelte/store';
-let subjectKeys, i18n;
+import { allSubjects } from '../data';
+
+let subjectKeys;
 const toBoolean = (value) => {
   if (typeof value === 'string') {
     return value === 'true';
@@ -13,21 +12,6 @@ const toBoolean = (value) => {
 };
 
 export const avatar = writable('avatar');
-
-// export const i18n = writable({
-//   isEnglish: false,
-//   // langCode() {
-//   //   return isEnglish ? 'en' : 'vi';
-//   // },
-//   // lang() {
-//   // //   data = isEnglish ? { ...en } : { ...vi };
-//   //   return isEnglish ? { ...en } : { ...vi };
-//   // },
-// });
-// export const isEnglishLang = writable(false);
-// export const isEnglish = writable(localStorage.getItem('isEnglish') || false);
-// isEnglish.subscribe((val) => localStorage.setItem('isEnglish', val));
-const store = writable(localStorage.getItem('store') || '');
 
 export const allSubjectsStore = writable(allSubjects);
 export const isEnglish = writable(false);
@@ -43,6 +27,8 @@ allSubjectsStore.subscribe((val) => {
   });
   subjectKeys = filtered;
 });
-export { subjectKeys };
+
+const store = writable(localStorage.getItem('store') || '');
 store.subscribe((val) => localStorage.setItem('store', val));
-// i18n.subscribe((value) => (value ? { ...en } : { ...vi }));
+
+export { subjectKeys };

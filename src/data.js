@@ -104,8 +104,6 @@ allSubjects.calcAverage = function () {
 };
 allSubjects.calcAverage();
 
-export const en = 0;
-export const vi = 0;
 mergeData(
   {
     first: {
@@ -118,12 +116,12 @@ mergeData(
   allSubjects
 );
 
-export const icon = {
+const icon = {
   sun: `<i class="uil uil-sun"></i>`,
   moon: `<i class="uil uil-moon"></i>`,
 };
 
-export const sunData = [
+const sunData = [
   [icon.sun, '1', 'Chào cờ', 'Hoá học', 'Tin học', 'Hình học', 'Đại số', ''],
   [
     '',
@@ -140,7 +138,7 @@ export const sunData = [
   ['', '5', 'Đại số', 'Vật lí', 'GDCD', 'Địa lí', '', 'Lịch sử'],
 ];
 
-export const moonData = [
+const moonData = [
   [icon.moon, '1', 'Ngữ văn', '', 'Hoá học', '', 'Anh văn', ''],
   ['', '2', 'Ngữ văn', '', 'GDQP-AN', '', 'Thể dục', ''],
   ['', '3', 'Ngữ văn', '', 'Ngữ văn', '', 'Thể dục', ''],
@@ -148,4 +146,20 @@ export const moonData = [
   ['', '5', '', '', '', '', '', ''],
 ];
 
-export { allSubjects };
+const cells = {
+  head: ['Buổi', 'Tiết', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'],
+  //   head: [
+  //     'Session',
+  //     'Period',
+  //     'Monday',
+  //     'Tuesday',
+  //     'Wednesday',
+  //     'Thursday',
+  //     'Friday',
+  //     'Saturday',
+  //   ],
+  sun: sunData,
+  moon: moonData,
+};
+
+export { allSubjects, cells };

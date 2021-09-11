@@ -42,8 +42,8 @@
     <!-- src="`${langCode()}.svg`" -->
   </button>
   <button class="cursor-pointer text-4xl" aria-label="Switch theme">
-    <!-- @click="isDarkMode = ! isDarkMode" -->
-    <i class="uil" />
+    <!-- on:click={changeTheme} @click="isDarkMode = ! isDarkMode" -->
+    <i class={`uil`} />
     <!-- :class="isDarkMode ? 'uil-moon' : 'uil-sun'" -->
   </button>
   <!-- <i class="uil uil-adjust-half"></i> -->

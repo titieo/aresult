@@ -4,7 +4,7 @@
   import Banner from './Banner.svelte';
   import Details from './Details.svelte';
   export let i18n;
-  //   import Schedule from './Schedule.svelte';
+  import Schedule from './Schedule.svelte';
 </script>
 
 <main
@@ -77,6 +77,6 @@
   </header>
 
   <Banner bind:i18n />
-  <!-- <Schedule /> -->
+  <Schedule bind:i18n />
   <Details />
 </main>

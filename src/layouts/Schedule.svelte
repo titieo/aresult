@@ -1,3 +1,10 @@
+<script>
+  //   import { each } from 'svelte/internal';
+  import { cells } from '../data';
+  //   import Header from './Header.svelte';
+  export let i18n;
+</script>
+
 <section
   id="schedule"
   class="
@@ -27,8 +34,8 @@ grid grid-rows-[auto,1fr]
 "
   >
     <a href="#" class="uil uil-arrow-left text-5xl cursor-pointer" />
-    <h2 x-text="data.schedule" class="text-2xl font-serif font-bold">
-      Thời khoá biểu
+    <h2 class="text-2xl font-serif font-bold">
+      {i18n.schedule}
     </h2>
   </header>
   <div
@@ -49,9 +56,8 @@ grid grid-rows-[auto,1fr]
     >
       <thead class="sticky top-0 bg-blue-500 text-white border-none">
         <tr class="border-none">
-          <template x-for="i in cells.head">
+          {#each cells.head as i}
             <th
-              x-text="i"
               class="
             border
             py-4
@@ -63,33 +69,33 @@ grid grid-rows-[auto,1fr]
             text-lg
             whitespace-nowrap
           "
-              :data-column-id="i"
-            />
-          </template>
+              data-column-id={i}>{i}</th
+            >
+          {/each}
         </tr>
       </thead>
       <tbody class="border-none">
-        <template x-for="item in cells.sun.length">
+        {#each cells.sun as item}
           <tr class="border-none">
-            <template x-for="(cell,index) in cells.sun[item-1]">
+            {#each item as cell, index}
+              <!-- <template x-for="(cell,index) in cells.sun[item-1]"> -->
               <td
-                class="
-              border
-              first-of-type:border-l-0
-              last-of-type:border-r-0
-            "
-                x-html="cell"
-                :rowspan="index === 0 && cell && cells.sun.length"
-                :class="(index === 0 && cell) ? 'text-7xl' : 'py-1.5 px-2.5'"
-                x-show="index !== 0 || cell"
-              />
-              <!-- text-6xl -->
-            </template>
+                rowspan={index === 0 && cell && cells.sun.length}
+                class={`border
+                    first-of-type:border-l-0
+                    last-of-type:border-r-0 ${
+                      index === 0 && cell ? 'text-7xl' : 'py-1.5 px-2.5'
+                    } ${index !== 0 || cell || 'hidden'}`}
+              >
+                {@html cell}</td
+              >
+            {/each}
           </tr>
-        </template>
+        {/each}
+
         <tr>
           <td
-            :colspan="cells.head.length"
+            colspan={cells.head.length}
             class="
           border
           py-2.5
@@ -104,23 +110,23 @@ grid grid-rows-[auto,1fr]
             🎉🎊🥳 Ăn trưa 🎉🎊🥳
           </td>
         </tr>
-        <template x-for="item in cells.moon.length">
-          <tr>
-            <template x-for="(cell,index) in cells.moon[item-1]">
+
+        {#each cells.moon as item}
+          <tr class="border-none">
+            {#each item as cell, index}
               <td
-                class="
-              border
-              first-of-type:border-l-0
-              last-of-type:border-r-0
-            "
-                x-html="cell"
-                :rowspan="index === 0 && cell && cells.moon.length"
-                x-show="index !== 0 || cell"
-                :class="(index === 0 && cell) ? 'text-7xl' : 'py-1.5 px-2.5'"
-              />
-            </template>
+                rowspan={index === 0 && cell && cells.moon.length}
+                class={`border
+                  first-of-type:border-l-0
+                  last-of-type:border-r-0 ${
+                    index === 0 && cell ? 'text-7xl' : 'py-1.5 px-2.5'
+                  } ${index !== 0 || cell || 'hidden'}`}
+              >
+                {@html cell}</td
+              >
+            {/each}
           </tr>
-        </template>
+        {/each}
       </tbody>
     </table>
   </div>
