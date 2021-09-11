@@ -1,6 +1,5 @@
 <script>
   // Import 3rd Party Lib
-  import DarkMode from 'svelte-dark-mode';
 
   // Import Data
   import vi from './i18n/vi.json';
@@ -17,8 +16,7 @@
   //   Declare States
 
   let showSidebar = false,
-    i18n,
-    theme;
+    i18n;
 
   isEnglish.subscribe((val) => {
     i18n = val ? en : vi;
@@ -34,23 +32,13 @@
     }
   }
 
-  $: changeTheme = theme === 'dark' ? 'light' : 'dark';
   $: document.documentElement.lang = i18n.code;
-  $: document.documentElement.className = theme;
 </script>
 
 <svelte:window on:keydown={handleEscape} />
 
-<DarkMode bind:theme />
-
 <Bodybg />
-<Navbar
-  bind:show={showSidebar}
-  bind:isEnglish={$isEnglish}
-  bind:i18n
-  bind:theme
-  bind:changeTheme
-/>
+<Navbar bind:show={showSidebar} bind:isEnglish={$isEnglish} bind:i18n />
 <Main bind:i18n />
 <Sidebar bind:show={showSidebar} bind:isEnglish={$isEnglish} bind:i18n />
 <Footer />

@@ -1,9 +1,10 @@
 <script>
+  import DarkModeToggler from '../components/DarkModeToggler.svelte';
   //   import { isEnglishLang } from './stores.js';
   export let show = false;
   export let i18n,
     isEnglish = false;
-  export let theme, changeTheme;
+  //   export let theme, changeTheme;
 </script>
 
 <header
@@ -42,15 +43,15 @@
     <img alt={i18n.key} class="max-w-full max-h-full" src={`${i18n.key}.svg`} />
     <!-- src="`${langCode()}.svg`" -->
   </button>
-  <button
+  <DarkModeToggler />
+  <!-- <button
     class="cursor-pointer text-4xl"
     aria-label="Switch theme"
     on:click={changeTheme}
   >
-    <!-- on:click={changeTheme} @click="isDarkMode = ! isDarkMode" -->
     <i class={`uil ${theme === 'dark' ? 'uil-moon' : 'uil-sun'}`} />
-    <!-- :class="isDarkMode ? 'uil-moon' : 'uil-sun'" -->
-  </button>
+
+  </button> -->
   <!-- <i class="uil uil-adjust-half"></i> -->
 </header>
 <!-- Header End -->

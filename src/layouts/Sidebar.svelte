@@ -1,4 +1,5 @@
 <script>
+  import DarkModeToggler from '../components/DarkModeToggler.svelte';
   import { avatar } from './stores.js';
   export let show = false,
     i18n,
@@ -200,12 +201,7 @@
           class="max-w-full max-h-full"
         />
       </button>
-      <button class="cursor-pointer text-4xl" aria-label="Switch theme">
-        <!-- on:click={"isDarkMode = ! isDarkMode"} -->
-        <i class="uil">
-          <!-- :class="isDarkMode ? 'uil-moon' : 'uil-sun'" -->
-        </i>
-      </button>
+      <DarkModeToggler />
     </div>
   </nav>
 </aside>
