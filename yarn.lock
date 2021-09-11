@@ -5,20 +5,6 @@ __metadata:
   version: 4
   cacheKey: 7
 
-"@alpinejs/intersect@npm:^3.3.2":
-  version: 3.3.2
-  resolution: "@alpinejs/intersect@npm:3.3.2"
-  checksum: 614cfdeeac12256321a8066bae9fb08446eba96aa14848fa0bd2078c8523092cea8c1732aea60b1d9da241e6b52762d18c0728ed3fb28cf1ce85c124577a007b
-  languageName: node
-  linkType: hard
-
-"@alpinejs/persist@npm:^3.3.2":
-  version: 3.3.2
-  resolution: "@alpinejs/persist@npm:3.3.2"
-  checksum: d40c896bc2d98c1f1b900aa55fbe535910424d9ed512e9d85c378191a411424756cec47f37ce597dfe3934a8edf0237c410d545569b520f31a1b0ba816cc8c44
-  languageName: node
-  linkType: hard
-
 "@antfu/utils@npm:^0.2.4":
   version: 0.2.4
   resolution: "@antfu/utils@npm:0.2.4"
@@ -1931,6 +1917,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sveltejs/vite-plugin-svelte@npm:^1.0.0-next.22":
+  version: 1.0.0-next.22
+  resolution: "@sveltejs/vite-plugin-svelte@npm:1.0.0-next.22"
+  dependencies:
+    "@rollup/pluginutils": ^4.1.1
+    debug: ^4.3.2
+    kleur: ^4.1.4
+    magic-string: ^0.25.7
+    require-relative: ^0.8.7
+    svelte-hmr: ^0.14.7
+  peerDependencies:
+    diff-match-patch: ^1.0.5
+    svelte: ^3.34.0
+    vite: ^2.5.3
+  peerDependenciesMeta:
+    diff-match-patch:
+      optional: true
+  checksum: 236d675c853558c373bc33ce64985948f6e71093846b0d79586a9b37082563966a7de63505630790d0d0b2b9a3ee336f697accb0ad4dd6a57f94e7c1d3588eae
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:1":
   version: 1.1.2
   resolution: "@tootallnate/once@npm:1.1.2"
@@ -2038,22 +2045,6 @@ __metadata:
   peerDependencies:
     vite: ^2.0.0
   checksum: 6d887f771a75972d80b95395e1b099b180771490eab325dcfaee76cf7bf3228f14249f1b16732d4de66a53e5ef5a2af0923859a33f711126c84dfcd877e82fdf
-  languageName: node
-  linkType: hard
-
-"@vue/reactivity@npm:^3.0.2":
-  version: 3.2.4
-  resolution: "@vue/reactivity@npm:3.2.4"
-  dependencies:
-    "@vue/shared": 3.2.4
-  checksum: 4e910364447256e518349e30c51a2f9919bb0775be0f77e208eee5b39434c03a3e64c432baccf3569334fa868e3d8ad2fa62784821d90bcd66f84d354f728f19
-  languageName: node
-  linkType: hard
-
-"@vue/shared@npm:3.2.4":
-  version: 3.2.4
-  resolution: "@vue/shared@npm:3.2.4"
-  checksum: 99f7b3093bd87110988b2c32e0c07a09bfcde0204e4338babd091be5d4129169ac72f3ec3b31e435d927909d6077cfea218e83187c37fd8dfd2926af7d8211d9
   languageName: node
   linkType: hard
 
@@ -2218,15 +2209,6 @@ __metadata:
     require-from-string: ^2.0.2
     uri-js: ^4.2.2
   checksum: 9969d6c0e6b601c4a1254d01acf1ccd419e5dabeb4651f2fbe7269d4ae5e30c281af758839a0cbf6f2bf4830600fa8bc909232af634b97c4ceb798f9a2b65cb4
-  languageName: node
-  linkType: hard
-
-"alpinejs@npm:^3.3.2":
-  version: 3.3.2
-  resolution: "alpinejs@npm:3.3.2"
-  dependencies:
-    "@vue/reactivity": ^3.0.2
-  checksum: c3e56dd542d9c0f2d36d3f99b98b0570ba56bbd2268cfc0e647ea602108b120d8aa98c0f5f6969906ee117f2717c4755a056a89cdd778d9d4a50d9cacc20d0df
   languageName: node
   linkType: hard
 
@@ -4005,6 +3987,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-svelte3@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "eslint-plugin-svelte3@npm:3.2.1"
+  peerDependencies:
+    eslint: ">=6.0.0"
+    svelte: ^3.2.0
+  checksum: 04769e87e85dd34d1af0cdc81286ab2840c3178ad7e80d5ff75f343d304d5e2b08d7776e1d175646472bdcd570911efcef32b56dd4244ddb30243c04a2be0ded
+  languageName: node
+  linkType: hard
+
 "eslint-scope@npm:^5.1.1":
   version: 5.1.1
   resolution: "eslint-scope@npm:5.1.1"
@@ -5565,6 +5557,13 @@ fsevents@~2.3.2:
   version: 6.0.3
   resolution: "kind-of@npm:6.0.3"
   checksum: 5de5d6577796af87a983199d6350ed41c670abec4a306cc43ca887c1afdbd6b89af9ab00016e3ca17eb7ad89ebfd9bb817d33baa89f855c6c95398a8b8abbf08
+  languageName: node
+  linkType: hard
+
+"kleur@npm:^4.1.4":
+  version: 4.1.4
+  resolution: "kleur@npm:4.1.4"
+  checksum: 18e52c52a0138448dea0137d09ace853e096f1bbc32b99d8781254258b892214718f5f7c2bc25f25d5fb84b4086bca465a4c0b7562e27ae3a25116f77ea6436f
   languageName: node
   linkType: hard
 
@@ -7249,6 +7248,16 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"prettier-plugin-svelte@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "prettier-plugin-svelte@npm:2.4.0"
+  peerDependencies:
+    prettier: ^1.16.4 || ^2.0.0
+    svelte: ^3.2.0
+  checksum: fb1d76c87824e4cc55dfdfddbe99679729f4aecde94857fe7c0c91a85e01e3c604e4c24013f8aff0e126e2951645ada6d2c1155b9142bbe6579cd5bc0cc8d72b
+  languageName: node
+  linkType: hard
+
 "prettier@npm:^2.4.0":
   version: 2.4.0
   resolution: "prettier@npm:2.4.0"
@@ -7570,6 +7579,13 @@ fsevents@~2.3.2:
   version: 2.0.0
   resolution: "require-main-filename@npm:2.0.0"
   checksum: 8d3633149a7fef67d14613146247137fe1dc4cc969bf2d1adcd40e3c28056de503229f41e78cba5efebad3a223cbfb4215fd220d879148df10c6d9a877099dbd
+  languageName: node
+  linkType: hard
+
+"require-relative@npm:^0.8.7":
+  version: 0.8.7
+  resolution: "require-relative@npm:0.8.7"
+  checksum: d07306c1ebfae4aaebeba64ff06ac453483fef1a18ee7bd2ef0460a94020f32f5135291ee0ae579ae7dde1d2d4bdc7bf3731fccb03fda937e07485245fbaadf3
   languageName: node
   linkType: hard
 
@@ -8443,6 +8459,38 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"svelte-dark-mode@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "svelte-dark-mode@npm:2.0.0"
+  checksum: 41a41518247ac7b6e4325995dbb6b9c84adee547c645cb5333cab11223ab0355e69909157cd60119cc9038020528eec17e766b8f4e986242bd48cdc3dac7a99b
+  languageName: node
+  linkType: hard
+
+"svelte-hmr@npm:^0.14.7":
+  version: 0.14.7
+  resolution: "svelte-hmr@npm:0.14.7"
+  peerDependencies:
+    svelte: ">=3.19.0"
+  checksum: acf8f8a080cae091a270ab909766116c19f1bb6654326a2c724661c3550ca3f0a35ba371a19cc4ff50c016f81beb05d8f5976478a6285978590e0a9503443815
+  languageName: node
+  linkType: hard
+
+"svelte-local-storage-store@npm:^0.2.4":
+  version: 0.2.4
+  resolution: "svelte-local-storage-store@npm:0.2.4"
+  peerDependencies:
+    svelte: ^3.38.2
+  checksum: f997d7ab7f42e25e71f9b20653d22b84929bcbe6ddce1bf0552be5d29b9149d92fe35375b3fc88c6bac090a55532dbc8618ef836a4fb1b8a059572aeeb035eed
+  languageName: node
+  linkType: hard
+
+"svelte@npm:^3.42.4":
+  version: 3.42.4
+  resolution: "svelte@npm:3.42.4"
+  checksum: c5bd6a6c4ade95c22c907019250b2dfe600685504ce973fd2468e5a2bfe4b75790d4c6d6452c0c35947f868f7d8a45e28631c49d5945c236d3cac105a403b534
+  languageName: node
+  linkType: hard
+
 "svg-tags@npm:^1.0.0":
   version: 1.0.0
   resolution: "svg-tags@npm:1.0.0"
@@ -8530,15 +8578,13 @@ fsevents@~2.3.2:
   version: 0.0.0-use.local
   resolution: "template@workspace:."
   dependencies:
-    "@alpinejs/intersect": ^3.3.2
-    "@alpinejs/persist": ^3.3.2
     "@commitlint/cli": ^13.1.0
     "@commitlint/config-conventional": ^13.1.0
     "@iconscout/unicons": ^4.0.0
     "@squoosh/lib": ^0.4.0
+    "@sveltejs/vite-plugin-svelte": ^1.0.0-next.22
     "@vitejs/plugin-legacy": ^1.5.3
     "@windicss/plugin-scrollbar": ^1.2.3
-    alpinejs: ^3.3.2
     autoprefixer: ^10.3.4
     canvas-confetti: ^1.4.0
     concurrently: ^6.2.1
@@ -8549,17 +8595,22 @@ fsevents@~2.3.2:
     eslint-plugin-import: ^2.24.2
     eslint-plugin-node: ^11.1.0
     eslint-plugin-promise: ^5.1.0
+    eslint-plugin-svelte3: ^3.2.1
     format-package: ^6.1.0
     husky: ^7.0.2
     lint-staged: ^11.1.2
     postcss: ^8.3.6
     postcss-preset-env: ^6.7.0
     prettier: ^2.4.0
+    prettier-plugin-svelte: ^2.4.0
     shx: ^0.3.3
     stylelint: ^13.13.1
     stylelint-a11y: ^1.2.3
     stylelint-config-prettier: ^8.0.2
     stylelint-config-standard: ^22.0.0
+    svelte: ^3.42.4
+    svelte-dark-mode: ^2.0.0
+    svelte-local-storage-store: ^0.2.4
     vite: ^2.5.6
     vite-plugin-html: ^2.1.0
     vite-plugin-pwa: ^0.11.2

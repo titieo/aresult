@@ -2,7 +2,22 @@
 
 html {
   scroll-behavior: smooth;
+  @apply antialiased <md:text-[80%];
+
+  /* scrollbar-primary */
+
+  @apply scrollbar-thin
+      scrollbar-track-transparent scrollbar-thumb-rounded-full hover:scrollbar-thumb-cool-gray-300;
+
+  --scrollbar-opacity: 0.5;
+  --scrollbar-thumb: rgb(229, 231, 235, var(--scrollbar-opacity));
 }
+
+/* stylelint-disable */
+html::-webkit-scrollbar-thumb:hover {
+  --scrollbar-thumb: rgb(209, 213, 219, var(--scrollbar-opacity));
+}
+/* stylelint-enable */
 
 table,
 th,
@@ -23,17 +38,14 @@ body > header.active {
   @apply scrollbar-thin
   scrollbar-track-transparent scrollbar-thumb-rounded-full hover:scrollbar-thumb-cool-gray-300;
 
-  /* @apply scrollbar-thumb-cool-gray-200 hover:scrollbar-thumb-cool-gray-300; */
-
   --scrollbar-opacity: 0.5;
   --scrollbar-thumb: rgb(229, 231, 235, var(--scrollbar-opacity));
 }
-/* stylelint-disable */
 
+/* stylelint-disable */
 .scrollbar-primary::-webkit-scrollbar-thumb:hover {
   --scrollbar-thumb: rgb(209, 213, 219, var(--scrollbar-opacity));
 }
-
 /* stylelint-enable */
 
 .card--trans {
