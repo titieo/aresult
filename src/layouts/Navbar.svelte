@@ -1,6 +1,8 @@
 <script>
   //   import { isEnglishLang } from './stores.js';
   export let show = false;
+  export let i18n,
+    isEnglish = false;
 </script>
 
 <header
@@ -28,11 +30,15 @@
     <span />
   </div>
   <h1 class="!mr-auto font-serif font-bold text-gray-700 dark:text-gray-200">
-    <a href="#" x-text="data.home">Trang chủ</a>
+    <a href="#">{i18n.home}</a>
   </h1>
-  <button class="w-14 h-10" aria-label="Switch language">
+  <button
+    class="w-14 h-10"
+    aria-label="Switch language"
+    on:click={() => ((isEnglish = !isEnglish), console.log(isEnglish, i18n))}
+  >
     <!-- on:click={changeLanguage} -->
-    <img alt="langCode()" class="max-w-full max-h-full" />
+    <img alt={i18n.key} class="max-w-full max-h-full" src={`${i18n.key}.svg`} />
     <!-- src="`${langCode()}.svg`" -->
   </button>
   <button class="cursor-pointer text-4xl" aria-label="Switch theme">

@@ -11,7 +11,7 @@ const firstLetterUpper = function (theString) {
 
 const mergeData = function (template, custom) {
   for (const i in template) {
-    console.log(i);
+    // console.log(i);
     if (!custom[i]) custom[i] = template[i];
   }
 };

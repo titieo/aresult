@@ -3,6 +3,7 @@
   //   import Picture from '../components/Picture.svelte';
   import Banner from './Banner.svelte';
   import Details from './Details.svelte';
+  export let i18n;
   //   import Schedule from './Schedule.svelte';
 </script>
 
@@ -49,11 +50,11 @@
     imgClass; -->
     <!-- <Picture bind:pict={$avatar} bind:pictureClass={"mr-4 max-w-md row-span-full"}/> -->
     <h2 class="self-center">
-      <span class="gradient-text" x-text="data.grade">Lớp</span>
+      <span class="gradient-text">{i18n.grade}</span>
       <span>10</span>
     </h2>
     <h2 class="self-center">
-      <span class="gradient-text" x-text="data.semester">Học kì</span>
+      <span class="gradient-text">{i18n.semester}</span>
       <span>I</span>
     </h2>
     <figure class="score row-span-full w-40 relative">
@@ -75,7 +76,7 @@
     </figure>
   </header>
 
-  <Banner />
+  <Banner bind:i18n />
   <!-- <Schedule /> -->
   <Details />
 </main>

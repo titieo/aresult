@@ -1,5 +1,6 @@
 <script>
   import { allSubjectsStore, subjectKeys } from './stores';
+  export let i18n;
 </script>
 
 <section
@@ -60,7 +61,7 @@
     "
         x-text="fullName[langCode()]"
       >
-        {$allSubjectsStore[i].fullName.vi}
+        {$allSubjectsStore[i].fullName[i18n.key]}
       </h3>
       <span
         class="

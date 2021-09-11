@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { allSubjects, vi, en, sunData, moonData } from '../data';
+import { allSubjects, sunData, moonData } from '../data';
+import en from '../i18n/en.json';
+import vi from '../i18n/vi.json';
 import { writable } from 'svelte/store';
-let subjectKeys;
+let subjectKeys, i18n;
 const toBoolean = (value) => {
   if (typeof value === 'string') {
     return value === 'true';
@@ -28,6 +30,8 @@ export const avatar = writable('avatar');
 const store = writable(localStorage.getItem('store') || '');
 
 export const allSubjectsStore = writable(allSubjects);
+export const isEnglish = writable(false);
+
 allSubjectsStore.subscribe((val) => {
   const filtered = Object.keys(val).filter((i) => {
     return (

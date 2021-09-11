@@ -1,6 +1,8 @@
 <script>
   import { avatar } from './stores.js';
-  export let show = false;
+  export let show = false,
+    i18n,
+    isEnglish = false;
 
   function hideSideBar() {
     show = false;
@@ -74,9 +76,11 @@
       </picture>
 
       <div class="flex space-x-2 order-1">
-        <p><span x-text="data.grade" class="font-bold">Lớp</span> 10</p>
         <p>
-          <span x-text="data.semester" class="font-bold">Học kì</span> I
+          <span x-text="data.grade" class="font-bold">{i18n.grade}</span> 10
+        </p>
+        <p>
+          <span x-text="data.semester" class="font-bold">{i18n.semester}</span> I
         </p>
       </div>
       <figcaption class="font-bold">Trần Tấn Lộc</figcaption>
@@ -104,7 +108,7 @@
           ><i class="uil uil-estate" /><span
             href="#"
             x-text="data.home"
-            on:click={hideSideBar}>Trang chủ</span
+            on:click={hideSideBar}>{i18n.home}</span
           ></a
         >
       </li>
@@ -128,7 +132,7 @@
       >
         <a href="#schedule" class="space-x-1 flex-grow" on:click={hideSideBar}
           ><i class="uil uil-schedule" /><span x-text="data.schedule"
-            >Thời khoá biểu</span
+            >{i18n.schedule}</span
           ></a
         >
       </li>
@@ -152,7 +156,7 @@
       >
         <a href="#" class="space-x-1 flex-grow" on:click={hideSideBar}
           ><i class="uil uil-setting" /><span x-text="data.setting"
-            >Cài đặt</span
+            >{i18n.setting}</span
           ></a
         >
       </li>
@@ -174,19 +178,27 @@
             "
       >
         <a href="<%- bugs %>" target="_blank" class="space-x-1 flex-grow"
-          ><i class="uil uil-bug" /><span x-text="data.bug">Góp ý</span></a
+          ><i class="uil uil-bug" /><span x-text="data.bug">{i18n.bug}</span></a
         >
       </li>
     </ul>
     <div class="border-t-2 text-center pt-1 flex-grow">
-      <span x-text="data.version">Phiên bản</span>
+      <span x-text="data.version">{i18n.version}</span>
       <!-- <span x-text="data.version">Phiên bản</span> <%- version %> -->
     </div>
     <div class="flex mx-3 items-center justify-center space-x-5">
-      <button class="w-14 h-10" aria-label="Switch language">
-        <!-- on:click={changeLanguage} -->
-        <img alt="langCode()" class="max-w-full max-h-full" />
-        <!-- src="`${langCode()}.svg`" -->
+      <button
+        class="w-14 h-10"
+        aria-label="Switch language"
+        on:click={() => {
+          isEnglish = !isEnglish;
+        }}
+      >
+        <img
+          alt={i18n.key}
+          src={`${i18n.key}.svg`}
+          class="max-w-full max-h-full"
+        />
       </button>
       <button class="cursor-pointer text-4xl" aria-label="Switch theme">
         <!-- on:click={"isDarkMode = ! isDarkMode"} -->
