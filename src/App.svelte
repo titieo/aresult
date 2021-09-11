@@ -5,7 +5,8 @@
   import Sidebar from './layouts/Sidebar.svelte';
   import Footer from './layouts/Footer.svelte';
 
-  let showSidebar = false;
+  let showSidebar = false,
+    isEnglish = false;
 </script>
 
 <Bodybg />

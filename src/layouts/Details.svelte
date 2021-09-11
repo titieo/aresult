@@ -1,10 +1,8 @@
 <script>
-  import { allSubjectsStore } from './stores';
+  import { allSubjectsStore, subjectKeys } from './stores';
 </script>
 
-{#each Object.keys($allSubjectsStore).filter((i) => {
-  return typeof this.items[i] === 'object' && i !== 'first' && i !== 'second' && i !== 'third';
-}) as i}
+{#each subjectKeys as i}
   <section
     class={`
         fixed-full
@@ -58,13 +56,12 @@
             lining-nums
             gradient-text
           "
-          x-text="items[i].average"
         >
-          -:-
+          {$allSubjectsStore[i].average || '-:-'}
         </figcaption>
       </figure>
     </header>
-    <template x-for="item in ['first','second','third']">
+    {#each ['first', 'second', 'third'] as item}
       <div
         class="
           mx-5
@@ -94,9 +91,9 @@
             "
           />
           <h3 x-text="items[item][langCode()]">Điểm</h3>
-          <!-- x-for="p in items[i][item]" -->
         </div>
-        <template x-for="p in items[i][item]">
+        {#each $allSubjectsStore[i][item] as p}
+          <!-- <template x-for="p in items[i][item]"> -->
           <figure
             class="
               score
@@ -139,12 +136,11 @@
                 -translate-y-0.5 -translate-x-5.5
                 lg:-translate-x-10.5 lg:-translate-y-1.5
               "
-              x-text="p"
             >
-              -:-
+              {p}
             </figcaption>
           </figure>
-        </template>
+        {/each}
       </div>
-    </template>
+    {/each}
   </section>{/each}

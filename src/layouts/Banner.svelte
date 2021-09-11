@@ -1,5 +1,5 @@
 <script>
-  import { allSubjectsStore } from './stores';
+  import { allSubjectsStore, subjectKeys } from './stores';
 </script>
 
 <section
@@ -13,11 +13,8 @@
     max-w-con
 "
 >
-  {#each Object.keys($allSubjectsStore).filter((i) => {
-    return typeof $allSubjectsStore[i] === 'object' && i !== 'first' && i !== 'second' && i !== 'third';
-  }) as i}
+  {#each subjectKeys as i}
     <a
-      x-data="items[i]"
       class={`rounded-lg
         shadow-md
         transform-gpu
@@ -72,11 +69,10 @@
       oldstyle-nums
       font-bold font-serif
       text-3xl
-    "
-        x-text="average">{$allSubjectsStore[i].average || '-:-'}</span
+    ">{$allSubjectsStore[i].average || '-:-'}</span
       >
       <div class="col-span-full mx-2 font-serif text-xs self-end font-light">
-        <i class="uil uil-user-circle mr-1" /><span x-text="teacher"
+        <i class="uil uil-user-circle mr-1" /><span
           >{$allSubjectsStore[i].teacher}</span
         >
       </div>

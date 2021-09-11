@@ -1,11 +1,6 @@
 <script>
-  import { avatar, isEnglishLang } from './stores.js';
-  //   let showSideBar;
+  import { avatar } from './stores.js';
   export let show = false;
-
-  function changeLanguage() {
-    isEnglishLang.update((n) => (n = !isEnglishLang));
-  }
 
   function hideSideBar() {
     show = false;
@@ -188,11 +183,7 @@
       <!-- <span x-text="data.version">Phiên bản</span> <%- version %> -->
     </div>
     <div class="flex mx-3 items-center justify-center space-x-5">
-      <button
-        class="w-14 h-10"
-        aria-label="Switch language"
-        on:click={changeLanguage}
-      >
+      <button class="w-14 h-10" aria-label="Switch language">
         <!-- on:click={changeLanguage} -->
         <img alt="langCode()" class="max-w-full max-h-full" />
         <!-- src="`${langCode()}.svg`" -->

@@ -1,23 +1,9 @@
 <script>
-  import { sideBarVisibility, avatar, isEnglishLang } from './stores.js';
-  import Picture from '../components/Picture.svelte';
+  import { avatar, allSubjectsStore } from './stores.js';
+  //   import Picture from '../components/Picture.svelte';
   import Banner from './Banner.svelte';
-  //   import Details from './Details.svelte';
+  import Details from './Details.svelte';
   //   import Schedule from './Schedule.svelte';
-
-  let showSideBar;
-
-  const unsubscribe = sideBarVisibility.subscribe((value) => {
-    showSideBar = value;
-  });
-
-  function changeLanguage() {
-    isEnglishLang.update((n) => (n = !isEnglishLang)); // logs '2'
-  }
-
-  function hideSideBar() {
-    sideBarVisibility.update((n) => (n = true));
-  }
 </script>
 
 <main
@@ -84,12 +70,12 @@
       "
         x-text="items.average"
       >
-        -:-
+        <!-- {$allSubjectsStore.average || '-:-'} --> -:-
       </figcaption>
     </figure>
   </header>
 
   <Banner />
-  <!--<Schedule />
-  <Details /> -->
+  <!-- <Schedule /> -->
+  <Details />
 </main>
