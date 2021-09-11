@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { writable } from 'svelte/store';
+import { writable as persist } from 'svelte-local-storage-store';
 import { allSubjects } from '../data';
 
 let subjectKeys;
@@ -14,7 +15,7 @@ const toBoolean = (value) => {
 export const avatar = writable('avatar');
 
 export const allSubjectsStore = writable(allSubjects);
-export const isEnglish = writable(false);
+export const isEnglish = persist('isEnglish', false);
 
 allSubjectsStore.subscribe((val) => {
   const filtered = Object.keys(val).filter((i) => {
@@ -27,8 +28,5 @@ allSubjectsStore.subscribe((val) => {
   });
   subjectKeys = filtered;
 });
-
-const store = writable(localStorage.getItem('store') || '');
-store.subscribe((val) => localStorage.setItem('store', val));
 
 export { subjectKeys };

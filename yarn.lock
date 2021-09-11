@@ -8475,6 +8475,15 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"svelte-local-storage-store@npm:^0.2.4":
+  version: 0.2.4
+  resolution: "svelte-local-storage-store@npm:0.2.4"
+  peerDependencies:
+    svelte: ^3.38.2
+  checksum: f997d7ab7f42e25e71f9b20653d22b84929bcbe6ddce1bf0552be5d29b9149d92fe35375b3fc88c6bac090a55532dbc8618ef836a4fb1b8a059572aeeb035eed
+  languageName: node
+  linkType: hard
+
 "svelte@npm:^3.42.4":
   version: 3.42.4
   resolution: "svelte@npm:3.42.4"
@@ -8601,6 +8610,7 @@ fsevents@~2.3.2:
     stylelint-config-standard: ^22.0.0
     svelte: ^3.42.4
     svelte-dark-mode: ^2.0.0
+    svelte-local-storage-store: ^0.2.4
     vite: ^2.5.6
     vite-plugin-html: ^2.1.0
     vite-plugin-pwa: ^0.11.2
