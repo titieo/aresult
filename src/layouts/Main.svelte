@@ -1,13 +1,13 @@
 <script>
-  import Header from './Header.svelte';
-  import Banner from './Banner.svelte';
-  import Details from './Details.svelte';
-  export let i18n;
-  import Schedule from './Schedule.svelte';
+	import Header from './Header.svelte';
+	import Banner from './Banner.svelte';
+	import Details from './Details.svelte';
+	export let i18n;
+	import Schedule from './Schedule.svelte';
 </script>
 
 <main
-  class="
+	class="
   w-full
   flex-grow
   relative
@@ -19,8 +19,8 @@
   flex flex-col
 "
 >
-  <Header bind:i18n />
-  <Banner bind:i18n />
-  <Schedule bind:i18n />
-  <Details bind:i18n />
+	<Header {i18n} />
+	<Banner {i18n} />
+	<Schedule {i18n} />
+	<Details {i18n} />
 </main>

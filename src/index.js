@@ -12,6 +12,10 @@ import App from './App.svelte';
 
 const app = new App({
   target: document.body,
+  props: {
+    title: 'AResult',
+    description: 'App for getting All Awesome Awwarded Result',
+  },
 });
 
 document.querySelectorAll('a').forEach((i) => {
