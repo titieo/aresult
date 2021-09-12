@@ -7780,6 +7780,15 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"schema-dts@npm:1.0.0":
+  version: 1.0.0
+  resolution: "schema-dts@npm:1.0.0"
+  peerDependencies:
+    typescript: ">=4.1.0"
+  checksum: 7903ddf211ee2ce8a54d981b17721e86dc9e810a6951a5539d5ddc4d0c4cb09efa65cd7afbb949650ab33da343d089d19ca6f518947e37ffff99fe1eb1201cce
+  languageName: node
+  linkType: hard
+
 "semver-compare@npm:^1.0.0":
   version: 1.0.0
   resolution: "semver-compare@npm:1.0.0"
@@ -8484,6 +8493,17 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"svelte-meta-tags@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "svelte-meta-tags@npm:1.2.2"
+  dependencies:
+    schema-dts: 1.0.0
+  peerDependencies:
+    svelte: ^3.39.0
+  checksum: 3f80ae651873a7f5558f113949d7481acf093155f56ee7d1a625d587d39a479396424563c47318f0da110c78cd3bf26960537103271368d74eaa46673d1c0b9c
+  languageName: node
+  linkType: hard
+
 "svelte@npm:^3.42.4":
   version: 3.42.4
   resolution: "svelte@npm:3.42.4"
@@ -8611,6 +8631,7 @@ fsevents@~2.3.2:
     svelte: ^3.42.4
     svelte-dark-mode: ^2.0.0
     svelte-local-storage-store: ^0.2.4
+    svelte-meta-tags: ^1.2.2
     vite: ^2.5.6
     vite-plugin-html: ^2.1.0
     vite-plugin-pwa: ^0.11.2

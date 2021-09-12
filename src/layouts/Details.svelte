@@ -1,5 +1,6 @@
 <script>
   import { allSubjectsStore, subjectKeys } from './stores';
+  export let i18n;
 </script>
 
 {#each subjectKeys as i}
@@ -41,7 +42,9 @@
         "
       >
         <a href="#" class="uil uil-arrow-left text-5xl cursor-pointer" />
-        <h2 class="text-2xl" x-text="items[i].fullName[langCode()]">Môn học</h2>
+        <h2 class="text-2xl">
+          {$allSubjectsStore[i].fullName[i18n.key]}
+        </h2>
       </div>
       <p class="text-xl">Trung bình môn</p>
       <figure class="score h-20 lg:h-28 relative text-xl md:text-2xl order-1">
@@ -90,10 +93,11 @@
               duration-500
             "
           />
-          <h3 x-text="items[item][langCode()]">Điểm</h3>
+          <h3>
+            {$allSubjectsStore[item][i18n.key]}
+          </h3>
         </div>
         {#each $allSubjectsStore[i][item] as p}
-          <!-- <template x-for="p in items[i][item]"> -->
           <figure
             class="
               score

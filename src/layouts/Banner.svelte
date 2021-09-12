@@ -1,5 +1,6 @@
 <script>
   import { allSubjectsStore, subjectKeys } from './stores';
+  import Picture from '../components/Picture.svelte';
   export let i18n;
 </script>
 
@@ -33,15 +34,13 @@
         `}
       href={`#${i}`}
     >
-      <picture class="place-self-stretch col-span-full row-start-1 row-end-2">
-        <source srcset={`${i}.webp`} type="image/webp" />
-        <source srcset={`${i}.png`} type="image/png" />
-        <img
-          src={`${i}.png`}
-          class="max-h-40 h-full w-full object-cover object-top"
-          alt={i}
-        />
-      </picture>
+      <Picture
+        pict={i}
+        alt={i}
+        pictureClass="place-self-stretch col-span-full row-start-1 row-end-2"
+        imgClass="max-h-40 h-full w-full object-cover object-top"
+      />
+
       <h3
         class="
       text-center
@@ -59,7 +58,6 @@
       bg-white bg-opacity-80
       dark:bg-gray-900 dark:bg-opacity-50
     "
-        x-text="fullName[langCode()]"
       >
         {$allSubjectsStore[i].fullName[i18n.key]}
       </h3>

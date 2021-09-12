@@ -49,11 +49,7 @@ grid grid-rows-[auto,1fr]
   mx-5
 "
   >
-    <table
-      role="grid"
-      x-data="schedule"
-      class="border rounded-lg w-full table-fixed"
-    >
+    <table role="grid" class="border rounded-lg w-full table-fixed">
       <thead class="sticky top-0 bg-blue-500 text-white border-none">
         <tr class="border-none">
           {#each cells.head as i}
@@ -78,7 +74,6 @@ grid grid-rows-[auto,1fr]
         {#each cells.sun as item}
           <tr class="border-none">
             {#each item as cell, index}
-              <!-- <template x-for="(cell,index) in cells.sun[item-1]"> -->
               <td
                 rowspan={index === 0 && cell && cells.sun.length}
                 class={`border

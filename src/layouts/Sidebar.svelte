@@ -1,5 +1,6 @@
 <script>
   import DarkModeToggler from '../components/DarkModeToggler.svelte';
+  import Picture from '../components/Picture.svelte';
   import { avatar } from './stores.js';
   export let show = false,
     i18n,
@@ -60,28 +61,23 @@
             font-serif
           "
     >
-      <picture class="mb-2">
-        <source srcset={`${$avatar}.webp`} type="image/webp" />
-        <source srcset={`${$avatar}.png`} type="image/png" />
-        <img
-          class="
-                rounded
-                h-[10rem]
-                transition-all
-                duration-500
-                hover:rounded-md
-              "
-          src={`${$avatar}.png`}
-          alt="Dzịt vàng đáng yêu"
-        />
-      </picture>
+      <Picture
+        pict={$avatar}
+        alt="Dzịt vàng đáng yêu"
+        pictureClass="mb-2"
+        imgClass="rounded
+      h-[10rem]
+      transition-all
+      duration-500
+      hover:rounded-md"
+      />
 
       <div class="flex space-x-2 order-1">
         <p>
-          <span x-text="data.grade" class="font-bold">{i18n.grade}</span> 10
+          <span class="font-bold">{i18n.grade}</span> 10
         </p>
         <p>
-          <span x-text="data.semester" class="font-bold">{i18n.semester}</span> I
+          <span class="font-bold">{i18n.semester}</span> I
         </p>
       </div>
       <figcaption class="font-bold">Trần Tấn Lộc</figcaption>
@@ -106,11 +102,7 @@
             "
       >
         <a href="#" class="space-x-1 flex-grow" on:click={hideSideBar}
-          ><i class="uil uil-estate" /><span
-            href="#"
-            x-text="data.home"
-            on:click={hideSideBar}>{i18n.home}</span
-          ></a
+          ><i class="uil uil-estate" /><span>{i18n.home}</span></a
         >
       </li>
       <li
@@ -132,9 +124,7 @@
             "
       >
         <a href="#schedule" class="space-x-1 flex-grow" on:click={hideSideBar}
-          ><i class="uil uil-schedule" /><span x-text="data.schedule"
-            >{i18n.schedule}</span
-          ></a
+          ><i class="uil uil-schedule" /><span>{i18n.schedule}</span></a
         >
       </li>
       <li
@@ -156,9 +146,7 @@
             "
       >
         <a href="#" class="space-x-1 flex-grow" on:click={hideSideBar}
-          ><i class="uil uil-setting" /><span x-text="data.setting"
-            >{i18n.setting}</span
-          ></a
+          ><i class="uil uil-setting" /><span>{i18n.setting}</span></a
         >
       </li>
       <li
@@ -179,13 +167,13 @@
             "
       >
         <a href="<%- bugs %>" target="_blank" class="space-x-1 flex-grow"
-          ><i class="uil uil-bug" /><span x-text="data.bug">{i18n.bug}</span></a
+          ><i class="uil uil-bug" /><span>{i18n.bug}</span></a
         >
       </li>
     </ul>
     <div class="border-t-2 text-center pt-1 flex-grow">
-      <span x-text="data.version">{i18n.version}</span>
-      <!-- <span x-text="data.version">Phiên bản</span> <%- version %> -->
+      <span>{i18n.version}</span>
+      <!-- <span>{i18n.version}</span> <%- version %> -->
     </div>
     <div class="flex mx-3 items-center justify-center space-x-5">
       <button

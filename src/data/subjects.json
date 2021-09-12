@@ -98,7 +98,7 @@
     "third": []
   },
 
-  "defense": {
+  "_defense": {
     "fullName": { "vi": "GDQP-AN", "en": "National Defense" },
     "teacher": "Nguyễn Hồng Quang",
     "bgColor": "from-light-blue-300 to-blue-700 dark:from-light-blue-400 dark:to-blue-800",

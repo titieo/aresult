@@ -12,6 +12,7 @@
   import Sidebar from './layouts/Sidebar.svelte';
   import Footer from './layouts/Footer.svelte';
   import { isEnglish } from './layouts/stores';
+  import Meta from './layouts/Meta.svelte';
 
   //   Declare States
 
@@ -36,7 +37,7 @@
 </script>
 
 <svelte:window on:keydown={handleEscape} />
-
+<svelte:head><Meta /></svelte:head>
 <Bodybg />
 <Navbar bind:show={showSidebar} bind:isEnglish={$isEnglish} bind:i18n />
 <Main bind:i18n />

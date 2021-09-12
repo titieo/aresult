@@ -23,7 +23,8 @@ allSubjectsStore.subscribe((val) => {
       typeof val[i] === 'object' &&
       i !== 'first' &&
       i !== 'second' &&
-      i !== 'third'
+      i !== 'third' &&
+      !i.startsWith('_')
     );
   });
   subjectKeys = filtered;

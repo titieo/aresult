@@ -100,6 +100,7 @@ allSubjects.calcAverage = function () {
       ? removeDecimal((total / division).toFixed(decimalNum))
       : emptyPoint;
   this.average = average;
+  //   console.log(average);
   return average;
 };
 allSubjects.calcAverage();
