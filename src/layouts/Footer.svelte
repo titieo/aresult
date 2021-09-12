@@ -35,6 +35,7 @@
               uil uil-facebook-f
               bg-clip-text
               group-hover:text-white
+              group-focus:text-white
               transition-color
               duration-500
             "
@@ -59,6 +60,7 @@
               bg-clip-text
               text-transparent
               group-hover:text-white
+              group-focus:text-white
               transition-color
               duration-500
             "
@@ -81,6 +83,7 @@
         class="
               uil uil-twitter
               group-hover:text-white
+              group-focus:text-white
               transition-color
               duration-500
             "

@@ -67,26 +67,7 @@ for (const i in allSubjects) {
   mergeData(template.allSubjects, allSubjects[i]);
 }
 
-// Object.defineProperty(allSubjects, 'average', {
-//   get: function () {
-//     let total = 0;
-//     const division = Object.keys(this).length - 1;
-//     for (const i in this) {
-//       const num = Number(this[i].average);
-//       if (num) {
-//         total += num;
-//       }
-//     }
-//     const average =
-//       total > 0
-//         ? removeDecimal((total / division).toFixed(decimalNum))
-//         : emptyPoint;
-//     this.average = average;
-//     return average;
-//   },
-// });
-
-allSubjects.calcAverage = function () {
+allSubjects._average = function () {
   let total = 0;
   const division = Object.keys(this).length - 1;
   for (const i in this) {
@@ -103,7 +84,7 @@ allSubjects.calcAverage = function () {
   //   console.log(average);
   return average;
 };
-allSubjects.calcAverage();
+allSubjects._average();
 
 mergeData(
   {
