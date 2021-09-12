@@ -1,17 +1,18 @@
 <script>
+  // 3rd Party Lib
+  import Hamburger from 'svelte-hamburgers';
+
   import DarkModeToggler from '../components/DarkModeToggler.svelte';
-  //   import { isEnglishLang } from './stores.js';
   export let show = false;
   export let i18n,
     isEnglish = false;
-  //   export let theme, changeTheme;
 </script>
 
 <header
   class="
         backdrop-filter backdrop-blur-md
-        px-5
-        h-20
+        px-8
+        py-2
         w-full
         flex
         items-center
@@ -25,33 +26,35 @@
         space-x-5
       "
 >
-  <div class="nav-icon" class:open={show} on:click={() => (show = !show)}>
-    <span />
-    <span />
-    <span />
-    <span />
-  </div>
+  <Hamburger
+    bind:open={show}
+    --padding="5px"
+    --layer-width="2.4rem"
+    --color="rgb(103, 232, 249)"
+  />
   <h1 class="!mr-auto font-serif font-bold text-gray-700 dark:text-gray-200">
     <a href="#">{i18n.home}</a>
   </h1>
   <button
-    class="w-14 h-10"
+    class="w-12 h-8"
     aria-label="Switch language"
     on:click={() => (isEnglish = !isEnglish)}
   >
-    <!-- on:click={changeLanguage} -->
     <img alt={i18n.key} class="max-w-full max-h-full" src={`${i18n.key}.svg`} />
-    <!-- src="`${langCode()}.svg`" -->
   </button>
   <DarkModeToggler />
-  <!-- <button
-    class="cursor-pointer text-4xl"
-    aria-label="Switch theme"
-    on:click={changeTheme}
-  >
-    <i class={`uil ${theme === 'dark' ? 'uil-moon' : 'uil-sun'}`} />
-
-  </button> -->
-  <!-- <i class="uil uil-adjust-half"></i> -->
 </header>
 <!-- Header End -->
+<svelte:head>
+  <!-- Import base css -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/svelte-hamburgers@3/dist/css/base.css"
+  />
+
+  <!-- Import spin css (spin is default type) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/svelte-hamburgers@3/dist/css/types/spin.css"
+  />
+</svelte:head>

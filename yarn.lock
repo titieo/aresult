@@ -8475,6 +8475,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"svelte-hamburgers@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "svelte-hamburgers@npm:3.0.1"
+  checksum: 8c97b2b03989e1b8f88783e6b2507639d2c544a84ac9cc10e96ca1c764ff914ce4695c308c0e234d9d3203e2ed77a7f54eb6617ce6c0611531aca1bd8717f690
+  languageName: node
+  linkType: hard
+
 "svelte-hmr@npm:^0.14.7":
   version: 0.14.7
   resolution: "svelte-hmr@npm:0.14.7"
@@ -8630,6 +8637,7 @@ fsevents@~2.3.2:
     stylelint-config-standard: ^22.0.0
     svelte: ^3.42.4
     svelte-dark-mode: ^2.0.0
+    svelte-hamburgers: ^3.0.1
     svelte-local-storage-store: ^0.2.4
     svelte-meta-tags: ^1.2.2
     vite: ^2.5.6

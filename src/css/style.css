@@ -19,6 +19,12 @@ html::-webkit-scrollbar-thumb:hover {
 }
 /* stylelint-enable */
 
+/* TODO: Choose a better way to do this */
+
+/* button {
+  outline: none;
+} */
+
 table,
 th,
 td {
@@ -110,10 +116,6 @@ body > header.active {
   }
 }
 
-[x-cloak] {
-  @apply animate-pulse;
-}
-
 .abs-full {
   @apply absolute top-0 bottom-0 right-0 left-0 min-w-full min-h-full;
 }
@@ -158,51 +160,6 @@ input {
 
 .form-info label:not(:first-of-type) {
   @apply mt-2;
-}
-
-.nav-icon {
-  /* margin: 50px 20px; */
-
-  /* @apply h-full w-16 cursor-pointer relative mt-12 mr-8 ml-5; */
-
-  @apply h-full w-12 cursor-pointer relative mt-12 mr-2;
-}
-
-.nav-icon span {
-  background: #d3531a;
-  border-radius: 9px;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
-  @apply absolute h-1 opacity-100 w-full left-0 block;
-}
-
-.nav-icon span:nth-child(1) {
-  @apply top-0;
-}
-
-.nav-icon span:nth-child(2),
-.nav-icon span:nth-child(3) {
-  /* top: 18px; */
-  @apply top-3;
-}
-
-.nav-icon span:nth-child(4) {
-  top: 36px;
-  @apply top-6;
-}
-
-.nav-icon.open span:nth-child(1),
-.nav-icon.open span:nth-child(4) {
-  /* top: 18px; */
-  @apply left-1/2 w-0 top-3;
-}
-
-.nav-icon.open span:nth-child(2) {
-  transform: rotate(45deg);
-}
-
-.nav-icon.open span:nth-child(3) {
-  transform: rotate(-45deg);
 }
 
 .mask-squircle {
