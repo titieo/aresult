@@ -2,11 +2,12 @@
 	// 3rd Party Lib
 	// import Hamburger from 'svelte-hamburgers';
 
-	import DarkModeToggler from '../components/DarkModeToggler.svelte';
-	import ChangeLangButton from '../components/ChangeLangButton.svelte';
+	// import DarkModeToggler from '../components/DarkModeToggler.svelte';
+	// import ChangeLangButton from '../components/ChangeLangButton.svelte';
 	// export let show = false;
-	export let i18n,
-		isEnglish = false;
+	export let i18n;
+	// export let i18n,
+	// 	isEnglish = false;
 </script>
 
 <header
@@ -35,8 +36,8 @@
 	<h1 class="!mr-auto font-serif font-bold text-gray-700 dark:text-gray-200">
 		<a href="#">{i18n.home}</a>
 	</h1>
-	<ChangeLangButton {i18n} bind:isEnglish />
-	<DarkModeToggler />
+	<!-- <ChangeLangButton {i18n} bind:isEnglish />
+	<DarkModeToggler /> -->
 </header>
 <!-- Header End -->
 <svelte:head>

@@ -3,7 +3,6 @@
 </script>
 
 <button
-	class="w-12 h-8 btn"
 	aria-label="Switch language"
 	on:click={() => {
 		isEnglish = !isEnglish;
@@ -12,6 +11,6 @@
 	<img
 		alt={i18n.key}
 		src={`${i18n.key}.svg`}
-		class="max-w-full max-h-full object-cover"
+		class="w-10 h-10 md:w-12 md:h-12 rounded object-cover"
 	/>
 </button>

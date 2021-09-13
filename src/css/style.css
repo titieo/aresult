@@ -2,7 +2,10 @@
 
 html {
   scroll-behavior: smooth;
-  @apply antialiased <md:text-[80%];
+
+  /* @apply antialiased <md:text-[80%]; */
+
+  @apply antialiased;
 
   /* scrollbar-primary */
 

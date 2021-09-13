@@ -8,11 +8,14 @@
 <header
 	class="
     grid
+    align-center
     py-4
     px-4
-    grid-rows-2 grid-flow-col grid-cols-header
+    grid-rows-2 grid-flow-col md:grid-cols-header
     font-bold font-serif
-    text-2xl
+    text-lg
+    md:text-xl
+    lg:text-2xl
     col-span-full
     my-5
     place-self-stretch
@@ -25,19 +28,19 @@
 >
 	<Picture
 		pict={$avatar}
-		pictureClass={'mr-4 max-w-md row-span-full'}
+		pictureClass="mr-4 max-w-md row-span-full <md:hidden"
 		alt="Dzịt vàng đáng yêu"
-		imgClass="mx-auto mask mask-squircle h-32"
+		imgClass="mx-auto mask mask-squircle h-32 "
 	/>
-	<h2 class="self-center">
+	<h2 class="self-center <md:hidden">
 		<span class="gradient-text">{i18n.grade}</span>
 		<span>10</span>
 	</h2>
-	<h2 class="self-center">
+	<h2 class="self-center <md:hidden">
 		<span class="gradient-text">{i18n.semester}</span>
 		<span>I</span>
 	</h2>
-	<figure class="score row-span-full w-40 relative">
+	<figure class="score row-span-full w-40 relative mx-auto">
 		<img src="./laurel.svg" alt="laurel" class="min-h-full" />
 		<figcaption
 			class="

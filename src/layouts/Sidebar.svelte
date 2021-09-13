@@ -12,13 +12,8 @@
 	import Picture from '../components/Picture.svelte';
 	import { avatar } from './stores.js';
 
-	export let show = false,
-		i18n,
+	export let i18n,
 		isEnglish = false;
-
-	function hideSideBar() {
-		show = false;
-	}
 </script>
 
 <aside>
@@ -34,20 +29,24 @@
 		<figure class="mt-4 flex justify-center">
 			<img src="laurel.svg" alt="Logo" class="w-3/5 max-w-18" />
 		</figure>
-		<ul class="mx-2 space-y-2 mb-auto">
-			<SideBarItem href="#" {hideSideBar} target=""
-				><HomeIcon /><span class="relative">{i18n.home}</span></SideBarItem
+		<ul
+			class="mx-2 space-y-2 mb-auto <lg:flex <lg:justify-center <lg:align-center <lg:flex-col"
+		>
+			<SideBarItem href="#" target=""
+				><HomeIcon /><span class="<lg:hidden">{i18n.home}</span></SideBarItem
 			>
-			<SideBarItem href="#" {hideSideBar} target=""
-				><CalendarIcon /><span>{i18n.schedule}</span></SideBarItem
+			<SideBarItem href="#schedule" target=""
+				><CalendarIcon /><span class="<lg:hidden">{i18n.schedule}</span
+				></SideBarItem
 			>
-			<SideBarItem href="#" {hideSideBar} target=""
-				><SettingsIcon /><span>{i18n.setting}</span></SideBarItem
+			<SideBarItem href="#" target=""
+				><SettingsIcon /><span class="<lg:hidden">{i18n.setting}</span
+				></SideBarItem
 			>
 			<SideBarItem
 				href="https://github.com/loctran016/aresult/issues/new"
-				{hideSideBar}
-				target="_blank"><GithubIcon /><span>{i18n.bug}</span></SideBarItem
+				target="_blank"
+				><GithubIcon /><span class="<lg:hidden">{i18n.bug}</span></SideBarItem
 			>
 		</ul>
 		<!-- <div class="border-t-2 text-center pt-1 flex-grow">
@@ -68,7 +67,7 @@
 					alt="Dzịt vàng đáng yêu"
 					pictureClass=""
 					imgClass="mask mask-squircle
-                      mx-auto h-[3rem]"
+                      mx-auto h-[3rem] lg:h-[4rem]"
 				/>
 			</figure>
 		</div>
