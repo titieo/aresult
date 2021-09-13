@@ -27,7 +27,7 @@
         "
 	>
 		<figure class="mt-4 flex justify-center">
-			<img src="laurel.svg" alt="Logo" class="w-3/5 max-w-18" />
+			<img src="logo.svg" alt="Logo" class="w-3/5 max-w-18" />
 		</figure>
 		<ul
 			class="mx-2 space-y-2 mb-auto <lg:flex <lg:justify-center <lg:align-center <lg:flex-col"

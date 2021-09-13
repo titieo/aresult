@@ -21,8 +21,11 @@
   bg-gray-100
   dark:bg-blue-gray-900
   flex flex-col
+
+  overflow-y-hidden
 "
 >
+	<!-- TODO: Not to use overflow-y-hidden -->
 	{#if false}
 		<AddSubject />
 	{/if}
