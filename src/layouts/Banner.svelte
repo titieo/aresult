@@ -1,23 +1,21 @@
 <script>
-  import { allSubjectsStore, subjectKeys } from './stores';
-  import Picture from '../components/Picture.svelte';
-  export let i18n;
+	//   import { allSubjectsStore, subjectKeys } from './stores';
+	import Picture from '../components/Picture.svelte';
+	export let i18n, allSubjectsStore, subjectKeys;
 </script>
 
 <section
-  class="
-    grid grid-cols-layout
+	class={`grid
     w-full
     px-5
-    py-3
     gap-y-5 gap-x-5
     flex-grow
-    max-w-con
-"
+    max-w-con place-content-center
+    ${subjectKeys.length ? 'grid-cols-layout py-3' : 'place-items-center'}`}
 >
-  {#each subjectKeys as i}
-    <a
-      class={`rounded-lg
+	{#each subjectKeys as i ($allSubjectsStore[i].id)}
+		<a
+			class={`rounded-lg
         shadow-md
         transform-gpu
         transition-all
@@ -32,17 +30,17 @@
         hover:-translate-y-1 hover:shadow-lg hover:scale-105
         ${$allSubjectsStore[i].bgColor}
         `}
-      href={`#${i}`}
-    >
-      <Picture
-        pict={i}
-        alt={i}
-        pictureClass="place-self-stretch col-span-full row-start-1 row-end-2"
-        imgClass="max-h-40 h-full w-full object-cover object-top"
-      />
+			href={`#${i}`}
+		>
+			<Picture
+				pict={i}
+				alt={i}
+				pictureClass="place-self-stretch col-span-full row-start-1 row-end-2"
+				imgClass="max-h-40 h-full w-full object-cover object-top"
+			/>
 
-      <h3
-        class="
+			<h3
+				class="
       text-center
       py-3
       px-5
@@ -58,23 +56,62 @@
       bg-white bg-opacity-80
       dark:bg-gray-900 dark:bg-opacity-50
     "
-      >
-        {$allSubjectsStore[i].fullName[i18n.key]}
-      </h3>
-      <span
-        class="
+			>
+				{$allSubjectsStore[i].fullName[i18n.key]}
+			</h3>
+			<span
+				class="
       col-span-full
       mt-5
       oldstyle-nums
       font-bold font-serif
       text-3xl
     ">{$allSubjectsStore[i].average || '-:-'}</span
-      >
-      <div class="col-span-full mx-2 font-serif text-xs self-end font-light">
-        <i class="uil uil-user-circle mr-1" /><span
-          >{$allSubjectsStore[i].teacher}</span
-        >
-      </div>
-    </a>
-  {/each}
+			>
+			<div class="col-span-full mx-2 font-serif text-xs self-end font-light">
+				<i class="uil uil-user-circle mr-1" /><span
+					>{$allSubjectsStore[i].teacher}</span
+				>
+			</div>
+		</a>
+	{:else}
+		<figure>
+			<!-- <img
+				src="no-results.png"
+				alt="No result"
+				class="h-full max-h-md mx-auto"
+			/> -->
+			<picture
+				><source
+					type="image/webp"
+					srcset="
+          no-results.webp    765w,
+          no-results@2x.webp 1530w,
+          no-results@3x.webp 2295w
+        "
+				/>
+				<source
+					type="image/png"
+					srcset="
+        no-results.png    765w,
+        no-results@2x.png  1530w,
+        no-results@3x.png 2295w
+      "
+				/>
+				<img
+					src="no-results.png"
+					alt="A bowl of curry and salmon"
+					srcset="
+      no-results.png    765w,
+      no-results@2x.png  1530w,
+      no-results@3x.png 2295w
+    "
+					class="h-full max-h-[50vh] mx-auto"
+				/></picture
+			>
+			<!-- <figcaption class="text-2xl text-center">
+				No data was found 😿😿😿
+			</figcaption> -->
+		</figure>
+	{/each}
 </section>

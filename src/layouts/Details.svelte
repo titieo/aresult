@@ -1,11 +1,11 @@
 <script>
-  import { allSubjectsStore, subjectKeys } from './stores';
-  export let i18n;
+	//   import { allSubjectsStore, subjectKeys } from './stores';
+	export let i18n, subjectKeys, allSubjectsStore;
 </script>
 
 {#each subjectKeys as i}
-  <section
-    class={`
+	<section
+		class={`
         fixed-full
         transform-gpu
         transition-transform
@@ -16,10 +16,10 @@
         bg-gradient-to-br
         ${$allSubjectsStore[i].bgColor}
     `}
-    id={i}
-  >
-    <header
-      class="
+		id={i}
+	>
+		<header
+			class="
         px-2
         py-4
         grid grid-cols-2
@@ -30,9 +30,9 @@
         bg-opacity-80
         backdrop-filter backdrop-blur-md
       "
-    >
-      <div
-        class="
+		>
+			<div
+				class="
           flex
           items-center
           space-x-2
@@ -40,17 +40,17 @@
           row-start-1
           place-self-stretch
         "
-      >
-        <a href="#" class="uil uil-arrow-left text-5xl cursor-pointer" />
-        <h2 class="text-2xl">
-          {$allSubjectsStore[i].fullName[i18n.key]}
-        </h2>
-      </div>
-      <p class="text-xl">Trung bình môn</p>
-      <figure class="score h-20 lg:h-28 relative text-xl md:text-2xl order-1">
-        <img src="./laurel.svg" alt="laurel" class="min-h-full" />
-        <figcaption
-          class="
+			>
+				<a href="#" class="uil uil-arrow-left text-5xl cursor-pointer" />
+				<h2 class="text-2xl">
+					{$allSubjectsStore[i].fullName[i18n.key]}
+				</h2>
+			</div>
+			<p class="text-xl">Trung bình môn</p>
+			<figure class="score h-20 lg:h-28 relative text-xl md:text-2xl order-1">
+				<img src="./laurel.svg" alt="laurel" class="min-h-full" />
+				<figcaption
+					class="
             absolute
             top-1/2
             left-1/2
@@ -59,14 +59,14 @@
             lining-nums
             gradient-text
           "
-        >
-          {$allSubjectsStore[i].average || '-:-'}
-        </figcaption>
-      </figure>
-    </header>
-    {#each ['first', 'second', 'third'] as item}
-      <div
-        class="
+				>
+					{$allSubjectsStore[i].average || '-:-'}
+				</figcaption>
+			</figure>
+		</header>
+		{#each ['first', 'second', 'third'] as item}
+			<div
+				class="
           mx-5
           my-3
           px-3
@@ -80,10 +80,10 @@
           transition-all
           duration-500
         "
-      >
-        <div class="flex space-x-2 font-bold text-lg">
-          <i
-            class="
+			>
+				<div class="flex space-x-2 font-bold text-lg">
+					<i
+						class="
               uil uil-angle-left-b
               transform-gpu
               text-xl
@@ -92,14 +92,14 @@
               transition-transform
               duration-500
             "
-          />
-          <h3>
-            {$allSubjectsStore[item][i18n.key]}
-          </h3>
-        </div>
-        {#each $allSubjectsStore[i][item] as p}
-          <figure
-            class="
+					/>
+					<h3>
+						{$allSubjectsStore[item][i18n.key]}
+					</h3>
+				</div>
+				{#each $allSubjectsStore[i][item] as p}
+					<figure
+						class="
               score
               md:text-lg
               lg:text-xl
@@ -119,19 +119,19 @@
               transition-all
               duration-500
             "
-          >
-            <img
-              src="./laurel.svg"
-              alt="laurel"
-              class="
+					>
+						<img
+							src="./laurel.svg"
+							alt="laurel"
+							class="
                 h-12
                 lg:h-20
                 row-start-1 row-end-2
                 col-start-1 col-end-2
               "
-            />
-            <figcaption
-              class="
+						/>
+						<figcaption
+							class="
                 lining-nums
                 gradient-text
                 row-start-1 row-end-2
@@ -140,11 +140,11 @@
                 -translate-y-0.5 -translate-x-5.5
                 lg:-translate-x-10.5 lg:-translate-y-1.5
               "
-            >
-              {p}
-            </figcaption>
-          </figure>
-        {/each}
-      </div>
-    {/each}
-  </section>{/each}
+						>
+							{p}
+						</figcaption>
+					</figure>
+				{/each}
+			</div>
+		{/each}
+	</section>{/each}

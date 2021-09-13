@@ -1,9 +1,15 @@
 <script>
+	// Import Data
+	import { allSubjectsStore, subjectKeys } from './stores';
+	// Import components
+	import AddSubject from '../components/AddSubject.svelte';
+	// Import layouts
 	import Header from './Header.svelte';
 	import Banner from './Banner.svelte';
 	import Details from './Details.svelte';
-	export let i18n;
 	import Schedule from './Schedule.svelte';
+	// States
+	export let i18n;
 </script>
 
 <main
@@ -19,8 +25,12 @@
   flex flex-col
 "
 >
+	{#if false}
+		<AddSubject />
+	{/if}
+
 	<Header {i18n} />
-	<Banner {i18n} />
+	<Banner {i18n} {allSubjectsStore} {subjectKeys} />
 	<Schedule {i18n} />
-	<Details {i18n} />
+	<Details {i18n} {allSubjectsStore} {subjectKeys} />
 </main>

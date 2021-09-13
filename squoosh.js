@@ -3,9 +3,9 @@ const path = require('path');
 
 const { ImagePool } = require('@squoosh/lib');
 const imagePool = new ImagePool();
-const root = path.join(__dirname, '/src');
+const root = path.join(__dirname);
 // Define your paths:
-const imagesToOptimizePath = `${root}/rawImages/`;
+const imagesToOptimizePath = `${root}/src/rawImages/`;
 // const moveToPath =
 //   './_originalRawImages/'; /* Uncomment this if you want to keep files */
 const optimizeToPath = `${root}/assets/`;

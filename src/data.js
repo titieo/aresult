@@ -11,7 +11,6 @@ const firstLetterUpper = function (theString) {
 
 const mergeData = function (template, custom) {
   for (const i in template) {
-    // console.log(i);
     if (!custom[i]) custom[i] = template[i];
   }
 };
@@ -27,6 +26,24 @@ const removeDecimal = function (number) {
   }
 };
 
+const allCapsAlpha = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+const allLowerAlpha = [...'abcdefghijklmnopqrstuvwxyz'];
+const allUniqueChars = [...`~!@#$%^&*()_+-=[]\\{}|;:'",./<>?`];
+const allNumbers = [...'0123456789'];
+
+const base = [
+  ...allCapsAlpha,
+  ...allNumbers,
+  ...allLowerAlpha,
+  ...allUniqueChars,
+];
+
+const ranStr = (len) => {
+  return [...Array(len)]
+    .map((i) => base[(Math.random() * base.length) | 0])
+    .join('');
+};
+
 const template = {
   allSubjects: {
     teacher: 'Lorem, ipsum.',
@@ -34,12 +51,17 @@ const template = {
     first: [],
     second: [],
     third: [],
+    // id: ranStr(10),
   },
 };
 
 for (const i in allSubjects) {
   if (typeof allSubjects[i] === 'object') {
+    mergeData(template.allSubjects, allSubjects[i]);
     allSubjects[i].name = i;
+    allSubjects[i].id = ranStr(10);
+    if (!allSubjects[i].fullName.en)
+      allSubjects[i].fullName.en = firstLetterUpper(i);
     Object.defineProperty(allSubjects[i], 'average', {
       get: function () {
         const division =
@@ -61,10 +83,7 @@ for (const i in allSubjects) {
       },
     });
   }
-
-  if (!allSubjects[i].fullName.en)
-    allSubjects[i].fullName.en = firstLetterUpper(i);
-  mergeData(template.allSubjects, allSubjects[i]);
+  //   ($allSubjectsStore[i].id)
 }
 
 allSubjects._average = function () {
