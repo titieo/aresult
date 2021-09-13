@@ -9,6 +9,11 @@
     w-full
     px-5
     gap-y-5 gap-x-5
+    bg-light-100
+    dark:bg-cool-gray-700
+    shadow-md
+    dark:shadow-color-cool-gray-400
+    rounded-lg
     flex-grow
     max-w-con place-content-center
     ${subjectKeys.length ? 'grid-cols-layout py-3' : 'place-items-center'}`}

@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import legacy from '@vitejs/plugin-legacy';
 import WindiCSS from 'vite-plugin-windicss';
+// import CleanCSS from 'clean-css';
 import path from 'path';
 import { minifyHtml, injectHtml } from 'vite-plugin-html';
 import pkg from './package.json';

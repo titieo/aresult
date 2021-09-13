@@ -1917,6 +1917,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@svelte-parts/icons@npm:^0.0.19":
+  version: 0.0.19
+  resolution: "@svelte-parts/icons@npm:0.0.19"
+  checksum: 148f7a5e55ad517cfced7ba2c10e628f4c842e4abd6c70c99e5cf50716835b64ed03a0754c37526ba2c5d7ea0fbbc626496192f92ceaa73a20f0c14756a93cf9
+  languageName: node
+  linkType: hard
+
 "@sveltejs/vite-plugin-svelte@npm:^1.0.0-next.22":
   version: 1.0.0-next.22
   resolution: "@sveltejs/vite-plugin-svelte@npm:1.0.0-next.22"
@@ -8609,6 +8616,7 @@ fsevents@~2.3.2:
     "@commitlint/config-conventional": ^13.1.0
     "@iconscout/unicons": ^4.0.0
     "@squoosh/lib": ^0.4.0
+    "@svelte-parts/icons": ^0.0.19
     "@sveltejs/vite-plugin-svelte": ^1.0.0-next.22
     "@vitejs/plugin-legacy": ^1.5.3
     "@windicss/plugin-scrollbar": ^1.2.3

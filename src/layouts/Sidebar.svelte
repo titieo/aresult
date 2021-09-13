@@ -1,8 +1,17 @@
 <script>
+	// Import 3rd-party libraries
+	import HomeIcon from '@svelte-parts/icons/feather/home';
+	import CalendarIcon from '@svelte-parts/icons/feather/calendar';
+	import SettingsIcon from '@svelte-parts/icons/feather/settings';
+	import GithubIcon from '@svelte-parts/icons/feather/github';
+
+	// Import 1rd Party Components
 	import DarkModeToggler from '../components/DarkModeToggler.svelte';
 	import ChangeLangButton from '../components/ChangeLangButton.svelte';
+	import SideBarItem from '../components/SideBarItem.svelte';
 	import Picture from '../components/Picture.svelte';
 	import { avatar } from './stores.js';
+
 	export let show = false,
 		i18n,
 		isEnglish = false;
@@ -66,11 +75,8 @@
 				pict={$avatar}
 				alt="Dzịt vàng đáng yêu"
 				pictureClass="mb-2"
-				imgClass="rounded
-      h-[10rem]
-      transition-all
-      duration-500
-      hover:rounded-md"
+				imgClass="mask mask-squircle
+      h-[10rem]"
 			/>
 
 			<div class="flex space-x-2 order-1">
@@ -84,93 +90,20 @@
 			<figcaption class="font-bold">Trần Tấn Lộc</figcaption>
 		</figure>
 		<ul class="mx-2 space-y-2">
-			<li
-				class="
-              flex
-              align-center
-              space-x-1
-              py-2
-              px-4
-              rounded-md
-              cursor-pointer
-              transition-all
-              border border-opacity-0 border-cool-gray-200
-              dark:border-opacity-0
-              dark:border-true-gray-600
-              dark:hover:border-opacity-100
-              dark:hover:text-light-blue-400
-              hover:border-opacity-100 hover:shadow-md
-            "
+			<SideBarItem href="#" {hideSideBar} target=""
+				><HomeIcon /><span class="relative">{i18n.home}</span></SideBarItem
 			>
-				<a href="#" class="space-x-1 flex-grow" on:click={hideSideBar}
-					><i class="uil uil-estate" /><span>{i18n.home}</span></a
-				>
-			</li>
-			<li
-				class="
-              flex
-              align-center
-              space-x-1
-              py-2
-              px-4
-              rounded-md
-              cursor-pointer
-              transition-all
-              border border-opacity-0 border-cool-gray-200
-              dark:border-opacity-0
-              dark:border-true-gray-600
-              dark:hover:border-opacity-100
-              dark:hover:text-light-blue-400
-              hover:border-opacity-100 hover:shadow-md
-            "
+			<SideBarItem href="#" {hideSideBar} target=""
+				><CalendarIcon /><span>{i18n.schedule}</span></SideBarItem
 			>
-				<a href="#schedule" class="space-x-1 flex-grow" on:click={hideSideBar}
-					><i class="uil uil-schedule" /><span>{i18n.schedule}</span></a
-				>
-			</li>
-			<li
-				class="
-              flex
-              align-center
-              space-x-1
-              py-2
-              px-4
-              rounded-md
-              cursor-pointer
-              transition-all
-              border border-opacity-0 border-cool-gray-200
-              dark:border-opacity-0
-              dark:border-true-gray-600
-              dark:hover:border-opacity-100
-              dark:hover:text-light-blue-400
-              hover:border-opacity-100 hover:shadow-md
-            "
+			<SideBarItem href="#" {hideSideBar} target=""
+				><SettingsIcon /><span>{i18n.setting}</span></SideBarItem
 			>
-				<a href="#" class="space-x-1 flex-grow" on:click={hideSideBar}
-					><i class="uil uil-setting" /><span>{i18n.setting}</span></a
-				>
-			</li>
-			<li
-				class="
-              flex
-              align-center
-              py-2
-              px-4
-              rounded-md
-              cursor-pointer
-              transition-all
-              border border-opacity-0 border-cool-gray-200
-              dark:border-opacity-0
-              dark:border-true-gray-600
-              dark:hover:border-opacity-100
-              dark:hover:text-light-blue-400
-              hover:border-opacity-100 hover:shadow-md
-            "
+			<SideBarItem
+				href="https://github.com/loctran016/aresult/issues/new"
+				{hideSideBar}
+				target="_blank"><GithubIcon /><span>{i18n.bug}</span></SideBarItem
 			>
-				<a href="<%- bugs %>" target="_blank" class="space-x-1 flex-grow"
-					><i class="uil uil-bug" /><span>{i18n.bug}</span></a
-				>
-			</li>
 		</ul>
 		<div class="border-t-2 text-center pt-1 flex-grow">
 			<span>{i18n.version}</span>
@@ -182,3 +115,10 @@
 		</div>
 	</nav>
 </aside>
+
+<!-- TODO: Fix this -->
+<style>
+	:global(svg) {
+		top: 0 !important;
+	}
+</style>
