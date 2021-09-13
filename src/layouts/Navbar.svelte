@@ -1,16 +1,17 @@
 <script>
 	// 3rd Party Lib
-	import Hamburger from 'svelte-hamburgers';
+	// import Hamburger from 'svelte-hamburgers';
 
 	import DarkModeToggler from '../components/DarkModeToggler.svelte';
 	import ChangeLangButton from '../components/ChangeLangButton.svelte';
-	export let show = false;
+	// export let show = false;
 	export let i18n,
 		isEnglish = false;
 </script>
 
 <header
 	class="
+    col-span-full
         backdrop-filter backdrop-blur-md
         px-8
         py-2
@@ -18,21 +19,19 @@
         flex
         items-center
         text-2xl text-black text-opacity-90
-        sticky
-        top-0
         z-10
         bg-white bg-opacity-80
         dark:bg-gray-900 dark:bg-opacity-50
-        navbar
         space-x-5
+        row-1
       "
 >
-	<Hamburger
+	<!-- <Hamburger
 		bind:open={show}
 		--padding="5px"
 		--layer-width="2.4rem"
 		--color="rgb(103, 232, 249)"
-	/>
+	/> -->
 	<h1 class="!mr-auto font-serif font-bold text-gray-700 dark:text-gray-200">
 		<a href="#">{i18n.home}</a>
 	</h1>

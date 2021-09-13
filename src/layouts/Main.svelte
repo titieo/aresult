@@ -14,8 +14,6 @@
 
 <main
 	class="
-  w-full
-  flex-grow
   relative
   pb-5
   pt-2

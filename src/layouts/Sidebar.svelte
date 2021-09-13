@@ -21,75 +21,20 @@
 	}
 </script>
 
-<aside class="fixed-full z-30" class:pointer-events-none={!show}>
-	<div
-		class="
-          w-full
-          h-full
-          bg-black
-          absolute
-          top-0
-          -z-1
-          cursor-pointer
-          transition-all
-          duration-300
-        "
-		on:click={hideSideBar}
-		class:bg-opacity-50={show}
-		class:bg-opacity-0={!show}
-	>
-		<!-- "$store.showSideBar && 'bg-opacity-50' || 'bg-opacity-0'" -->
-	</div>
+<aside>
 	<nav
 		class="
           h-full
-          w-[20rem]
           bg-white
           dark:bg-gray-900
           flex flex-col
           space-y-2
-          transition-transform
-          duration-300
-          transform-gpu
-          pb-2
         "
-		class:-translate-x-full={!show}
 	>
-		<figure
-			class="
-            seft-stretch
-            bg-card
-            from-green-400
-            flex flex-col
-            items-center
-            justify-center
-            w-full
-            to-blue-500
-            pt-4
-            pb-5
-            text-center text-white text-lg
-            font-serif
-          "
-		>
-			<Picture
-				pict={$avatar}
-				alt="Dzịt vàng đáng yêu"
-				pictureClass="mb-2"
-				imgClass="mask mask-squircle
-      h-[10rem]"
-			/>
-
-			<div class="flex space-x-2 order-1">
-				<p>
-					<span class="font-bold">{i18n.grade}</span> 10
-				</p>
-				<p>
-					<span class="font-bold">{i18n.semester}</span> I
-				</p>
-			</div>
-			<figcaption class="font-bold">Trần Tấn Lộc</figcaption>
+		<figure class="mt-4 flex justify-center">
+			<img src="laurel.svg" alt="Logo" class="w-3/5 max-w-18" />
 		</figure>
-		<ul class="mx-2 space-y-2">
+		<ul class="mx-2 space-y-2 mb-auto">
 			<SideBarItem href="#" {hideSideBar} target=""
 				><HomeIcon /><span class="relative">{i18n.home}</span></SideBarItem
 			>
@@ -105,13 +50,27 @@
 				target="_blank"><GithubIcon /><span>{i18n.bug}</span></SideBarItem
 			>
 		</ul>
-		<div class="border-t-2 text-center pt-1 flex-grow">
+		<!-- <div class="border-t-2 text-center pt-1 flex-grow">
 			<span>{i18n.version}</span>
-			<!-- <span>{i18n.version}</span> <%- version %> -->
-		</div>
-		<div class="flex mx-3 items-center justify-center space-x-5">
+		</div> -->
+		<div
+			class="mx-auto flex flex-col items-center justify-end space-y-2 text-center self-stretch w-full"
+			style="margin-top: auto;"
+		>
 			<ChangeLangButton {i18n} bind:isEnglish />
 			<DarkModeToggler />
+			<figure
+				class="bg-light-300 dark:bg-blue-gray-800 self-stretch py-4 px-3"
+				style="align-self: stretch;"
+			>
+				<Picture
+					pict={$avatar}
+					alt="Dzịt vàng đáng yêu"
+					pictureClass=""
+					imgClass="mask mask-squircle
+                      mx-auto h-[3rem]"
+				/>
+			</figure>
 		</div>
 	</nav>
 </aside>

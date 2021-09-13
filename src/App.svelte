@@ -17,8 +17,7 @@
 
 	//   Declare States
 
-	let showSidebar = false,
-		i18n;
+	let i18n;
 
 	isEnglish.subscribe((val) => {
 		i18n = val ? en : vi;
@@ -26,11 +25,7 @@
 
 	function handleEscape(e) {
 		if (e.keyCode === 27) {
-			if (showSidebar) {
-				showSidebar = false;
-			} else {
-				window.location.href = '#';
-			}
+			window.location.href = '#';
 		}
 	}
 
@@ -42,7 +37,7 @@
 <svelte:window on:keydown={handleEscape} />
 <svelte:head><MetaTags {title} {description} /></svelte:head>
 <Bodybg />
-<Navbar bind:show={showSidebar} bind:isEnglish={$isEnglish} {i18n} />
+<Navbar bind:isEnglish={$isEnglish} {i18n} />
+<Sidebar bind:isEnglish={$isEnglish} {i18n} />
 <Main {i18n} />
-<Sidebar bind:show={showSidebar} bind:isEnglish={$isEnglish} {i18n} />
 <!-- <Footer /> -->

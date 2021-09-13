@@ -75,14 +75,6 @@ td {
   .body-bg {
     animation: none;
   }
-
-  .nav-icon {
-    transition: none;
-  }
-
-  .nav-icon span {
-    transition: none;
-  }
 }
 
 .body-bg {

@@ -14,8 +14,7 @@
     shadow-md
     dark:shadow-color-cool-gray-400
     rounded-lg
-    flex-grow
-    max-w-con place-content-center
+    flex-grow place-content-center
     ${subjectKeys.length ? 'grid-cols-layout py-3' : 'place-items-center'}`}
 >
 	{#each subjectKeys as i ($allSubjectsStore[i].id)}
