@@ -32,10 +32,6 @@ td {
   text-align: center;
 }
 
-body > header.active {
-  @apply max-h-16 bg-opacity-100;
-}
-
 .text-color-base {
   @apply text-gray-700 dark:text-gray-200;
 }
@@ -272,4 +268,8 @@ input {
 .link--twitter:focus {
   background: var(--color);
   @apply transition-all duration-500;
+}
+
+.btn {
+  @apply transform transition-transform duration-200 ease-in-out active:scale-95 active:outline-transparent focus:active:outline-transparent focus:outline-transparent;
 }

@@ -11,7 +11,7 @@
 	import Navbar from './layouts/Navbar.svelte';
 	import Main from './layouts/Main.svelte';
 	import Sidebar from './layouts/Sidebar.svelte';
-	import Footer from './layouts/Footer.svelte';
+	// import Footer from './layouts/Footer.svelte';
 	import { isEnglish } from './layouts/stores';
 	//   import Meta from './layouts/Meta.svelte';
 
@@ -45,4 +45,4 @@
 <Navbar bind:show={showSidebar} bind:isEnglish={$isEnglish} {i18n} />
 <Main {i18n} />
 <Sidebar bind:show={showSidebar} bind:isEnglish={$isEnglish} {i18n} />
-<Footer />
+<!-- <Footer /> -->
