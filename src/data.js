@@ -4,6 +4,19 @@ import schedule from './data/schedules.json';
 const emptyPoint = `-:-`;
 const decimalNum = 2;
 
+// Data
+const allCapsAlpha = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+const allLowerAlpha = [...'abcdefghijklmnopqrstuvwxyz'];
+const allUniqueChars = [...`~!@#$%^&*()_+-=[]\\{}|;:'",./<>?`];
+const allNumbers = [...'0123456789'];
+const base = [
+  ...allCapsAlpha,
+  ...allNumbers,
+  ...allLowerAlpha,
+  ...allUniqueChars,
+];
+
+// Function
 const firstLetterUpper = function (theString) {
   return theString.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, function (c) {
     return c.toUpperCase();
@@ -27,21 +40,18 @@ const removeDecimal = function (number) {
   }
 };
 
-const allCapsAlpha = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
-const allLowerAlpha = [...'abcdefghijklmnopqrstuvwxyz'];
-const allUniqueChars = [...`~!@#$%^&*()_+-=[]\\{}|;:'",./<>?`];
-const allNumbers = [...'0123456789'];
-
-const base = [
-  ...allCapsAlpha,
-  ...allNumbers,
-  ...allLowerAlpha,
-  ...allUniqueChars,
-];
+const addCells = function (...arr) {
+  arr.forEach((data) => {
+    for (let i = 1; i < schedule[`${data}Data`].length; i++) {
+      schedule[`${data}Data`][i].unshift('', i + 1);
+    }
+    schedule[`${data}Data`][0].unshift(schedule[data], 1);
+  });
+};
 
 const ranStr = (len) => {
   return [...Array(len)]
-    .map((i) => base[(Math.random() * base.length) | 0])
+    .map(() => base[(Math.random() * base.length) | 0])
     .join('');
 };
 
@@ -118,15 +128,7 @@ mergeData(
   allSubjects
 );
 
-for (let i = 1; i < schedule.sunData.length; i++) {
-  schedule.sunData[i].unshift('', i + 1);
-}
-schedule.sunData[0].unshift(schedule.sun, 1);
-for (let i = 1; i < schedule.moonData.length; i++) {
-  schedule.moonData[i].unshift('', i + 1);
-}
-schedule.moonData[0].unshift(schedule.moon, 1);
-console.log(schedule);
+addCells('sun', 'moon');
 
 const cells = {
   head: schedule.head,

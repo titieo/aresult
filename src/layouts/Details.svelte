@@ -1,5 +1,7 @@
 <script>
 	//   import { allSubjectsStore, subjectKeys } from './stores';
+	import ArrIcon from '@svelte-parts/icons/feather/arrow-left';
+	import ChevLeft from '@svelte-parts/icons/octicons/chevron-left';
 	export let i18n, subjectKeys, allSubjectsStore;
 </script>
 
@@ -41,7 +43,7 @@
           place-self-stretch
         "
 			>
-				<a href="#" class="uil uil-arrow-left text-5xl cursor-pointer" />
+				<a href="#" class="text-4xl cursor-pointer"><ArrIcon /></a>
 				<h2 class="text-2xl">
 					{$allSubjectsStore[i].fullName[i18n.key]}
 				</h2>
@@ -82,17 +84,19 @@
         "
 			>
 				<div class="flex space-x-2 font-bold text-lg">
-					<i
+					<div
 						class="
-              uil uil-angle-left-b
               transform-gpu
               text-xl
               -rotate-90
               group-hover:rotate-90
               transition-transform
-              duration-500
+              duration-500 h-6 w-6
+              relative top-1
             "
-					/>
+					>
+						<ChevLeft inline={false} />
+					</div>
 					<h3>
 						{$allSubjectsStore[item][i18n.key]}
 					</h3>

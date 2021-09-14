@@ -22,7 +22,7 @@ export default defineConfig({
         license: pkg.license,
       },
     }),
-    WindiCSS({ transformCSS: 'pre' }),
+    WindiCSS(),
     legacy({
       targets: ['defaults', 'not IE 11'],
     }),

@@ -1,5 +1,5 @@
 <script>
-	//   import { allSubjectsStore, subjectKeys } from './stores';
+	import UserIcon from '@svelte-parts/icons/feather/user';
 	import Picture from '../components/Picture.svelte';
 	export let i18n, allSubjectsStore, subjectKeys;
 </script>
@@ -72,10 +72,11 @@
       text-3xl
     ">{$allSubjectsStore[i].average || '-:-'}</span
 			>
-			<div class="col-span-full mx-2 font-serif text-xs self-end font-light">
-				<i class="uil uil-user-circle mr-1" /><span
-					>{$allSubjectsStore[i].teacher}</span
-				>
+			<div
+				class="col-span-full mx-2 font-serif text-xs self-end font-light flex space-x-1"
+			>
+				<span><UserIcon /> </span>
+				<span>{$allSubjectsStore[i].teacher}</span>
 			</div>
 		</a>
 	{:else}

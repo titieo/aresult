@@ -37,7 +37,7 @@
 <svelte:window on:keydown={handleEscape} />
 <svelte:head><MetaTags {title} {description} /></svelte:head>
 <Bodybg />
-<Navbar bind:isEnglish={$isEnglish} {i18n} />
+<Navbar {i18n} />
 <Sidebar bind:isEnglish={$isEnglish} {i18n} />
 <Main {i18n} />
 <!-- <Footer /> -->

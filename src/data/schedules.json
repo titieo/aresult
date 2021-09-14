@@ -1,6 +1,8 @@
 {
-  "sun": "<i class=`uil uil-sun`></i>",
-  "moon": "<i class=`uil uil-moon`></i>",
+  "_sun": "<i class=\"uil uil-sun\"></i>",
+  "_moon": "<i class=\"uil uil-moon\"></i>",
+  "sun": "🌄",
+  "moon": "🕑",
   "sunData": [
     ["Chào cờ", "Hoá học", "Tin học", "Hình học", "Đại số", ""],
     ["Sinh hoạt lớp", "Hoá học", "Tin học", "Hình học", "Đại số", "Vật lí"],
