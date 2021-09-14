@@ -1,184 +1,87 @@
 <script>
+	// import Logo from '../svg/logo.svg';
+
+	// Import 3rd-party libraries
+	import HomeIcon from '@svelte-parts/icons/feather/home';
+	import CalendarIcon from '@svelte-parts/icons/feather/calendar';
+	import SettingsIcon from '@svelte-parts/icons/feather/settings';
+	import GithubIcon from '@svelte-parts/icons/feather/github';
+
+	// Import 1rd Party Components
 	import DarkModeToggler from '../components/DarkModeToggler.svelte';
 	import ChangeLangButton from '../components/ChangeLangButton.svelte';
+	import SideBarItem from '../components/SideBarItem.svelte';
 	import Picture from '../components/Picture.svelte';
 	import { avatar } from './stores.js';
-	export let show = false,
-		i18n,
-		isEnglish = false;
 
-	function hideSideBar() {
-		show = false;
-	}
+	export let i18n,
+		isEnglish = false;
 </script>
 
-<aside class="fixed-full z-30" class:pointer-events-none={!show}>
-	<div
-		class="
-          w-full
-          h-full
-          bg-black
-          absolute
-          top-0
-          -z-1
-          cursor-pointer
-          transition-all
-          duration-300
-        "
-		on:click={hideSideBar}
-		class:bg-opacity-50={show}
-		class:bg-opacity-0={!show}
-	>
-		<!-- "$store.showSideBar && 'bg-opacity-50' || 'bg-opacity-0'" -->
-	</div>
+<aside>
 	<nav
 		class="
           h-full
-          w-[20rem]
           bg-white
           dark:bg-gray-900
           flex flex-col
           space-y-2
-          transition-transform
-          duration-300
-          transform-gpu
-          pb-2
         "
-		class:-translate-x-full={!show}
 	>
-		<figure
-			class="
-            seft-stretch
-            bg-card
-            from-green-400
-            flex flex-col
-            items-center
-            justify-center
-            w-full
-            to-blue-500
-            pt-4
-            pb-5
-            text-center text-white text-lg
-            font-serif
-          "
-		>
-			<Picture
-				pict={$avatar}
-				alt="Dzịt vàng đáng yêu"
-				pictureClass="mb-2"
-				imgClass="rounded
-      h-[10rem]
-      transition-all
-      duration-500
-      hover:rounded-md"
-			/>
-
-			<div class="flex space-x-2 order-1">
-				<p>
-					<span class="font-bold">{i18n.grade}</span> 10
-				</p>
-				<p>
-					<span class="font-bold">{i18n.semester}</span> I
-				</p>
-			</div>
-			<figcaption class="font-bold">Trần Tấn Lộc</figcaption>
+		<figure class="mt-4 flex justify-center">
+			<img src="logo.svg" alt="Logo" class="w-3/5 max-w-18" />
+			<!-- <svg class="w-3/5 max-w-18">
+				<use xlink:href={`#${Logo}`} />
+			</svg> -->
 		</figure>
-		<ul class="mx-2 space-y-2">
-			<li
-				class="
-              flex
-              align-center
-              space-x-1
-              py-2
-              px-4
-              rounded-md
-              cursor-pointer
-              transition-all
-              border border-opacity-0 border-cool-gray-200
-              dark:border-opacity-0
-              dark:border-true-gray-600
-              dark:hover:border-opacity-100
-              dark:hover:text-light-blue-400
-              hover:border-opacity-100 hover:shadow-md
-            "
+		<ul
+			class="mx-2 space-y-2 mb-auto <lg:flex <lg:justify-center <lg:align-center <lg:flex-col"
+		>
+			<SideBarItem href="#" target=""
+				><HomeIcon /><span class="<lg:hidden">{i18n.home}</span></SideBarItem
 			>
-				<a href="#" class="space-x-1 flex-grow" on:click={hideSideBar}
-					><i class="uil uil-estate" /><span>{i18n.home}</span></a
-				>
-			</li>
-			<li
-				class="
-              flex
-              align-center
-              space-x-1
-              py-2
-              px-4
-              rounded-md
-              cursor-pointer
-              transition-all
-              border border-opacity-0 border-cool-gray-200
-              dark:border-opacity-0
-              dark:border-true-gray-600
-              dark:hover:border-opacity-100
-              dark:hover:text-light-blue-400
-              hover:border-opacity-100 hover:shadow-md
-            "
+			<SideBarItem href="#schedule" target=""
+				><CalendarIcon /><span class="<lg:hidden">{i18n.schedule}</span
+				></SideBarItem
 			>
-				<a href="#schedule" class="space-x-1 flex-grow" on:click={hideSideBar}
-					><i class="uil uil-schedule" /><span>{i18n.schedule}</span></a
-				>
-			</li>
-			<li
-				class="
-              flex
-              align-center
-              space-x-1
-              py-2
-              px-4
-              rounded-md
-              cursor-pointer
-              transition-all
-              border border-opacity-0 border-cool-gray-200
-              dark:border-opacity-0
-              dark:border-true-gray-600
-              dark:hover:border-opacity-100
-              dark:hover:text-light-blue-400
-              hover:border-opacity-100 hover:shadow-md
-            "
+			<SideBarItem href="#" target=""
+				><SettingsIcon /><span class="<lg:hidden">{i18n.setting}</span
+				></SideBarItem
 			>
-				<a href="#" class="space-x-1 flex-grow" on:click={hideSideBar}
-					><i class="uil uil-setting" /><span>{i18n.setting}</span></a
-				>
-			</li>
-			<li
-				class="
-              flex
-              align-center
-              py-2
-              px-4
-              rounded-md
-              cursor-pointer
-              transition-all
-              border border-opacity-0 border-cool-gray-200
-              dark:border-opacity-0
-              dark:border-true-gray-600
-              dark:hover:border-opacity-100
-              dark:hover:text-light-blue-400
-              hover:border-opacity-100 hover:shadow-md
-            "
+			<SideBarItem
+				href="https://github.com/loctran016/aresult/issues/new"
+				target="_blank"
+				><GithubIcon /><span class="<lg:hidden">{i18n.bug}</span></SideBarItem
 			>
-				<a href="<%- bugs %>" target="_blank" class="space-x-1 flex-grow"
-					><i class="uil uil-bug" /><span>{i18n.bug}</span></a
-				>
-			</li>
 		</ul>
-		<div class="border-t-2 text-center pt-1 flex-grow">
+		<!-- <div class="border-t-2 text-center pt-1 flex-grow">
 			<span>{i18n.version}</span>
-			<!-- <span>{i18n.version}</span> <%- version %> -->
-		</div>
-		<div class="flex mx-3 items-center justify-center space-x-5">
+		</div> -->
+		<div
+			class="mx-auto flex flex-col items-center justify-end space-y-4 text-center self-stretch w-full"
+			style="margin-top: auto;"
+		>
 			<ChangeLangButton {i18n} bind:isEnglish />
 			<DarkModeToggler />
+			<figure
+				class="bg-light-300 dark:bg-blue-gray-800 self-stretch py-4 px-3"
+				style="align-self: stretch;"
+			>
+				<Picture
+					pict={$avatar}
+					alt="Dzịt vàng đáng yêu"
+					pictureClass=""
+					imgClass="mask mask-squircle
+                      mx-auto h-[3rem] lg:h-[4rem]"
+				/>
+			</figure>
 		</div>
 	</nav>
 </aside>
+
+<!-- TODO: Fix this -->
+<style>
+	:global(svg) {
+		top: 0 !important;
+	}
+</style>

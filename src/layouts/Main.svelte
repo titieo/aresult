@@ -14,20 +14,21 @@
 
 <main
 	class="
-  w-full
-  flex-grow
   relative
   pb-5
   pt-2
   px-3
-  bg-white
-  dark:bg-gray-900
+  bg-gray-100
+  dark:bg-blue-gray-900
   flex flex-col
+
+  overflow-y-hidden
 "
 >
-	{#if false}
-		<AddSubject />
-	{/if}
+	<!-- TODO: Not to use overflow-y-hidden -->
+	<!-- {#if false} -->
+	<AddSubject />
+	<!-- {/if} -->
 
 	<Header {i18n} />
 	<Banner {i18n} {allSubjectsStore} {subjectKeys} />

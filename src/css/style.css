@@ -1,8 +1,9 @@
-@import '@iconscout/unicons/css/line.css';
-
 html {
   scroll-behavior: smooth;
-  @apply antialiased <md:text-[80%];
+
+  /* @apply antialiased <md:text-[80%]; */
+
+  @apply antialiased;
 
   /* scrollbar-primary */
 
@@ -74,14 +75,6 @@ td {
 
   .body-bg {
     animation: none;
-  }
-
-  .nav-icon {
-    transition: none;
-  }
-
-  .nav-icon span {
-    transition: none;
   }
 }
 

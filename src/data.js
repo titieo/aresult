@@ -1,8 +1,22 @@
 // @ts-nocheck
 import allSubjects from './data/subjects.json';
+import schedule from './data/schedules.json';
 const emptyPoint = `-:-`;
 const decimalNum = 2;
 
+// Data
+const allCapsAlpha = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+const allLowerAlpha = [...'abcdefghijklmnopqrstuvwxyz'];
+const allUniqueChars = [...`~!@#$%^&*()_+-=[]\\{}|;:'",./<>?`];
+const allNumbers = [...'0123456789'];
+const base = [
+  ...allCapsAlpha,
+  ...allNumbers,
+  ...allLowerAlpha,
+  ...allUniqueChars,
+];
+
+// Function
 const firstLetterUpper = function (theString) {
   return theString.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, function (c) {
     return c.toUpperCase();
@@ -26,21 +40,18 @@ const removeDecimal = function (number) {
   }
 };
 
-const allCapsAlpha = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
-const allLowerAlpha = [...'abcdefghijklmnopqrstuvwxyz'];
-const allUniqueChars = [...`~!@#$%^&*()_+-=[]\\{}|;:'",./<>?`];
-const allNumbers = [...'0123456789'];
-
-const base = [
-  ...allCapsAlpha,
-  ...allNumbers,
-  ...allLowerAlpha,
-  ...allUniqueChars,
-];
+const addCells = function (...arr) {
+  arr.forEach((data) => {
+    for (let i = 1; i < schedule[`${data}Data`].length; i++) {
+      schedule[`${data}Data`][i].unshift('', i + 1);
+    }
+    schedule[`${data}Data`][0].unshift(schedule[data], 1);
+  });
+};
 
 const ranStr = (len) => {
   return [...Array(len)]
-    .map((i) => base[(Math.random() * base.length) | 0])
+    .map(() => base[(Math.random() * base.length) | 0])
     .join('');
 };
 
@@ -117,38 +128,10 @@ mergeData(
   allSubjects
 );
 
-const icon = {
-  sun: `<i class="uil uil-sun"></i>`,
-  moon: `<i class="uil uil-moon"></i>`,
-};
-
-const sunData = [
-  [icon.sun, '1', 'Chào cờ', 'Hoá học', 'Tin học', 'Hình học', 'Đại số', ''],
-  [
-    '',
-    '2',
-    'Sinh hoạt lớp',
-    'Hoá học',
-    'Tin học',
-    'Hình học',
-    'Đại số',
-    'Vật lí',
-  ],
-  ['', '3', 'Toán', 'Hoá học', 'Anh văn', 'Hình học', '', 'Vật lí'],
-  ['', '4', 'Toán', 'Vật lí', 'Anh văn', 'Địa lí', '', 'Lịch sử'],
-  ['', '5', 'Đại số', 'Vật lí', 'GDCD', 'Địa lí', '', 'Lịch sử'],
-];
-
-const moonData = [
-  [icon.moon, '1', 'Ngữ văn', '', 'Hoá học', '', 'Anh văn', ''],
-  ['', '2', 'Ngữ văn', '', 'GDQP-AN', '', 'Thể dục', ''],
-  ['', '3', 'Ngữ văn', '', 'Ngữ văn', '', 'Thể dục', ''],
-  ['', '4', '', '', 'Sinh học', '', 'Công nghệ', ''],
-  ['', '5', '', '', '', '', '', ''],
-];
+addCells('sun', 'moon');
 
 const cells = {
-  head: ['Buổi', 'Tiết', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'],
+  head: schedule.head,
   //   head: [
   //     'Session',
   //     'Period',
@@ -159,8 +142,8 @@ const cells = {
   //     'Friday',
   //     'Saturday',
   //   ],
-  sun: sunData,
-  moon: moonData,
+  sun: schedule.sunData,
+  moon: schedule.moonData,
 };
 
 export { allSubjects, cells };

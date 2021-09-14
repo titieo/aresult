@@ -1,15 +1,17 @@
 import { defineConfig } from 'vite';
 import legacy from '@vitejs/plugin-legacy';
 import WindiCSS from 'vite-plugin-windicss';
+import createSvgSpritePlugin from 'vite-plugin-svg-sprite';
 import path from 'path';
 import { minifyHtml, injectHtml } from 'vite-plugin-html';
 import pkg from './package.json';
 import { VitePWA } from 'vite-plugin-pwa';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 export default defineConfig({
-  //   root: './src/',
+  //   root: './src/'
   publicDir: 'assets',
   plugins: [
+    createSvgSpritePlugin({}),
     svelte(),
     minifyHtml(),
     injectHtml({

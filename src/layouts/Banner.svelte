@@ -1,5 +1,5 @@
 <script>
-	//   import { allSubjectsStore, subjectKeys } from './stores';
+	import UserIcon from '@svelte-parts/icons/feather/user';
 	import Picture from '../components/Picture.svelte';
 	export let i18n, allSubjectsStore, subjectKeys;
 </script>
@@ -9,9 +9,13 @@
     w-full
     px-5
     gap-y-5 gap-x-5
-    flex-grow
-    max-w-con place-content-center
-    ${subjectKeys.length ? 'grid-cols-layout py-3' : 'place-items-center'}`}
+    bg-light-100
+    dark:bg-cool-gray-700
+    shadow-md
+    dark:shadow-color-cool-gray-400
+    rounded-lg
+    flex-grow place-content-center
+    ${subjectKeys.length ? 'grid-cols-layout py-4' : 'place-items-center'}`}
 >
 	{#each subjectKeys as i ($allSubjectsStore[i].id)}
 		<a
@@ -68,10 +72,11 @@
       text-3xl
     ">{$allSubjectsStore[i].average || '-:-'}</span
 			>
-			<div class="col-span-full mx-2 font-serif text-xs self-end font-light">
-				<i class="uil uil-user-circle mr-1" /><span
-					>{$allSubjectsStore[i].teacher}</span
-				>
+			<div
+				class="col-span-full mx-2 font-serif text-xs self-end font-light flex space-x-1"
+			>
+				<span><UserIcon /> </span>
+				<span>{$allSubjectsStore[i].teacher}</span>
 			</div>
 		</a>
 	{:else}

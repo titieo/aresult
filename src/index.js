@@ -4,7 +4,7 @@ import 'virtual:windi-components.css';
 import './css/style.css';
 import 'virtual:windi-utilities.css';
 // import 'virtual:windi.css';
-import 'virtual:windi-devtools';
+// import 'virtual:windi-devtools';
 
 // import confetti from 'canvas-confetti';
 

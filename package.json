@@ -17,7 +17,7 @@
   "scripts": {
     "build": "NODE_ENV=production vite build",
     "build-dev": "build && vite preview",
-    "dev": "NODE_ENV=development vite",
+    "dev": "NODE_ENV=development BROWSER=firefox vite",
     "analysis": "windicss-analysis --html website/report",
     "format": "concurrently \"yarn:format:*\" && echo Please apply the diff",
     "format:eslint": "echo Fixing Lint Issues With Eslint... && yarn eslint --ext .js --fix --quiet && echo Fix generated successfully. || (echo Fix failed! && exit 1)",
@@ -47,7 +47,7 @@
     "> 5% in VN"
   ],
   "dependencies": {
-    "@iconscout/unicons": "^4.0.0",
+    "@svelte-parts/icons": "^0.0.19",
     "canvas-confetti": "^1.4.0",
     "svelte-local-storage-store": "^0.2.4",
     "svelte-meta-tags": "^1.2.2"
@@ -87,6 +87,7 @@
     "vite": "^2.5.6",
     "vite-plugin-html": "^2.1.0",
     "vite-plugin-pwa": "^0.11.2",
+    "vite-plugin-svg-sprite": "^0.2.3",
     "vite-plugin-windicss": "^1.4.2",
     "windicss": "^3.1.7",
     "windicss-analysis": "^0.3.4"
