@@ -1,0 +1,19 @@
+{
+  "sun": "<i class=`uil uil-sun`></i>",
+  "moon": "<i class=`uil uil-moon`></i>",
+  "sunData": [
+    ["Chào cờ", "Hoá học", "Tin học", "Hình học", "Đại số", ""],
+    ["Sinh hoạt lớp", "Hoá học", "Tin học", "Hình học", "Đại số", "Vật lí"],
+    ["Toán", "Hoá học", "Anh văn", "Hình học", "", "Vật lí"],
+    ["Toán", "Vật lí", "Anh văn", "Địa lí", "", "Lịch sử"],
+    ["Đại số", "Vật lí", "GDCD", "Địa lí", "", "Lịch sử"]
+  ],
+  "moonData": [
+    ["Ngữ văn", "", "Hoá học", "", "Anh văn", ""],
+    ["Ngữ văn", "", "GDQP-AN", "", "Thể dục", ""],
+    ["Ngữ văn", "", "Ngữ văn", "", "Thể dục", ""],
+    ["", "", "Sinh học", "", "Công nghệ", ""],
+    ["", "", "", "", "", ""]
+  ],
+  "head": ["Buổi", "Tiết", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"]
+}

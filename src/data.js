@@ -1,5 +1,6 @@
 // @ts-nocheck
 import allSubjects from './data/subjects.json';
+import schedule from './data/schedules.json';
 const emptyPoint = `-:-`;
 const decimalNum = 2;
 
@@ -117,38 +118,18 @@ mergeData(
   allSubjects
 );
 
-const icon = {
-  sun: `<i class="uil uil-sun"></i>`,
-  moon: `<i class="uil uil-moon"></i>`,
-};
-
-const sunData = [
-  [icon.sun, '1', 'Chào cờ', 'Hoá học', 'Tin học', 'Hình học', 'Đại số', ''],
-  [
-    '',
-    '2',
-    'Sinh hoạt lớp',
-    'Hoá học',
-    'Tin học',
-    'Hình học',
-    'Đại số',
-    'Vật lí',
-  ],
-  ['', '3', 'Toán', 'Hoá học', 'Anh văn', 'Hình học', '', 'Vật lí'],
-  ['', '4', 'Toán', 'Vật lí', 'Anh văn', 'Địa lí', '', 'Lịch sử'],
-  ['', '5', 'Đại số', 'Vật lí', 'GDCD', 'Địa lí', '', 'Lịch sử'],
-];
-
-const moonData = [
-  [icon.moon, '1', 'Ngữ văn', '', 'Hoá học', '', 'Anh văn', ''],
-  ['', '2', 'Ngữ văn', '', 'GDQP-AN', '', 'Thể dục', ''],
-  ['', '3', 'Ngữ văn', '', 'Ngữ văn', '', 'Thể dục', ''],
-  ['', '4', '', '', 'Sinh học', '', 'Công nghệ', ''],
-  ['', '5', '', '', '', '', '', ''],
-];
+for (let i = 1; i < schedule.sunData.length; i++) {
+  schedule.sunData[i].unshift('', i + 1);
+}
+schedule.sunData[0].unshift(schedule.sun, 1);
+for (let i = 1; i < schedule.moonData.length; i++) {
+  schedule.moonData[i].unshift('', i + 1);
+}
+schedule.moonData[0].unshift(schedule.moon, 1);
+console.log(schedule);
 
 const cells = {
-  head: ['Buổi', 'Tiết', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'],
+  head: schedule.head,
   //   head: [
   //     'Session',
   //     'Period',
@@ -159,8 +140,8 @@ const cells = {
   //     'Friday',
   //     'Saturday',
   //   ],
-  sun: sunData,
-  moon: moonData,
+  sun: schedule.sunData,
+  moon: schedule.moonData,
 };
 
 export { allSubjects, cells };
