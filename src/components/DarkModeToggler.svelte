@@ -11,7 +11,7 @@
 
 <DarkMode bind:theme />
 <button
-	class={`cursor-pointer h-18 w-18 flex-center bg-gradient-to-br btn rounded-2xl  shadow-md ${
+	class={`cursor-pointer h-18 w-18 flex-center bg-gradient-to-br btn rounded-2xl text-white shadow-md ${
 		theme === 'dark'
 			? 'from-cyan-300 to-blue-400'
 			: 'from-yellow-500 to-orange-500'
@@ -24,7 +24,7 @@
 		class="h-18"
 		alt="Change Theme"
 	/> -->
-	<svg class="mx-1">
+	<svg class="">
 		<use xlink:href={`#${theme === 'dark' ? MoonIcon : SunIcon}`} />
 	</svg>
 </button>

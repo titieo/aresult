@@ -8,7 +8,7 @@ import pkg from './package.json';
 import { VitePWA } from 'vite-plugin-pwa';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 export default defineConfig({
-  //   root: './src/',
+  //   root: './src/'
   publicDir: 'assets',
   plugins: [
     createSvgSpritePlugin({}),
