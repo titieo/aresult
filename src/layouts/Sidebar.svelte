@@ -1,4 +1,6 @@
 <script>
+	// import Logo from '../svg/logo.svg';
+
 	// Import 3rd-party libraries
 	import HomeIcon from '@svelte-parts/icons/feather/home';
 	import CalendarIcon from '@svelte-parts/icons/feather/calendar';
@@ -28,6 +30,9 @@
 	>
 		<figure class="mt-4 flex justify-center">
 			<img src="logo.svg" alt="Logo" class="w-3/5 max-w-18" />
+			<!-- <svg class="w-3/5 max-w-18">
+				<use xlink:href={`#${Logo}`} />
+			</svg> -->
 		</figure>
 		<ul
 			class="mx-2 space-y-2 mb-auto <lg:flex <lg:justify-center <lg:align-center <lg:flex-col"
@@ -53,7 +58,7 @@
 			<span>{i18n.version}</span>
 		</div> -->
 		<div
-			class="mx-auto flex flex-col items-center justify-end space-y-2 text-center self-stretch w-full"
+			class="mx-auto flex flex-col items-center justify-end space-y-4 text-center self-stretch w-full"
 			style="margin-top: auto;"
 		>
 			<ChangeLangButton {i18n} bind:isEnglish />

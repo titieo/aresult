@@ -26,9 +26,9 @@
 "
 >
 	<!-- TODO: Not to use overflow-y-hidden -->
-	{#if false}
-		<AddSubject />
-	{/if}
+	<!-- {#if false} -->
+	<AddSubject />
+	<!-- {/if} -->
 
 	<Header {i18n} />
 	<Banner {i18n} {allSubjectsStore} {subjectKeys} />
