@@ -1,6 +1,6 @@
 <script>
 	//   import { each } from 'svelte/internal';
-	import ArrIcon from '@svelte-parts/icons/feather/arrow-left';
+	import ArrIcon from 'virtual:icons/feather/arrow-left';
 	import { cells } from '../data';
 	//   import Header from './Header.svelte';
 	export let i18n;

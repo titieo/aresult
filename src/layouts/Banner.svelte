@@ -1,5 +1,5 @@
 <script>
-	import UserIcon from '@svelte-parts/icons/feather/user';
+	import UserIcon from 'virtual:icons/feather/user';
 	import Picture from '../components/Picture.svelte';
 	export let i18n, allSubjectsStore, subjectKeys;
 </script>
@@ -75,7 +75,7 @@
 			<div
 				class="col-span-full mx-2 font-serif text-xs self-end font-light flex space-x-1"
 			>
-				<span><UserIcon /> </span>
+				<UserIcon />
 				<span>{$allSubjectsStore[i].teacher}</span>
 			</div>
 		</a>

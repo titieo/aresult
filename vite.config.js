@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import Icons from 'unplugin-icons/vite';
 import legacy from '@vitejs/plugin-legacy';
 import WindiCSS from 'vite-plugin-windicss';
 import createSvgSpritePlugin from 'vite-plugin-svg-sprite';
@@ -13,6 +14,9 @@ export default defineConfig({
   plugins: [
     createSvgSpritePlugin({}),
     svelte(),
+    Icons({
+      compiler: 'svelte',
+    }),
     minifyHtml(),
     injectHtml({
       data: {

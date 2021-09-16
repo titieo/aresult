@@ -2,10 +2,10 @@
 	// import Logo from '../svg/logo.svg';
 
 	// Import 3rd-party libraries
-	import HomeIcon from '@svelte-parts/icons/feather/home';
-	import CalendarIcon from '@svelte-parts/icons/feather/calendar';
-	import SettingsIcon from '@svelte-parts/icons/feather/settings';
-	import GithubIcon from '@svelte-parts/icons/feather/github';
+	import HomeIcon from 'virtual:icons/feather/home';
+	import CalendarIcon from 'virtual:icons/feather/calendar';
+	import SettingsIcon from 'virtual:icons/feather/settings';
+	import GithubIcon from 'virtual:icons/feather/github';
 
 	// Import 1rd Party Components
 	import DarkModeToggler from '../components/DarkModeToggler.svelte';
@@ -23,7 +23,7 @@
 		class="
           h-full
           bg-white
-          dark:bg-gray-900
+          dark:bg-cool-gray-700
           flex flex-col
           space-y-2
         "
@@ -38,20 +38,26 @@
 			class="mx-2 space-y-2 mb-auto <lg:flex <lg:justify-center <lg:align-center <lg:flex-col"
 		>
 			<SideBarItem href="#" target=""
-				><HomeIcon /><span class="<lg:hidden">{i18n.home}</span></SideBarItem
+				><HomeIcon class="top-[0.15em] relative" /><span class="<lg:hidden"
+					>{i18n.home}</span
+				></SideBarItem
 			>
 			<SideBarItem href="#schedule" target=""
-				><CalendarIcon /><span class="<lg:hidden">{i18n.schedule}</span
+				><CalendarIcon class="top-[0.15em] relative" /><span class="<lg:hidden"
+					>{i18n.schedule}</span
 				></SideBarItem
 			>
 			<SideBarItem href="#" target=""
-				><SettingsIcon /><span class="<lg:hidden">{i18n.setting}</span
+				><SettingsIcon class="top-[0.15em] relative" /><span class="<lg:hidden"
+					>{i18n.setting}</span
 				></SideBarItem
 			>
 			<SideBarItem
 				href="https://github.com/loctran016/aresult/issues/new"
 				target="_blank"
-				><GithubIcon /><span class="<lg:hidden">{i18n.bug}</span></SideBarItem
+				><GithubIcon class="top-[0.15em] relative" /><span class="<lg:hidden"
+					>{i18n.bug}</span
+				></SideBarItem
 			>
 		</ul>
 		<!-- <div class="border-t-2 text-center pt-1 flex-grow">
@@ -78,10 +84,3 @@
 		</div>
 	</nav>
 </aside>
-
-<!-- TODO: Fix this -->
-<style>
-	:global(svg) {
-		top: 0 !important;
-	}
-</style>

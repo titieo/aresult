@@ -14,6 +14,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@antfu/utils@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@antfu/utils@npm:0.3.0"
+  dependencies:
+    "@types/throttle-debounce": ^2.1.0
+  checksum: 208cf5ece42ee85c7175802d0bd3132553153639d4fef8276109b0c4331852f94e3fc7e29ddb31050395982a6a97159ab0d3c49e4a250b97fca0eccfbf901f1c
+  languageName: node
+  linkType: hard
+
 "@apideck/better-ajv-errors@npm:^0.2.4":
   version: 0.2.5
   resolution: "@apideck/better-ajv-errors@npm:0.2.5"
@@ -1738,6 +1747,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@iconify/json-tools@npm:^1.0.10":
+  version: 1.0.10
+  resolution: "@iconify/json-tools@npm:1.0.10"
+  checksum: 40f8c650534bda3962041bb238f2cf0183888c5addc9115a60d8628a4b9ab2ad9178bbad7267cb6383ff51a5ae538f3506362bb3b3ccce225832050a0accf655
+  languageName: node
+  linkType: hard
+
+"@iconify/json@npm:^1.1.402":
+  version: 1.1.402
+  resolution: "@iconify/json@npm:1.1.402"
+  checksum: 740528ceddd1cc71ef30987dcb84d1fa80f931eb673d0d19ac6cc792cae028ef0bc7bfcb6e17b439234e1c3e76ba44bfc0d580401e028c03ef92c0a43b981b2b
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -1892,13 +1915,6 @@ __metadata:
     ejs: ^2.6.1
     magic-string: ^0.25.0
   checksum: 678096f137f858c4062942d2cd1f6613281f5558fdacd20a3d8eece0848efab129636c75c2a86e5125faf2c809045c681557e7c1c34811bbc5e30e1d0f555cff
-  languageName: node
-  linkType: hard
-
-"@svelte-parts/icons@npm:^0.0.19":
-  version: 0.0.19
-  resolution: "@svelte-parts/icons@npm:0.0.19"
-  checksum: 148f7a5e55ad517cfced7ba2c10e628f4c842e4abd6c70c99e5cf50716835b64ed03a0754c37526ba2c5d7ea0fbbc626496192f92ceaa73a20f0c14756a93cf9
   languageName: node
   linkType: hard
 
@@ -4805,6 +4821,13 @@ fsevents@~2.3.2:
   version: 4.0.0
   resolution: "has-flag@npm:4.0.0"
   checksum: 2e5391139d3d287231ccb58659702392f6e3abeac3296fb4721afaff46493f3d9b99a9329ae015dfe973aa206ed5c75f43e86aec0267dce79aa5c2b6e811b3ad
+  languageName: node
+  linkType: hard
+
+"has-pkg@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "has-pkg@npm:0.0.1"
+  checksum: 564048921eb69604441a94a6c1ad9666e8a02630fb33e249e1a2e7b4c54517b8c7b678ba1e6c732c6ff2a81662bff270608f102fc28920dd7c690308a73546f1
   languageName: node
   linkType: hard
 
@@ -9069,8 +9092,8 @@ fsevents@~2.3.2:
   dependencies:
     "@commitlint/cli": ^13.1.0
     "@commitlint/config-conventional": ^13.1.0
+    "@iconify/json": ^1.1.402
     "@squoosh/lib": ^0.4.0
-    "@svelte-parts/icons": ^0.0.19
     "@sveltejs/vite-plugin-svelte": ^1.0.0-next.22
     "@vitejs/plugin-legacy": ^1.5.3
     "@windicss/plugin-scrollbar": ^1.2.3
@@ -9102,6 +9125,7 @@ fsevents@~2.3.2:
     svelte-hamburgers: ^3.0.1
     svelte-local-storage-store: ^0.2.4
     svelte-meta-tags: ^1.2.2
+    unplugin-icons: ^0.11.3
     vite: ^2.5.6
     vite-plugin-html: ^2.1.0
     vite-plugin-pwa: ^0.11.2
@@ -9562,6 +9586,54 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"unplugin-icons@npm:^0.11.3":
+  version: 0.11.3
+  resolution: "unplugin-icons@npm:0.11.3"
+  dependencies:
+    "@antfu/utils": ^0.3.0
+    "@iconify/json-tools": ^1.0.10
+    has-pkg: ^0.0.1
+    unplugin: ^0.2.9
+  peerDependencies:
+    "@iconify/json": "*"
+    "@svgr/core": ^5.5.0
+    "@vue/compiler-sfc": ^3.0.2
+    vue-template-compiler: ^2.6.12
+    vue-template-es2015-compiler: ^1.9.0
+  peerDependenciesMeta:
+    "@svgr/core":
+      optional: true
+    "@vue/compiler-sfc":
+      optional: true
+    vue-template-compiler:
+      optional: true
+    vue-template-es2015-compiler:
+      optional: true
+  checksum: 240ddb87ca36a9b2320f7ef06646200336a747941d4a2ca40f48b8965401ec5058dc2095d9e3f04b739cac9c1ea41ea7c88857c4f7ef89dc2705ba1fdf58c760
+  languageName: node
+  linkType: hard
+
+"unplugin@npm:^0.2.9":
+  version: 0.2.9
+  resolution: "unplugin@npm:0.2.9"
+  dependencies:
+    upath: ^2.0.1
+    webpack-virtual-modules: ^0.4.3
+  peerDependencies:
+    rollup: ^2.50.0
+    vite: ^2.3.0
+    webpack: 4 || 5
+  peerDependenciesMeta:
+    rollup:
+      optional: true
+    vite:
+      optional: true
+    webpack:
+      optional: true
+  checksum: fe6dd60a6ca4de309b64e0bb5351b34d178be5e95f4d07fb9019593cf9707eb2e6b542f72ffb90f349d6fbc992c3d7b32718ee49a8875a14e53d11d966a176ee
+  languageName: node
+  linkType: hard
+
 "unquote@npm:~1.1.1":
   version: 1.1.1
   resolution: "unquote@npm:1.1.1"
@@ -9583,6 +9655,13 @@ fsevents@~2.3.2:
   version: 1.2.0
   resolution: "upath@npm:1.2.0"
   checksum: ecb08ff3e7e3b152e03bceb7089e6f0077bf3494764397a301eb99a7a5cd4c593ea4d0b13a7714195ad8a3ddca9d7a5964037a1c0bc712e1ba7b67a79165a0be
+  languageName: node
+  linkType: hard
+
+"upath@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "upath@npm:2.0.1"
+  checksum: 50e663333f305787d6a88e3840824f1332ded90a9c1b567c8faa418ab340125f5cae66b909c034bf95d861ab34db4c306984524fe33d6da1493984eae6b8be37
   languageName: node
   linkType: hard
 
@@ -9771,6 +9850,13 @@ fsevents@~2.3.2:
   version: 4.0.2
   resolution: "webidl-conversions@npm:4.0.2"
   checksum: 75c2ada4262cda41410ec898178f4f2a31419a905415a98a0bd1b93441ce4a2b942bae2d0ac6d637b749b9d3b309be5a49dbc3b06aae9d9e65280554268a2c94
+  languageName: node
+  linkType: hard
+
+"webpack-virtual-modules@npm:^0.4.3":
+  version: 0.4.3
+  resolution: "webpack-virtual-modules@npm:0.4.3"
+  checksum: 9d25285c2fcbfb54515e4fc0e12eb6261ad9565a6eb36e679e5277a0a4728425c59d75ae81f3d1536c73a6d446cb33338153b9e61b4f6c2c04c04394e57f06ff
   languageName: node
   linkType: hard
 

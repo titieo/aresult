@@ -17,7 +17,7 @@
   "scripts": {
     "build": "NODE_ENV=production vite build",
     "build-dev": "build && vite preview",
-    "dev": "NODE_ENV=development BROWSER=firefox vite",
+    "dev": "NODE_ENV=development vite",
     "analysis": "windicss-analysis --html website/report",
     "format": "concurrently \"yarn:format:*\" && echo Please apply the diff",
     "format:eslint": "echo Fixing Lint Issues With Eslint... && yarn eslint --ext .js --fix --quiet && echo Fix generated successfully. || (echo Fix failed! && exit 1)",
@@ -47,7 +47,6 @@
     "> 5% in VN"
   ],
   "dependencies": {
-    "@svelte-parts/icons": "^0.0.19",
     "canvas-confetti": "^1.4.0",
     "svelte-local-storage-store": "^0.2.4",
     "svelte-meta-tags": "^1.2.2"
@@ -55,6 +54,7 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@iconify/json": "^1.1.402",
     "@squoosh/lib": "^0.4.0",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.22",
     "@vitejs/plugin-legacy": "^1.5.3",
@@ -84,6 +84,7 @@
     "svelte": "^3.42.4",
     "svelte-dark-mode": "^2.0.0",
     "svelte-hamburgers": "^3.0.1",
+    "unplugin-icons": "^0.11.3",
     "vite": "^2.5.6",
     "vite-plugin-html": "^2.1.0",
     "vite-plugin-pwa": "^0.11.2",

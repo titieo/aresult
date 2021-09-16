@@ -1,7 +1,7 @@
 <script>
 	//   import { allSubjectsStore, subjectKeys } from './stores';
-	import ArrIcon from '@svelte-parts/icons/feather/arrow-left';
-	import ChevLeft from '@svelte-parts/icons/octicons/chevron-left';
+	import ArrIcon from 'virtual:icons/feather/arrow-left';
+	import ChevLeft from 'virtual:icons/ion/chevron-back-outline';
 	export let i18n, subjectKeys, allSubjectsStore;
 </script>
 
@@ -95,7 +95,7 @@
               relative top-1
             "
 					>
-						<ChevLeft inline={false} />
+						<ChevLeft />
 					</div>
 					<h3>
 						{$allSubjectsStore[item][i18n.key]}
