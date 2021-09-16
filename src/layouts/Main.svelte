@@ -1,6 +1,6 @@
 <script>
 	// Import Data
-	import { allSubjectsStore, subjectKeys } from './stores';
+	import { allSubjectsStore as allSubjects, subjectKeys } from './stores';
 	// Import components
 	import AddSubject from '../components/AddSubject.svelte';
 	// Import layouts
@@ -8,8 +8,14 @@
 	import Banner from './Banner.svelte';
 	import Details from './Details.svelte';
 	import Schedule from './Schedule.svelte';
+	import Form from './Form.svelte';
 	// States
 	export let i18n;
+	let subject, section, newScore;
+	$: if (newScore) {
+		allSubjects.update((i) => i[subject][section].push(newScore));
+		console.log($allSubjects);
+	}
 </script>
 
 <main
@@ -29,9 +35,16 @@
 	<!-- {#if false} -->
 	<AddSubject />
 	<!-- {/if} -->
-
+	<Form
+		bind:subject
+		bind:section
+		bind:newScore
+		subjects={allSubjects}
+		{subjectKeys}
+		{i18n}
+	/>
 	<Header {i18n} />
-	<Banner {i18n} {allSubjectsStore} {subjectKeys} />
+	<Banner {i18n} allSubjectsStore={allSubjects} {subjectKeys} />
 	<Schedule {i18n} />
-	<Details {i18n} {allSubjectsStore} {subjectKeys} />
+	<Details {i18n} allSubjectsStore={allSubjects} {subjectKeys} />
 </main>
