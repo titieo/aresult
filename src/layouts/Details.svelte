@@ -84,19 +84,17 @@
         "
 			>
 				<div class="flex space-x-2 font-bold text-lg">
-					<div
+					<ChevLeft
 						class="
-              transform-gpu
-              text-xl
-              -rotate-90
-              group-hover:rotate-90
-              transition-transform
-              duration-500 h-6 w-6
-              relative top-1
-            "
-					>
-						<ChevLeft />
-					</div>
+                        transform-gpu
+                        text-xl
+                        rotate-90
+                        group-hover:-rotate-90
+                        transition-transform
+                        duration-500 h-6 w-6
+                        relative top-0.5
+                      "
+					/>
 					<h3>
 						{$allSubjectsStore[item][i18n.key]}
 					</h3>
