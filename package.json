@@ -77,7 +77,7 @@
     "prettier": "^2.4.0",
     "prettier-plugin-svelte": "^2.4.0",
     "shx": "^0.3.3",
-    "stylelint": "^13.13.1",
+    "stylelint": "^15.10.1",
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
